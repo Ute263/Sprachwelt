@@ -180,10 +180,6 @@ navButtons.forEach((button) => {
   button.addEventListener("click", () => setRoute(button.dataset.route));
 });
 
-document.querySelectorAll("[data-back]").forEach((button) => {
-  button.addEventListener("click", () => setRoute("home"));
-});
-
 searchInput.addEventListener("input", (event) => {
   state.query = event.target.value.trim().toLowerCase();
   render();

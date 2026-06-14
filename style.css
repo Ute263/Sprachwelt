@@ -14,7 +14,7 @@
   --button-dark: #174f8a;
   --card-border: rgba(65, 83, 108, 0.14);
   --shadow: 0 16px 34px rgba(52, 82, 124, 0.14);
-  font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+  font-family: "Grundschrift", "Grundschrift Regular", "Schulschrift", "Andika", "Trebuchet MS", Arial, sans-serif;
 }
 
 * {
@@ -122,7 +122,6 @@ h2 {
 }
 
 .nav-button,
-.back-button,
 .read-button {
   min-height: 56px;
   border: 0;
@@ -142,8 +141,6 @@ h2 {
 
 .nav-button:hover,
 .nav-button:focus-visible,
-.back-button:hover,
-.back-button:focus-visible,
 .read-button:hover,
 .read-button:focus-visible {
   background: var(--button-dark);
@@ -202,31 +199,6 @@ h2 {
 
 .home-search {
   margin-top: 28px;
-}
-
-.section-heading.with-back {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.back-button {
-  min-width: 132px;
-  padding: 12px 20px;
-  font-size: 1.08rem;
-}
-
-.home-button {
-  background: var(--lemon);
-  color: var(--ink);
-  box-shadow: 0 8px 0 rgba(196, 158, 51, 0.28);
-}
-
-.home-button:hover,
-.home-button:focus-visible {
-  background: #ffd84f;
-  color: var(--ink);
 }
 
 .scroll-top-button {
@@ -484,15 +456,6 @@ h2 {
     width: 88px;
     height: 88px;
     border-radius: 26px;
-  }
-
-  .section-heading.with-back {
-    align-items: stretch;
-    flex-direction: column-reverse;
-  }
-
-  .back-button {
-    width: 100%;
   }
 
   .word-grid {
