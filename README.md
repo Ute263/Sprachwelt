@@ -1,6 +1,22 @@
-# Mina-Igel-Wörterbuch
+# Tonis Wörterbuch
 
-Eine kleine statische Web-App für Kinder der 1. Klasse. Sie läuft ohne Anmeldung, ohne Datenbank und ohne externe Frameworks. Nach dem Laden funktioniert sie auch ohne Internetverbindung weiter.
+Wörterbuch der Antonius Grundschule Kevelaer.
+
+Eine kleine statische Web-App für Kinder der 1. Klasse mit mehreren Wörterbuch-Bänden. Sie läuft ohne Anmeldung, ohne Datenbank und ohne externe Frameworks. Nach dem Laden funktioniert sie auch ohne Internetverbindung weiter.
+
+Aktuell enthalten:
+
+- `Tiere`
+- `Schule`
+- `Sommer und Ferien`
+- `Essen und Trinken`
+- `Spielzeug`
+- `Familie und Menschen`
+- `Zuhause`
+- `Tunwörter`
+- `Wiewörter`
+
+Die Suche findet Wörter über alle enthaltenen Bände hinweg. Favoriten werden ebenfalls bandübergreifend auf dem jeweiligen Gerät gespeichert.
 
 ## Lokal öffnen
 
@@ -19,6 +35,7 @@ Auf dem Mac geht das zum Beispiel so:
    - `style.css`
    - `words.js`
    - `app.js`
+   - `assets/toni.png`
    - `README.md`
 3. Öffne in GitHub die Einstellungen des Repositorys.
 4. Gehe zu `Pages`.

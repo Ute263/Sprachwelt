@@ -1,38 +1,158 @@
 const THEMES = [
-  { name: "Tiere", emoji: "🐾", ready: true },
-  { name: "Schule", emoji: "🎒", ready: false },
-  { name: "Sommer", emoji: "☀️", ready: false },
-  { name: "Essen", emoji: "🍎", ready: false },
-  { name: "Gefühle", emoji: "😊", ready: false },
-  { name: "Tunwörter", emoji: "🏃", ready: false },
-  { name: "Wiewörter", emoji: "🌈", ready: false }
+  { name: "Tiere", route: "animals", emoji: "🐾", ready: true },
+  { name: "Schule", route: "school", emoji: "🎒", ready: true },
+  { name: "Sommer und Ferien", route: "summer", emoji: "☀️", ready: true },
+  { name: "Essen", route: "food", emoji: "🍎", ready: true },
+  { name: "Gefühle", route: "", emoji: "😊", ready: false },
+  { name: "Spielzeug", route: "toys", emoji: "🎲", ready: true },
+  { name: "Familie und Menschen", route: "people", emoji: "👨‍👩‍👧", ready: true },
+  { name: "Zuhause", route: "homePlace", emoji: "🏠", ready: true },
+  { name: "Tunwörter", route: "verbs", emoji: "🏃", ready: true },
+  { name: "Wiewörter", route: "adjectives", emoji: "🌈", ready: true }
 ];
 
-const CATEGORIES = [
-  "Alle Tiere",
-  "Haustiere",
-  "Bauernhoftiere",
-  "Wilde Tiere",
-  "Kleine Tiere",
-  "Wassertiere"
-];
+const BANDS = {
+  animals: {
+    thema: "Tiere",
+    title: "Band Tiere",
+    allCategory: "Alle Tiere",
+    categories: [
+      "Alle Tiere",
+      "Haustiere",
+      "Bauernhoftiere",
+      "Wilde Tiere",
+      "Kleine Tiere",
+      "Wassertiere"
+    ]
+  },
+  school: {
+    thema: "Schule",
+    title: "Band Schule",
+    allCategory: "Alle Schulwörter",
+    categories: [
+      "Alle Schulwörter",
+      "Im Klassenraum",
+      "Schreiben und Basteln",
+      "Zahlen und Formen",
+      "Sport und Pause"
+    ]
+  },
+  summer: {
+    thema: "Sommer",
+    title: "Band Sommer und Ferien",
+    allCategory: "Alle Sommerwörter",
+    categories: [
+      "Alle Sommerwörter",
+      "Sommerwetter",
+      "Draußen",
+      "Ferien",
+      "Meer und Schwimmbad"
+    ]
+  },
+  food: {
+    thema: "Essen",
+    title: "Band Essen und Trinken",
+    allCategory: "Alle Essenswörter",
+    categories: [
+      "Alle Essenswörter",
+      "Obst",
+      "Gemüse",
+      "Frühstück und Brotzeit",
+      "Getränke und Süßes"
+    ]
+  },
+  toys: {
+    thema: "Spielzeug",
+    title: "Band Spielzeug",
+    allCategory: "Alle Spielzeugwörter",
+    categories: [
+      "Alle Spielzeugwörter",
+      "Spielsachen",
+      "Bauen",
+      "Draußen spielen",
+      "Kuscheln"
+    ]
+  },
+  people: {
+    thema: "Familie und Menschen",
+    title: "Band Familie und Menschen",
+    allCategory: "Alle Menschenwörter",
+    categories: [
+      "Alle Menschenwörter",
+      "Familie",
+      "Freunde",
+      "Körper",
+      "Kleidung"
+    ]
+  },
+  homePlace: {
+    thema: "Zuhause",
+    title: "Band Zuhause",
+    allCategory: "Alle Zuhausewörter",
+    categories: [
+      "Alle Zuhausewörter",
+      "Zimmer",
+      "Möbel",
+      "Küche",
+      "Bad"
+    ]
+  },
+  verbs: {
+    thema: "Tunwörter",
+    title: "Band Tunwörter",
+    allCategory: "Alle Tunwörter",
+    categories: [
+      "Alle Tunwörter",
+      "Bewegung",
+      "Schule",
+      "Spielen",
+      "Gefühle zeigen"
+    ]
+  },
+  adjectives: {
+    thema: "Wiewörter",
+    title: "Band Wiewörter",
+    allCategory: "Alle Wiewörter",
+    categories: [
+      "Alle Wiewörter",
+      "Aussehen",
+      "Größe",
+      "Gefühl",
+      "Bewegung"
+    ]
+  }
+};
 
-const FAVORITE_KEY = "mina-igel-favoriten";
+const FAVORITE_KEY = "toni-woerterbuch-favoriten";
+const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 
 const state = {
   route: "home",
-  category: "Alle Tiere",
+  categories: {
+    animals: BANDS.animals.allCategory,
+    school: BANDS.school.allCategory,
+    summer: BANDS.summer.allCategory,
+    food: BANDS.food.allCategory,
+    toys: BANDS.toys.allCategory,
+    people: BANDS.people.allCategory,
+    homePlace: BANDS.homePlace.allCategory,
+    verbs: BANDS.verbs.allCategory,
+    adjectives: BANDS.adjectives.allCategory
+  },
   query: "",
   favorites: loadFavorites()
 };
 
 const views = {
   home: document.querySelector("#view-home"),
-  animals: document.querySelector("#view-animals"),
+  band: document.querySelector("#view-band"),
   favorites: document.querySelector("#view-favorites")
 };
 
 const themeGrid = document.querySelector("#theme-grid");
+const homeSearch = document.querySelector("#home-search");
+const homeSearchGrid = document.querySelector("#home-search-grid");
+const bandTitle = document.querySelector("#band-title");
 const categoryTabs = document.querySelector("#category-tabs");
 const wordGrid = document.querySelector("#word-grid");
 const favoriteGrid = document.querySelector("#favorite-grid");
@@ -40,7 +160,6 @@ const searchInput = document.querySelector("#search-input");
 const navButtons = document.querySelectorAll("[data-route]");
 
 renderThemes();
-renderCategories();
 render();
 
 navButtons.forEach((button) => {
@@ -60,7 +179,13 @@ function renderThemes() {
   themeGrid.innerHTML = THEMES.map((theme) => {
     const note = theme.ready ? "Jetzt öffnen" : "kommt bald";
     return `
-      <button class="theme-tile" type="button" data-theme="${theme.name}" data-ready="${theme.ready}">
+      <button
+        class="theme-tile"
+        type="button"
+        data-theme="${theme.name}"
+        data-route-target="${theme.route}"
+        data-ready="${theme.ready}"
+      >
         <span class="tile-emoji" aria-hidden="true">${theme.emoji}</span>
         <span>
           <span class="tile-title">${theme.name}</span>
@@ -73,23 +198,8 @@ function renderThemes() {
   themeGrid.querySelectorAll(".theme-tile").forEach((tile) => {
     tile.addEventListener("click", () => {
       if (tile.dataset.ready === "true") {
-        setRoute("animals");
+        setRoute(tile.dataset.routeTarget);
       }
-    });
-  });
-}
-
-function renderCategories() {
-  categoryTabs.innerHTML = CATEGORIES.map((category) => `
-    <button class="category-tab" type="button" data-category="${category}">
-      ${category}
-    </button>
-  `).join("");
-
-  categoryTabs.querySelectorAll(".category-tab").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.category = button.dataset.category;
-      render();
     });
   });
 }
@@ -97,15 +207,15 @@ function renderCategories() {
 function render() {
   updateVisibleView();
   updateNavigation();
-  updateCategories();
-  renderWordCards(wordGrid, getAnimalWords(), "Hier ist noch kein Wort zu sehen.");
+  renderHomeSearch();
+  renderBandView();
   renderWordCards(favoriteGrid, getFavoriteWords(), "Tippe auf einen Stern. Dann findest du dein Wort hier wieder.");
 }
 
 function updateVisibleView() {
-  Object.entries(views).forEach(([route, view]) => {
-    view.classList.toggle("is-visible", route === state.route);
-  });
+  views.home.classList.toggle("is-visible", state.route === "home");
+  views.favorites.classList.toggle("is-visible", state.route === "favorites");
+  views.band.classList.toggle("is-visible", Boolean(getCurrentBand()));
 }
 
 function updateNavigation() {
@@ -114,18 +224,72 @@ function updateNavigation() {
   });
 }
 
-function updateCategories() {
+function renderBandView() {
+  const band = getCurrentBand();
+
+  if (!band) {
+    return;
+  }
+
+  bandTitle.textContent = state.query ? "Suchergebnisse" : band.title;
+  renderCategories(band);
+  renderWordCards(wordGrid, getBandWords(band), "Hier ist noch kein Wort zu sehen.");
+}
+
+function renderHomeSearch() {
+  const hasQuery = Boolean(state.query);
+  homeSearch.hidden = !hasQuery;
+
+  if (hasQuery) {
+    renderWordCards(homeSearchGrid, getSearchWords(), "Zu deiner Suche gibt es noch kein Wort.");
+  } else {
+    homeSearchGrid.innerHTML = "";
+  }
+}
+
+function renderCategories(band) {
+  categoryTabs.hidden = Boolean(state.query);
+
+  if (state.query) {
+    categoryTabs.innerHTML = "";
+    return;
+  }
+
+  categoryTabs.innerHTML = band.categories.map((category) => `
+    <button class="category-tab" type="button" data-category="${category}">
+      ${category}
+    </button>
+  `).join("");
+
   categoryTabs.querySelectorAll(".category-tab").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.category === state.category);
+    button.classList.toggle("is-active", button.dataset.category === state.categories[state.route]);
+    button.addEventListener("click", () => {
+      state.categories[state.route] = button.dataset.category;
+      render();
+    });
   });
 }
 
-function getAnimalWords() {
+function getCurrentBand() {
+  return BANDS[state.route] || null;
+}
+
+function getBandWords(band) {
+  const selectedCategory = state.categories[state.route];
+
   return WORDS.filter((word) => {
-    const matchesTheme = word.thema === "Tiere";
-    const matchesCategory = state.category === "Alle Tiere" || word.kategorie === state.category;
+    if (state.query) {
+      return matchesSearch(word);
+    }
+
+    const matchesTheme = word.thema === band.thema;
+    const matchesCategory = selectedCategory === band.allCategory || word.kategorie === selectedCategory;
     return matchesTheme && matchesCategory && matchesSearch(word);
   });
+}
+
+function getSearchWords() {
+  return WORDS.filter((word) => matchesSearch(word));
 }
 
 function getFavoriteWords() {
@@ -137,7 +301,7 @@ function matchesSearch(word) {
     return true;
   }
 
-  // Suche über die wichtigsten Felder, damit Kinder auch nach Artikel oder Kategorie suchen können.
+  // Suche über die wichtigsten Felder, damit Kinder auch nach Artikel, Kategorie oder Band suchen können.
   const searchableText = [
     word.wort,
     word.artikel,
@@ -157,6 +321,8 @@ function renderWordCards(container, words, emptyText) {
 
   container.innerHTML = words.map((word) => {
     const isFavorite = state.favorites.includes(word.id);
+    const articleLabel = word.artikel ? `${word.artikel} ` : "";
+    const articleLine = word.artikel ? `<span class="article">${word.artikel}</span>` : "";
     return `
       <article class="word-card">
         <div class="word-top">
@@ -164,13 +330,13 @@ function renderWordCards(container, words, emptyText) {
           <button
             class="favorite-button"
             type="button"
-            aria-label="${word.artikel} ${word.wort} merken"
+            aria-label="${articleLabel}${word.wort} merken"
             aria-pressed="${isFavorite}"
             data-favorite="${word.id}"
           >${isFavorite ? "★" : "☆"}</button>
         </div>
         <div class="word-main">
-          <span class="article">${word.artikel}</span>
+          ${articleLine}
           <h3 class="word">${word.wort}</h3>
           <p class="syllables">${word.silben}</p>
         </div>
@@ -190,6 +356,10 @@ function renderWordCards(container, words, emptyText) {
 }
 
 function setRoute(route) {
+  if (!route) {
+    return;
+  }
+
   state.route = route;
   render();
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -212,7 +382,8 @@ function speakWord(id) {
     return;
   }
 
-  const utterance = new SpeechSynthesisUtterance(`${word.artikel} ${word.wort}`);
+  const text = word.artikel ? `${word.artikel} ${word.wort}` : word.wort;
+  const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "de-DE";
   utterance.rate = 0.82;
   utterance.pitch = 1.08;
@@ -223,7 +394,7 @@ function speakWord(id) {
 
 function loadFavorites() {
   try {
-    return JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
+    return JSON.parse(localStorage.getItem(FAVORITE_KEY) || localStorage.getItem(OLD_FAVORITE_KEY)) || [];
   } catch (error) {
     return [];
   }

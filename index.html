@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mina-Igel-Wörterbuch</title>
+    <title>Tonis Wörterbuch</title>
     <meta
       name="description"
-      content="Ein kindgerechtes Wörterbuch für die 1. Klasse mit Tierwörtern, Favoriten und Vorlesefunktion."
+      content="Tonis Wörterbuch der Antonius Grundschule Kevelaer mit Suche, Vorlesen und Favoriten."
     >
     <link rel="stylesheet" href="style.css">
   </head>
@@ -14,49 +14,55 @@
     <div class="app-shell">
       <header class="hero" aria-labelledby="app-title">
         <div class="mascot" aria-hidden="true">
-          <div class="mina-hedgehog">
-            <span class="spike spike-one"></span>
-            <span class="spike spike-two"></span>
-            <span class="spike spike-three"></span>
-            <span class="spike spike-four"></span>
-            <span class="hedgehog-body"></span>
-            <span class="hedgehog-face"></span>
-            <span class="hedgehog-eye"></span>
-            <span class="hedgehog-nose"></span>
-            <span class="hedgehog-smile"></span>
-          </div>
+          <img class="toni-mascot-image" src="assets/toni.png" alt="">
         </div>
         <div>
-          <p class="eyebrow">Hallo, ich bin Mina Igel.</p>
-          <h1 id="app-title">Mina-Igel-Wörterbuch</h1>
+          <p class="eyebrow">Hallo, ich bin Toni.</p>
+          <h1 id="app-title">Tonis Wörterbuch</h1>
+          <p class="school-subtitle">Antonius Grundschule Kevelaer</p>
+          <p class="helper-text">Ich helfe dir beim Schreiben.</p>
         </div>
       </header>
 
       <nav class="main-nav" aria-label="Hauptnavigation">
         <button class="nav-button is-active" type="button" data-route="home">Startseite</button>
         <button class="nav-button" type="button" data-route="animals">Tiere</button>
+        <button class="nav-button" type="button" data-route="school">Schule</button>
+        <button class="nav-button" type="button" data-route="summer">Sommer</button>
+        <button class="nav-button" type="button" data-route="food">Essen</button>
+        <button class="nav-button" type="button" data-route="toys">Spielzeug</button>
+        <button class="nav-button" type="button" data-route="people">Familie</button>
+        <button class="nav-button" type="button" data-route="homePlace">Zuhause</button>
+        <button class="nav-button" type="button" data-route="verbs">Tunwörter</button>
+        <button class="nav-button" type="button" data-route="adjectives">Wiewörter</button>
         <button class="nav-button" type="button" data-route="favorites">Meine Wörter</button>
       </nav>
 
       <main>
         <section class="search-panel" aria-label="Wörter suchen">
           <label for="search-input">Wort suchen</label>
-          <input id="search-input" type="search" placeholder="z. B. Hund, die, Haustiere">
+          <input id="search-input" type="search" placeholder="z. B. Sonne, Ball, schnell">
         </section>
 
         <section id="view-home" class="view is-visible" aria-labelledby="home-title">
           <div class="section-heading">
-            <h2 id="home-title">Wähle einen Band</h2>
+            <h2 id="home-title">Wähle ein Thema aus.</h2>
           </div>
           <div id="theme-grid" class="tile-grid" aria-live="polite"></div>
+          <div id="home-search" class="home-search" hidden>
+            <div class="section-heading">
+              <h2>Suchergebnisse</h2>
+            </div>
+            <div id="home-search-grid" class="word-grid" aria-live="polite"></div>
+          </div>
         </section>
 
-        <section id="view-animals" class="view" aria-labelledby="animals-title">
+        <section id="view-band" class="view" aria-labelledby="band-title">
           <div class="section-heading with-back">
             <button class="back-button" type="button" data-back>← Zurück</button>
-            <h2 id="animals-title">Band Tiere</h2>
+            <h2 id="band-title">Band Tiere</h2>
           </div>
-          <div id="category-tabs" class="category-tabs" aria-label="Tier-Kategorien"></div>
+          <div id="category-tabs" class="category-tabs" aria-label="Kategorien"></div>
           <div id="word-grid" class="word-grid" aria-live="polite"></div>
         </section>
 
