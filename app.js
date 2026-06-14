@@ -3,7 +3,7 @@ const THEMES = [
   { name: "Schule", route: "school", emoji: "🎒", ready: true },
   { name: "Sommer und Ferien", route: "summer", emoji: "☀️", ready: true },
   { name: "Essen", route: "food", emoji: "🍎", ready: true },
-  { name: "Gefühle", route: "", emoji: "😊", ready: false },
+  { name: "Gefühle", route: "feelings", emoji: "😊", ready: true },
   { name: "Spielzeug", route: "toys", emoji: "🎲", ready: true },
   { name: "Familie und Menschen", route: "people", emoji: "👨‍👩‍👧", ready: true },
   { name: "Zuhause", route: "homePlace", emoji: "🏠", ready: true },
@@ -59,6 +59,18 @@ const BANDS = {
       "Gemüse",
       "Frühstück und Brotzeit",
       "Getränke und Süßes"
+    ]
+  },
+  feelings: {
+    thema: "Gefühle",
+    title: "Band Gefühle",
+    allCategory: "Alle Gefühlswörter",
+    categories: [
+      "Alle Gefühlswörter",
+      "Gute Gefühle",
+      "Schlechte Gefühle",
+      "Miteinander",
+      "Mut und Angst"
     ]
   },
   toys: {
@@ -133,6 +145,7 @@ const state = {
     school: BANDS.school.allCategory,
     summer: BANDS.summer.allCategory,
     food: BANDS.food.allCategory,
+    feelings: BANDS.feelings.allCategory,
     toys: BANDS.toys.allCategory,
     people: BANDS.people.allCategory,
     homePlace: BANDS.homePlace.allCategory,
@@ -158,6 +171,7 @@ const wordGrid = document.querySelector("#word-grid");
 const favoriteGrid = document.querySelector("#favorite-grid");
 const searchInput = document.querySelector("#search-input");
 const navButtons = document.querySelectorAll("[data-route]");
+const scrollTopButton = document.querySelector("#scroll-top-button");
 
 renderThemes();
 render();
@@ -174,6 +188,21 @@ searchInput.addEventListener("input", (event) => {
   state.query = event.target.value.trim().toLowerCase();
   render();
 });
+
+window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+setInterval(updateScrollTopButton, 250);
+
+scrollTopButton.addEventListener("click", scrollToTop);
+scrollTopButton.addEventListener("pointerdown", scrollToTop);
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    if (window.scrollY > 8) {
+      window.scrollTo({ top: 0 });
+    }
+  }, 650);
+}
 
 function renderThemes() {
   themeGrid.innerHTML = THEMES.map((theme) => {
@@ -207,6 +236,7 @@ function renderThemes() {
 function render() {
   updateVisibleView();
   updateNavigation();
+  updateScrollTopButton();
   renderHomeSearch();
   renderBandView();
   renderWordCards(favoriteGrid, getFavoriteWords(), "Tippe auf einen Stern. Dann findest du dein Wort hier wieder.");
@@ -222,6 +252,10 @@ function updateNavigation() {
   navButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.route === state.route);
   });
+}
+
+function updateScrollTopButton() {
+  scrollTopButton.hidden = window.scrollY < 260;
 }
 
 function renderBandView() {

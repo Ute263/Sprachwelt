@@ -312,7 +312,7 @@ const WORDS = [
     silben: "Tisch",
     kategorie: "Im Klassenraum",
     thema: "Schule",
-    emoji: "🪑"
+    emoji: "▭"
   },
   {
     id: "stuhl",
@@ -447,7 +447,7 @@ const WORDS = [
     silben: "Ra-dier-gum-mi",
     kategorie: "Schreiben und Basteln",
     thema: "Schule",
-    emoji: "🩶"
+    emoji: "⬜"
   },
   {
     id: "kreis",
@@ -555,7 +555,7 @@ const WORDS = [
     silben: "Schau-kel",
     kategorie: "Sport und Pause",
     thema: "Schule",
-    emoji: "🎠"
+    emoji: "🖼️"
   },
   {
     id: "rutsche",
@@ -573,7 +573,7 @@ const WORDS = [
     silben: "Pau-sen-brot",
     kategorie: "Sport und Pause",
     thema: "Schule",
-    emoji: "🍞"
+    emoji: "🥪"
   },
   {
     id: "trinkflasche",
@@ -582,7 +582,7 @@ const WORDS = [
     silben: "Trink-fla-sche",
     kategorie: "Sport und Pause",
     thema: "Schule",
-    emoji: "🥤"
+    emoji: "💧"
   },
   {
     id: "schulhof",
@@ -645,7 +645,7 @@ const WORDS = [
     silben: "Schat-ten",
     kategorie: "Sommerwetter",
     thema: "Sommer",
-    emoji: "🌳"
+    emoji: "◼️"
   },
   {
     id: "himmel",
@@ -690,7 +690,7 @@ const WORDS = [
     silben: "Wie-se",
     kategorie: "Draußen",
     thema: "Sommer",
-    emoji: "🌱"
+    emoji: "🌿"
   },
   {
     id: "garten",
@@ -699,7 +699,7 @@ const WORDS = [
     silben: "Gar-ten",
     kategorie: "Draußen",
     thema: "Sommer",
-    emoji: "🪴"
+    emoji: "🌼"
   },
   {
     id: "sommer-schmetterling",
@@ -744,7 +744,7 @@ const WORDS = [
     silben: "Ur-laub",
     kategorie: "Ferien",
     thema: "Sommer",
-    emoji: "🧳"
+    emoji: "🏖️"
   },
   {
     id: "koffer",
@@ -762,7 +762,7 @@ const WORDS = [
     silben: "Rei-se",
     kategorie: "Ferien",
     thema: "Sommer",
-    emoji: "🚆"
+    emoji: "🧳"
   },
   {
     id: "auto",
@@ -861,7 +861,7 @@ const WORDS = [
     silben: "Schau-fel",
     kategorie: "Meer und Schwimmbad",
     thema: "Sommer",
-    emoji: "🪣"
+    emoji: "🖼️"
   },
   {
     id: "eis",
@@ -1068,7 +1068,7 @@ const WORDS = [
     silben: "Mar-me-la-de",
     kategorie: "Frühstück und Brotzeit",
     thema: "Essen",
-    emoji: "🍓"
+    emoji: "🍯"
   },
   {
     id: "ei",
@@ -1086,7 +1086,7 @@ const WORDS = [
     silben: "Jo-ghurt",
     kategorie: "Frühstück und Brotzeit",
     thema: "Essen",
-    emoji: "🥣"
+    emoji: "🥛"
   },
   {
     id: "muesli",
@@ -1185,7 +1185,7 @@ const WORDS = [
     silben: "Pup-pe",
     kategorie: "Spielsachen",
     thema: "Spielzeug",
-    emoji: "🧸"
+    emoji: "🪆"
   },
   {
     id: "spielzeug-auto",
@@ -1248,7 +1248,7 @@ const WORDS = [
     silben: "Stein",
     kategorie: "Bauen",
     thema: "Spielzeug",
-    emoji: "🧱"
+    emoji: "◼️"
   },
   {
     id: "spielzeug-turm",
@@ -1347,7 +1347,7 @@ const WORDS = [
     silben: "Schau-kel",
     kategorie: "Draußen spielen",
     thema: "Spielzeug",
-    emoji: "🛝"
+    emoji: "🖼️"
   },
   {
     id: "spielzeug-rutsche",
@@ -1383,7 +1383,7 @@ const WORDS = [
     silben: "Schau-fel",
     kategorie: "Draußen spielen",
     thema: "Spielzeug",
-    emoji: "🪣"
+    emoji: "🖼️"
   },
   {
     id: "spielzeug-kuscheltier",
@@ -1401,7 +1401,7 @@ const WORDS = [
     silben: "De-cke",
     kategorie: "Kuscheln",
     thema: "Spielzeug",
-    emoji: "🛏️"
+    emoji: "🟨"
   },
   {
     id: "spielzeug-kissen",
@@ -1410,7 +1410,7 @@ const WORDS = [
     silben: "Kis-sen",
     kategorie: "Kuscheln",
     thema: "Spielzeug",
-    emoji: "🛏️"
+    emoji: "🟦"
   },
   {
     id: "spielzeug-bett",
@@ -1437,7 +1437,7 @@ const WORDS = [
     silben: "Höh-le",
     kategorie: "Kuscheln",
     thema: "Spielzeug",
-    emoji: "⛺"
+    emoji: "🕳️"
   },
   {
     id: "spielzeug-zelt",
@@ -1806,7 +1806,7 @@ const WORDS = [
     silben: "Trep-pe",
     kategorie: "Zimmer",
     thema: "Zuhause",
-    emoji: "🪜"
+    emoji: "↗️"
   },
   {
     id: "zuhause-garten",
@@ -1815,7 +1815,7 @@ const WORDS = [
     silben: "Gar-ten",
     kategorie: "Zimmer",
     thema: "Zuhause",
-    emoji: "🌳"
+    emoji: "🌼"
   },
   {
     id: "zuhause-tisch",
@@ -1824,7 +1824,7 @@ const WORDS = [
     silben: "Tisch",
     kategorie: "Möbel",
     thema: "Zuhause",
-    emoji: "🪑"
+    emoji: "▭"
   },
   {
     id: "zuhause-stuhl",
@@ -1887,7 +1887,7 @@ const WORDS = [
     silben: "Tep-pich",
     kategorie: "Möbel",
     thema: "Zuhause",
-    emoji: "🟫"
+    emoji: "▭"
   },
   {
     id: "zuhause-kueche",
@@ -1896,7 +1896,7 @@ const WORDS = [
     silben: "Kü-che",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🍽️"
+    emoji: "🏠"
   },
   {
     id: "zuhause-teller",
@@ -1932,7 +1932,7 @@ const WORDS = [
     silben: "Ga-bel",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🍴"
+    emoji: "🍽️"
   },
   {
     id: "zuhause-messer",
@@ -1950,7 +1950,7 @@ const WORDS = [
     silben: "Topf",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🍲"
+    emoji: "🥘"
   },
   {
     id: "zuhause-ofen",
@@ -1959,7 +1959,7 @@ const WORDS = [
     silben: "O-fen",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🔥"
+    emoji: "♨️"
   },
   {
     id: "zuhause-bad",
@@ -1968,7 +1968,7 @@ const WORDS = [
     silben: "Bad",
     kategorie: "Bad",
     thema: "Zuhause",
-    emoji: "🛁"
+    emoji: "🚿"
   },
   {
     id: "zuhause-dusche",
@@ -1995,7 +1995,7 @@ const WORDS = [
     silben: "Hand-tuch",
     kategorie: "Bad",
     thema: "Zuhause",
-    emoji: "🧺"
+    emoji: "🟦"
   },
   {
     id: "zuhause-seife",
@@ -2457,11 +2457,11 @@ const WORDS = [
     emoji: "⬆️"
   },
   {
-    id: "wie-tief",
-    wort: "tief",
+    id: "wie-unten",
+    wort: "unten",
     artikel: "",
-    silben: "tief",
-    kategorie: "Größe",
+    silben: "un-ten",
+    kategorie: "Bewegung",
     thema: "Wiewörter",
     emoji: "⬇️"
   },
@@ -2571,7 +2571,7 @@ const WORDS = [
     silben: "schwach",
     kategorie: "Bewegung",
     thema: "Wiewörter",
-    emoji: "🪶"
+    emoji: "⬇️"
   },
   {
     id: "wie-wild",
@@ -2608,5 +2608,293 @@ const WORDS = [
     kategorie: "Bewegung",
     thema: "Wiewörter",
     emoji: "🪨"
+  },
+  {
+    id: "gefuehl-froh",
+    wort: "froh",
+    artikel: "",
+    silben: "froh",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "😊"
+  },
+  {
+    id: "gefuehl-gluecklich",
+    wort: "glücklich",
+    artikel: "",
+    silben: "glück-lich",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "😄"
+  },
+  {
+    id: "gefuehl-stolz",
+    wort: "stolz",
+    artikel: "",
+    silben: "stolz",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "😌"
+  },
+  {
+    id: "gefuehl-mutig",
+    wort: "mutig",
+    artikel: "",
+    silben: "mu-tig",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "🦁"
+  },
+  {
+    id: "gefuehl-ruhig",
+    wort: "ruhig",
+    artikel: "",
+    silben: "ru-hig",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "😌"
+  },
+  {
+    id: "gefuehl-freundlich",
+    wort: "freundlich",
+    artikel: "",
+    silben: "freund-lich",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "🙂"
+  },
+  {
+    id: "gefuehl-lustig",
+    wort: "lustig",
+    artikel: "",
+    silben: "lus-tig",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "😆"
+  },
+  {
+    id: "gefuehl-zufrieden",
+    wort: "zufrieden",
+    artikel: "",
+    silben: "zu-frie-den",
+    kategorie: "Gute Gefühle",
+    thema: "Gefühle",
+    emoji: "😊"
+  },
+  {
+    id: "gefuehl-traurig",
+    wort: "traurig",
+    artikel: "",
+    silben: "trau-rig",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😢"
+  },
+  {
+    id: "gefuehl-wuetend",
+    wort: "wütend",
+    artikel: "",
+    silben: "wü-tend",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😡"
+  },
+  {
+    id: "gefuehl-sauer",
+    wort: "sauer",
+    artikel: "",
+    silben: "sau-er",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😠"
+  },
+  {
+    id: "gefuehl-muede",
+    wort: "müde",
+    artikel: "",
+    silben: "mü-de",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😴"
+  },
+  {
+    id: "gefuehl-allein",
+    wort: "allein",
+    artikel: "",
+    silben: "al-lein",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "🧍"
+  },
+  {
+    id: "gefuehl-unsicher",
+    wort: "unsicher",
+    artikel: "",
+    silben: "un-si-cher",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😟"
+  },
+  {
+    id: "gefuehl-enttaeuscht",
+    wort: "enttäuscht",
+    artikel: "",
+    silben: "ent-täuscht",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😞"
+  },
+  {
+    id: "gefuehl-genervt",
+    wort: "genervt",
+    artikel: "",
+    silben: "ge-nervt",
+    kategorie: "Schlechte Gefühle",
+    thema: "Gefühle",
+    emoji: "😤"
+  },
+  {
+    id: "gefuehl-freund",
+    wort: "Freund",
+    artikel: "der",
+    silben: "Freund",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "👦"
+  },
+  {
+    id: "gefuehl-freundin",
+    wort: "Freundin",
+    artikel: "die",
+    silben: "Freun-din",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "👧"
+  },
+  {
+    id: "gefuehl-streit",
+    wort: "Streit",
+    artikel: "der",
+    silben: "Streit",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "⚡"
+  },
+  {
+    id: "gefuehl-entschuldigung",
+    wort: "Entschuldigung",
+    artikel: "die",
+    silben: "Ent-schul-di-gung",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "🙏"
+  },
+  {
+    id: "gefuehl-gespraech",
+    wort: "Gespräch",
+    artikel: "das",
+    silben: "Ge-spräch",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "💬"
+  },
+  {
+    id: "gefuehl-hilfe",
+    wort: "Hilfe",
+    artikel: "die",
+    silben: "Hil-fe",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "🤝"
+  },
+  {
+    id: "gefuehl-loesung",
+    wort: "Lösung",
+    artikel: "die",
+    silben: "Lö-sung",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "💡"
+  },
+  {
+    id: "gefuehl-frieden",
+    wort: "Frieden",
+    artikel: "der",
+    silben: "Frie-den",
+    kategorie: "Miteinander",
+    thema: "Gefühle",
+    emoji: "🕊️"
+  },
+  {
+    id: "gefuehl-angst",
+    wort: "Angst",
+    artikel: "die",
+    silben: "Angst",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "😨"
+  },
+  {
+    id: "gefuehl-mut",
+    wort: "Mut",
+    artikel: "der",
+    silben: "Mut",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "💪"
+  },
+  {
+    id: "gefuehl-sorge",
+    wort: "Sorge",
+    artikel: "die",
+    silben: "Sor-ge",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "😟"
+  },
+  {
+    id: "gefuehl-freude",
+    wort: "Freude",
+    artikel: "die",
+    silben: "Freu-de",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "😃"
+  },
+  {
+    id: "gefuehl-traene",
+    wort: "Träne",
+    artikel: "die",
+    silben: "Trä-ne",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "💧"
+  },
+  {
+    id: "gefuehl-lachen",
+    wort: "Lachen",
+    artikel: "das",
+    silben: "La-chen",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "😂"
+  },
+  {
+    id: "gefuehl-herz",
+    wort: "Herz",
+    artikel: "das",
+    silben: "Herz",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "❤️"
+  },
+  {
+    id: "gefuehl-hoffnung",
+    wort: "Hoffnung",
+    artikel: "die",
+    silben: "Hoff-nung",
+    kategorie: "Mut und Angst",
+    thema: "Gefühle",
+    emoji: "🌈"
   }
 ];

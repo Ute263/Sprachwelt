@@ -10,6 +10,7 @@ Aktuell enthalten:
 - `Schule`
 - `Sommer und Ferien`
 - `Essen und Trinken`
+- `Gefühle`
 - `Spielzeug`
 - `Familie und Menschen`
 - `Zuhause`
