@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mina-Igel-Wörterbuch</title>
+    <meta
+      name="description"
+      content="Ein kindgerechtes Wörterbuch für die 1. Klasse mit Tierwörtern, Favoriten und Vorlesefunktion."
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero" aria-labelledby="app-title">
+        <div class="mascot" aria-hidden="true">
+          <div class="mina-hedgehog">
+            <span class="spike spike-one"></span>
+            <span class="spike spike-two"></span>
+            <span class="spike spike-three"></span>
+            <span class="spike spike-four"></span>
+            <span class="hedgehog-body"></span>
+            <span class="hedgehog-face"></span>
+            <span class="hedgehog-eye"></span>
+            <span class="hedgehog-nose"></span>
+            <span class="hedgehog-smile"></span>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Hallo, ich bin Mina Igel.</p>
+          <h1 id="app-title">Mina-Igel-Wörterbuch</h1>
+        </div>
+      </header>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-button is-active" type="button" data-route="home">Startseite</button>
+        <button class="nav-button" type="button" data-route="animals">Tiere</button>
+        <button class="nav-button" type="button" data-route="favorites">Meine Wörter</button>
+      </nav>
+
+      <main>
+        <section class="search-panel" aria-label="Wörter suchen">
+          <label for="search-input">Wort suchen</label>
+          <input id="search-input" type="search" placeholder="z. B. Hund, die, Haustiere">
+        </section>
+
+        <section id="view-home" class="view is-visible" aria-labelledby="home-title">
+          <div class="section-heading">
+            <h2 id="home-title">Wähle einen Band</h2>
+          </div>
+          <div id="theme-grid" class="tile-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="view-animals" class="view" aria-labelledby="animals-title">
+          <div class="section-heading with-back">
+            <button class="back-button" type="button" data-back>← Zurück</button>
+            <h2 id="animals-title">Band Tiere</h2>
+          </div>
+          <div id="category-tabs" class="category-tabs" aria-label="Tier-Kategorien"></div>
+          <div id="word-grid" class="word-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="view-favorites" class="view" aria-labelledby="favorites-title">
+          <div class="section-heading with-back">
+            <button class="back-button" type="button" data-back>← Zurück</button>
+            <h2 id="favorites-title">Meine Wörter</h2>
+          </div>
+          <div id="favorite-grid" class="word-grid" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
