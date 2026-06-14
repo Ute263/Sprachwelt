@@ -357,10 +357,14 @@ function renderWordCards(container, words, emptyText) {
     const isFavorite = state.favorites.includes(word.id);
     const articleLabel = word.artikel ? `${word.artikel} ` : "";
     const articleLine = word.artikel ? `<span class="article">${word.artikel}</span>` : "";
+    const visual = word.bild
+      ? `<img class="word-picture" src="${word.bild}" alt="" loading="lazy">`
+      : word.emoji;
+    const visualClass = word.bild ? "word-emoji has-picture" : "word-emoji";
     return `
       <article class="word-card">
         <div class="word-top">
-          <div class="word-emoji" aria-hidden="true">${word.emoji}</div>
+          <div class="${visualClass}" aria-hidden="true">${visual}</div>
           <button
             class="favorite-button"
             type="button"

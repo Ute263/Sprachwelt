@@ -36,7 +36,7 @@ Auf dem Mac geht das zum Beispiel so:
    - `style.css`
    - `words.js`
    - `app.js`
-   - `assets/toni.png`
+   - `assets/`
    - `README.md`
 3. Öffne in GitHub die Einstellungen des Repositorys.
 4. Gehe zu `Pages`.

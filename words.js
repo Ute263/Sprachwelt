@@ -285,7 +285,8 @@ const WORDS = [
     silben: "See-stern",
     kategorie: "Wassertiere",
     thema: "Tiere",
-    emoji: "⭐"
+    emoji: "⭐",
+    bild: "assets/words/seestern.png"
   },
   {
     id: "qualle",
@@ -312,7 +313,8 @@ const WORDS = [
     silben: "Tisch",
     kategorie: "Im Klassenraum",
     thema: "Schule",
-    emoji: "▭"
+    emoji: "▭",
+    bild: "assets/words/tisch.png"
   },
   {
     id: "stuhl",
@@ -447,7 +449,8 @@ const WORDS = [
     silben: "Ra-dier-gum-mi",
     kategorie: "Schreiben und Basteln",
     thema: "Schule",
-    emoji: "⬜"
+    emoji: "⬜",
+    bild: "assets/words/radiergummi.png"
   },
   {
     id: "kreis",
@@ -555,7 +558,8 @@ const WORDS = [
     silben: "Schau-kel",
     kategorie: "Sport und Pause",
     thema: "Schule",
-    emoji: "🖼️"
+    emoji: "🖼️",
+    bild: "assets/words/schaukel.png"
   },
   {
     id: "rutsche",
@@ -573,7 +577,8 @@ const WORDS = [
     silben: "Pau-sen-brot",
     kategorie: "Sport und Pause",
     thema: "Schule",
-    emoji: "🥪"
+    emoji: "🥪",
+    bild: "assets/words/pausenbrot.png"
   },
   {
     id: "trinkflasche",
@@ -582,7 +587,8 @@ const WORDS = [
     silben: "Trink-fla-sche",
     kategorie: "Sport und Pause",
     thema: "Schule",
-    emoji: "💧"
+    emoji: "💧",
+    bild: "assets/words/trinkflasche.png"
   },
   {
     id: "schulhof",
@@ -645,7 +651,8 @@ const WORDS = [
     silben: "Schat-ten",
     kategorie: "Sommerwetter",
     thema: "Sommer",
-    emoji: "◼️"
+    emoji: "◼️",
+    bild: "assets/words/schatten.png"
   },
   {
     id: "himmel",
@@ -690,7 +697,8 @@ const WORDS = [
     silben: "Wie-se",
     kategorie: "Draußen",
     thema: "Sommer",
-    emoji: "🌿"
+    emoji: "🌿",
+    bild: "assets/words/wiese.png"
   },
   {
     id: "garten",
@@ -699,7 +707,8 @@ const WORDS = [
     silben: "Gar-ten",
     kategorie: "Draußen",
     thema: "Sommer",
-    emoji: "🌼"
+    emoji: "🌼",
+    bild: "assets/words/garten.png"
   },
   {
     id: "sommer-schmetterling",
@@ -744,7 +753,8 @@ const WORDS = [
     silben: "Ur-laub",
     kategorie: "Ferien",
     thema: "Sommer",
-    emoji: "🏖️"
+    emoji: "🏖️",
+    bild: "assets/words/urlaub.png"
   },
   {
     id: "koffer",
@@ -762,7 +772,8 @@ const WORDS = [
     silben: "Rei-se",
     kategorie: "Ferien",
     thema: "Sommer",
-    emoji: "🧳"
+    emoji: "🧳",
+    bild: "assets/words/reise.png"
   },
   {
     id: "auto",
@@ -861,7 +872,8 @@ const WORDS = [
     silben: "Schau-fel",
     kategorie: "Meer und Schwimmbad",
     thema: "Sommer",
-    emoji: "🖼️"
+    emoji: "🖼️",
+    bild: "assets/words/schaufel.png"
   },
   {
     id: "eis",
@@ -1014,7 +1026,8 @@ const WORDS = [
     silben: "Erb-se",
     kategorie: "Gemüse",
     thema: "Essen",
-    emoji: "🟢"
+    emoji: "🟢",
+    bild: "assets/words/erbse.png"
   },
   {
     id: "mais",
@@ -1068,7 +1081,8 @@ const WORDS = [
     silben: "Mar-me-la-de",
     kategorie: "Frühstück und Brotzeit",
     thema: "Essen",
-    emoji: "🍯"
+    emoji: "🍯",
+    bild: "assets/words/marmelade.png"
   },
   {
     id: "ei",
@@ -1086,7 +1100,8 @@ const WORDS = [
     silben: "Jo-ghurt",
     kategorie: "Frühstück und Brotzeit",
     thema: "Essen",
-    emoji: "🥛"
+    emoji: "🥛",
+    bild: "assets/words/joghurt.png"
   },
   {
     id: "muesli",
@@ -1185,7 +1200,8 @@ const WORDS = [
     silben: "Pup-pe",
     kategorie: "Spielsachen",
     thema: "Spielzeug",
-    emoji: "🪆"
+    emoji: "🪆",
+    bild: "assets/words/puppe.png"
   },
   {
     id: "spielzeug-auto",
@@ -1248,7 +1264,8 @@ const WORDS = [
     silben: "Stein",
     kategorie: "Bauen",
     thema: "Spielzeug",
-    emoji: "◼️"
+    emoji: "◼️",
+    bild: "assets/words/baustein.png"
   },
   {
     id: "spielzeug-turm",
@@ -1293,7 +1310,8 @@ const WORDS = [
     silben: "Klotz",
     kategorie: "Bauen",
     thema: "Spielzeug",
-    emoji: "🧱"
+    emoji: "🧱",
+    bild: "assets/words/bauklotz.png"
   },
   {
     id: "spielzeug-schiene",
@@ -1347,7 +1365,8 @@ const WORDS = [
     silben: "Schau-kel",
     kategorie: "Draußen spielen",
     thema: "Spielzeug",
-    emoji: "🖼️"
+    emoji: "🖼️",
+    bild: "assets/words/schaukel.png"
   },
   {
     id: "spielzeug-rutsche",
@@ -1383,7 +1402,8 @@ const WORDS = [
     silben: "Schau-fel",
     kategorie: "Draußen spielen",
     thema: "Spielzeug",
-    emoji: "🖼️"
+    emoji: "🖼️",
+    bild: "assets/words/schaufel.png"
   },
   {
     id: "spielzeug-kuscheltier",
@@ -1401,7 +1421,8 @@ const WORDS = [
     silben: "De-cke",
     kategorie: "Kuscheln",
     thema: "Spielzeug",
-    emoji: "🟨"
+    emoji: "🟨",
+    bild: "assets/words/decke.png"
   },
   {
     id: "spielzeug-kissen",
@@ -1410,7 +1431,8 @@ const WORDS = [
     silben: "Kis-sen",
     kategorie: "Kuscheln",
     thema: "Spielzeug",
-    emoji: "🟦"
+    emoji: "🟦",
+    bild: "assets/words/kissen.png"
   },
   {
     id: "spielzeug-bett",
@@ -1437,7 +1459,8 @@ const WORDS = [
     silben: "Höh-le",
     kategorie: "Kuscheln",
     thema: "Spielzeug",
-    emoji: "🕳️"
+    emoji: "🕳️",
+    bild: "assets/words/hoehle.png"
   },
   {
     id: "spielzeug-zelt",
@@ -1806,7 +1829,8 @@ const WORDS = [
     silben: "Trep-pe",
     kategorie: "Zimmer",
     thema: "Zuhause",
-    emoji: "↗️"
+    emoji: "↗️",
+    bild: "assets/words/treppe.png"
   },
   {
     id: "zuhause-garten",
@@ -1815,7 +1839,8 @@ const WORDS = [
     silben: "Gar-ten",
     kategorie: "Zimmer",
     thema: "Zuhause",
-    emoji: "🌼"
+    emoji: "🌼",
+    bild: "assets/words/garten.png"
   },
   {
     id: "zuhause-tisch",
@@ -1824,7 +1849,8 @@ const WORDS = [
     silben: "Tisch",
     kategorie: "Möbel",
     thema: "Zuhause",
-    emoji: "▭"
+    emoji: "▭",
+    bild: "assets/words/tisch.png"
   },
   {
     id: "zuhause-stuhl",
@@ -1887,7 +1913,8 @@ const WORDS = [
     silben: "Tep-pich",
     kategorie: "Möbel",
     thema: "Zuhause",
-    emoji: "▭"
+    emoji: "▭",
+    bild: "assets/words/teppich.png"
   },
   {
     id: "zuhause-kueche",
@@ -1896,7 +1923,8 @@ const WORDS = [
     silben: "Kü-che",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🏠"
+    emoji: "🏠",
+    bild: "assets/words/kueche.png"
   },
   {
     id: "zuhause-teller",
@@ -1932,7 +1960,8 @@ const WORDS = [
     silben: "Ga-bel",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🍽️"
+    emoji: "🍽️",
+    bild: "assets/words/gabel.png"
   },
   {
     id: "zuhause-messer",
@@ -1950,7 +1979,8 @@ const WORDS = [
     silben: "Topf",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "🥘"
+    emoji: "🥘",
+    bild: "assets/words/topf.png"
   },
   {
     id: "zuhause-ofen",
@@ -1959,7 +1989,8 @@ const WORDS = [
     silben: "O-fen",
     kategorie: "Küche",
     thema: "Zuhause",
-    emoji: "♨️"
+    emoji: "♨️",
+    bild: "assets/words/ofen.png"
   },
   {
     id: "zuhause-bad",
@@ -1968,7 +1999,8 @@ const WORDS = [
     silben: "Bad",
     kategorie: "Bad",
     thema: "Zuhause",
-    emoji: "🚿"
+    emoji: "🚿",
+    bild: "assets/words/bad.png"
   },
   {
     id: "zuhause-dusche",
@@ -1995,7 +2027,8 @@ const WORDS = [
     silben: "Hand-tuch",
     kategorie: "Bad",
     thema: "Zuhause",
-    emoji: "🟦"
+    emoji: "🟦",
+    bild: "assets/words/handtuch.png"
   },
   {
     id: "zuhause-seife",
@@ -2571,7 +2604,8 @@ const WORDS = [
     silben: "schwach",
     kategorie: "Bewegung",
     thema: "Wiewörter",
-    emoji: "⬇️"
+    emoji: "⬇️",
+    bild: "assets/words/schwach.png"
   },
   {
     id: "wie-wild",
