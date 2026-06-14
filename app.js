@@ -83,6 +83,7 @@ const STORY_OPTIONS = {
 const FAVORITE_KEY = "toni-woerterbuch-favoriten";
 const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
+const APP_TITLE = "Tonis Sprachwelt";
 const WRITING_AREAS = [
   { name: "Schreibaufgaben", emoji: "✏️" },
   { name: "Mini-Bücher", emoji: "📖" },
@@ -131,6 +132,7 @@ const storyWhat = document.querySelector("#story-what");
 
 renderThemes();
 rollStory();
+document.title = APP_TITLE;
 render();
 
 navButtons.forEach((button) => {
@@ -532,6 +534,13 @@ function setRoute(route) {
   if (route === "portal") {
     state.query = "";
     searchInput.value = "";
+    state.writingArea = "";
+    state.writingCardIndex = 0;
+  }
+
+  if (route === "writing" && state.route !== "writing") {
+    state.writingArea = "";
+    state.writingCardIndex = 0;
   }
 
   state.route = route;
@@ -593,5 +602,20 @@ function saveFavorites() {
 }
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  clearLegacyAppCaches();
   navigator.serviceWorker.register("service-worker.js").catch(() => {});
+}
+
+function clearLegacyAppCaches() {
+  if (!("caches" in window)) {
+    return;
+  }
+
+  caches.keys()
+    .then((keys) => Promise.all(
+      keys
+        .filter((key) => key.startsWith("hilfe-") || key.toLowerCase().includes("notfall"))
+        .map((key) => caches.delete(key))
+    ))
+    .catch(() => {});
 }

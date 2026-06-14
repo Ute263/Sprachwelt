@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonis-sprachwelt-v2";
+const CACHE_NAME = "tonis-sprachwelt-v4";
 const ASSETS = [
   "./",
   "index.html",
@@ -21,7 +21,11 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) => Promise.all(
       keys
-        .filter((key) => key.startsWith("tonis-sprachwelt-") && key !== CACHE_NAME)
+        .filter((key) => (
+          key.startsWith("tonis-sprachwelt-") ||
+          key.startsWith("hilfe-") ||
+          key.toLowerCase().includes("notfall")
+        ) && key !== CACHE_NAME)
         .map((key) => caches.delete(key))
     ))
   );
