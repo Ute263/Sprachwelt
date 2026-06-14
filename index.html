@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tonis Wörterbuch</title>
+    <title>Toni hilft beim Deutschlernen</title>
     <meta
       name="description"
-      content="Tonis Wörterbuch der Antonius Grundschule Kevelaer mit Suche, Vorlesen und Favoriten."
+      content="Deutsch-Lernportal der Antonius Grundschule Kevelaer mit Wörterbuch, Schreibwerkstatt, Geschichtenwürfel und Lesewelt."
     >
     <link rel="stylesheet" href="style.css">
   </head>
@@ -18,17 +18,18 @@
         </div>
         <div>
           <p class="eyebrow">Hallo, ich bin Toni.</p>
-          <h1 id="app-title">Tonis Wörterbuch</h1>
+          <h1 id="app-title">Toni hilft beim Deutschlernen</h1>
           <p class="school-subtitle">Antonius Grundschule Kevelaer</p>
-          <p class="helper-text">Ich helfe dir beim Schreiben.</p>
+          <p class="helper-text">Ich helfe dir beim Lesen und Schreiben.</p>
         </div>
       </header>
 
-      <nav class="main-nav" aria-label="Hauptnavigation">
+      <nav id="dictionary-nav" class="main-nav" aria-label="Wörterbuch-Navigation" hidden>
         <button class="nav-button" type="button" data-route="animals">Tiere</button>
         <button class="nav-button" type="button" data-route="school">Schule</button>
         <button class="nav-button" type="button" data-route="summer">Sommer</button>
         <button class="nav-button" type="button" data-route="food">Essen</button>
+        <button class="nav-button" type="button" data-route="feelings">Gefühle</button>
         <button class="nav-button" type="button" data-route="toys">Spielzeug</button>
         <button class="nav-button" type="button" data-route="people">Familie</button>
         <button class="nav-button" type="button" data-route="homePlace">Zuhause</button>
@@ -38,14 +39,41 @@
       </nav>
 
       <main>
-        <section class="search-panel" aria-label="Wörter suchen">
-          <label for="search-input">Wort suchen</label>
-          <input id="search-input" type="search" placeholder="z. B. Sonne, Ball, schnell">
+        <section id="view-portal" class="view is-visible" aria-labelledby="portal-title">
+          <div class="section-heading">
+            <h2 id="portal-title">Wähle einen Bereich aus.</h2>
+          </div>
+          <div class="portal-grid">
+            <button class="portal-tile" type="button" data-route="dictionary">
+              <span class="portal-emoji" aria-hidden="true">📚</span>
+              <span>Wörterbuch</span>
+            </button>
+            <button class="portal-tile" type="button" data-route="writing">
+              <span class="portal-emoji" aria-hidden="true">✏️</span>
+              <span>Schreibwerkstatt</span>
+            </button>
+            <button class="portal-tile" type="button" data-route="story">
+              <span class="portal-emoji" aria-hidden="true">🎲</span>
+              <span>Geschichtenwürfel</span>
+            </button>
+            <button class="portal-tile" type="button" data-route="reading">
+              <span class="portal-emoji" aria-hidden="true">📖</span>
+              <span>Lesewelt</span>
+            </button>
+          </div>
         </section>
 
-        <section id="view-home" class="view is-visible" aria-labelledby="home-title">
+        <section id="dictionary-tools" class="dictionary-tools" aria-label="Wörterbuch-Werkzeuge" hidden>
+          <button class="home-button" type="button" data-route="portal">🏠 Home</button>
+          <div class="search-panel" aria-label="Wörter suchen">
+            <label for="search-input">Wort suchen</label>
+            <input id="search-input" type="search" placeholder="z. B. Sonne, Ball, schnell">
+          </div>
+        </section>
+
+        <section id="view-dictionary" class="view" aria-labelledby="dictionary-title">
           <div class="section-heading">
-            <h2 id="home-title">Wähle ein Thema aus.</h2>
+            <h2 id="dictionary-title">Wähle ein Thema aus.</h2>
           </div>
           <div id="theme-grid" class="tile-grid" aria-live="polite"></div>
           <div id="home-search" class="home-search" hidden>
@@ -69,6 +97,107 @@
             <h2 id="favorites-title">Meine Wörter</h2>
           </div>
           <div id="favorite-grid" class="word-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="view-writing" class="view" aria-labelledby="writing-title">
+          <button class="home-button" type="button" data-route="portal">🏠 Home</button>
+          <div class="section-heading">
+            <h2 id="writing-title">Schreibwerkstatt</h2>
+          </div>
+          <div class="learning-grid">
+            <article class="learning-card">
+              <h3>Satzanfänge</h3>
+              <ul>
+                <li>Heute …</li>
+                <li>Plötzlich …</li>
+                <li>Dann …</li>
+                <li>Auf einmal …</li>
+                <li>Zum Glück …</li>
+                <li>Am Ende …</li>
+                <li>Eines Tages …</li>
+                <li>Danach …</li>
+              </ul>
+            </article>
+            <article class="learning-card">
+              <h3>Schreibideen</h3>
+              <ul>
+                <li>Toni findet einen Schatz.</li>
+                <li>Toni macht Ferien.</li>
+                <li>Toni rettet ein Tier.</li>
+                <li>Toni trifft einen Drachen.</li>
+                <li>Toni besucht die WM.</li>
+                <li>Toni hat Geburtstag.</li>
+              </ul>
+            </article>
+            <article class="learning-card">
+              <h3>Mini-Bücher</h3>
+              <ul>
+                <li>Toni macht Ferien</li>
+                <li>Toni hat Geburtstag</li>
+                <li>Toni rettet ein Tier</li>
+                <li>Toni trifft einen Drachen</li>
+                <li>Toni besucht die WM</li>
+                <li>Toni findet einen Schatz</li>
+              </ul>
+            </article>
+            <article class="learning-card">
+              <h3>Text prüfen</h3>
+              <ul class="check-list">
+                <li>☐ Ich habe groß angefangen.</li>
+                <li>☐ Ich habe Fingerabstände gelassen.</li>
+                <li>☐ Ich habe einen Punkt gesetzt.</li>
+                <li>☐ Ich habe mein Wort im Wörterbuch kontrolliert.</li>
+                <li>☐ Ich habe meinen Satz noch einmal gelesen.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-story" class="view" aria-labelledby="story-title">
+          <button class="home-button" type="button" data-route="portal">🏠 Home</button>
+          <div class="section-heading">
+            <h2 id="story-title">Geschichtenwürfel</h2>
+          </div>
+          <div class="story-grid" aria-live="polite">
+            <article class="story-card">
+              <h3>Wer?</h3>
+              <p id="story-who">Toni</p>
+            </article>
+            <article class="story-card">
+              <h3>Wo?</h3>
+              <p id="story-where">in der Schule</p>
+            </article>
+            <article class="story-card">
+              <h3>Was passiert?</h3>
+              <p id="story-what">findet einen Schatz</p>
+            </article>
+          </div>
+          <button id="roll-story-button" class="big-action-button" type="button">Neue Geschichte würfeln</button>
+        </section>
+
+        <section id="view-reading" class="view" aria-labelledby="reading-title">
+          <button class="home-button" type="button" data-route="portal">🏠 Home</button>
+          <div class="section-heading">
+            <h2 id="reading-title">Lesewelt</h2>
+          </div>
+          <div class="learning-grid">
+            <article class="learning-card placeholder-card">
+              <h3>Silbengeschichten</h3>
+              <p>Kommt bald.</p>
+            </article>
+            <article class="learning-card placeholder-card">
+              <h3>Lesemalaufgaben</h3>
+              <p>Kommt bald.</p>
+            </article>
+            <article class="learning-card placeholder-card">
+              <h3>Leserätsel</h3>
+              <p>Kommt bald.</p>
+            </article>
+            <article class="learning-card placeholder-card">
+              <h3>Starke Leser</h3>
+              <p>Kommt bald.</p>
+            </article>
+          </div>
         </section>
       </main>
     </div>

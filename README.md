@@ -1,23 +1,15 @@
-# Tonis Wörterbuch
+# Toni hilft beim Deutschlernen
 
-Wörterbuch der Antonius Grundschule Kevelaer.
+Deutsch-Lernportal der Antonius Grundschule Kevelaer.
 
-Eine kleine statische Web-App für Kinder der 1. Klasse mit mehreren Wörterbuch-Bänden. Sie läuft ohne Anmeldung, ohne Datenbank und ohne externe Frameworks. Nach dem Laden funktioniert sie auch ohne Internetverbindung weiter.
+Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder externe Frameworks. Nach dem Laden funktioniert sie weiter, auch wenn keine Internetverbindung besteht.
 
-Aktuell enthalten:
+## Bereiche
 
-- `Tiere`
-- `Schule`
-- `Sommer und Ferien`
-- `Essen und Trinken`
-- `Gefühle`
-- `Spielzeug`
-- `Familie und Menschen`
-- `Zuhause`
-- `Tunwörter`
-- `Wiewörter`
-
-Die Suche findet Wörter über alle enthaltenen Bände hinweg. Favoriten werden ebenfalls bandübergreifend auf dem jeweiligen Gerät gespeichert.
+- `Wörterbuch`: Themenbände mit Suche, Vorlesen und Favoriten.
+- `Schreibwerkstatt`: Satzanfänge, Schreibideen, Mini-Bücher und eine kleine Prüfliste.
+- `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
+- `Lesewelt`: Platzhalter für Silbengeschichten, Lesemalaufgaben, Leserätsel und starke Leser.
 
 ## Lokal öffnen
 
@@ -31,7 +23,7 @@ Auf dem Mac geht das zum Beispiel so:
 ## GitHub Pages aktivieren
 
 1. Lege ein neues Repository auf GitHub an.
-2. Lade diese Dateien in das Repository hoch:
+2. Lade diese Dateien und Ordner in das Repository hoch:
    - `index.html`
    - `style.css`
    - `words.js`
@@ -69,6 +61,7 @@ Wichtig:
 - `thema` steuert den Band, zum Beispiel `Tiere`.
 - `kategorie` steuert die Untergruppe, zum Beispiel `Haustiere`.
 - `emoji` kann durch ein anderes kindgerechtes Emoji ersetzt werden.
+- `bild` ist optional und verweist auf ein lokales Bild, zum Beispiel `assets/words/tisch.png`.
 
 ## Link als QR-Code für iPads nutzen
 

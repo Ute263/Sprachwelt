@@ -16,152 +16,93 @@ const BANDS = {
     thema: "Tiere",
     title: "Band Tiere",
     allCategory: "Alle Tiere",
-    categories: [
-      "Alle Tiere",
-      "Haustiere",
-      "Bauernhoftiere",
-      "Wilde Tiere",
-      "Kleine Tiere",
-      "Wassertiere"
-    ]
+    categories: ["Alle Tiere", "Haustiere", "Bauernhoftiere", "Wilde Tiere", "Kleine Tiere", "Wassertiere"]
   },
   school: {
     thema: "Schule",
     title: "Band Schule",
     allCategory: "Alle Schulwörter",
-    categories: [
-      "Alle Schulwörter",
-      "Im Klassenraum",
-      "Schreiben und Basteln",
-      "Zahlen und Formen",
-      "Sport und Pause"
-    ]
+    categories: ["Alle Schulwörter", "Im Klassenraum", "Schreiben und Basteln", "Zahlen und Formen", "Sport und Pause"]
   },
   summer: {
     thema: "Sommer",
     title: "Band Sommer und Ferien",
     allCategory: "Alle Sommerwörter",
-    categories: [
-      "Alle Sommerwörter",
-      "Sommerwetter",
-      "Draußen",
-      "Ferien",
-      "Meer und Schwimmbad"
-    ]
+    categories: ["Alle Sommerwörter", "Sommerwetter", "Draußen", "Ferien", "Meer und Schwimmbad"]
   },
   food: {
     thema: "Essen",
     title: "Band Essen und Trinken",
     allCategory: "Alle Essenswörter",
-    categories: [
-      "Alle Essenswörter",
-      "Obst",
-      "Gemüse",
-      "Frühstück und Brotzeit",
-      "Getränke und Süßes"
-    ]
+    categories: ["Alle Essenswörter", "Obst", "Gemüse", "Frühstück und Brotzeit", "Getränke und Süßes"]
   },
   feelings: {
     thema: "Gefühle",
     title: "Band Gefühle",
     allCategory: "Alle Gefühlswörter",
-    categories: [
-      "Alle Gefühlswörter",
-      "Gute Gefühle",
-      "Schlechte Gefühle",
-      "Miteinander",
-      "Mut und Angst"
-    ]
+    categories: ["Alle Gefühlswörter", "Gute Gefühle", "Schlechte Gefühle", "Miteinander", "Mut und Angst"]
   },
   toys: {
     thema: "Spielzeug",
     title: "Band Spielzeug",
     allCategory: "Alle Spielzeugwörter",
-    categories: [
-      "Alle Spielzeugwörter",
-      "Spielsachen",
-      "Bauen",
-      "Draußen spielen",
-      "Kuscheln"
-    ]
+    categories: ["Alle Spielzeugwörter", "Spielsachen", "Bauen", "Draußen spielen", "Kuscheln"]
   },
   people: {
     thema: "Familie und Menschen",
     title: "Band Familie und Menschen",
     allCategory: "Alle Menschenwörter",
-    categories: [
-      "Alle Menschenwörter",
-      "Familie",
-      "Freunde",
-      "Körper",
-      "Kleidung"
-    ]
+    categories: ["Alle Menschenwörter", "Familie", "Freunde", "Körper", "Kleidung"]
   },
   homePlace: {
     thema: "Zuhause",
     title: "Band Zuhause",
     allCategory: "Alle Zuhausewörter",
-    categories: [
-      "Alle Zuhausewörter",
-      "Zimmer",
-      "Möbel",
-      "Küche",
-      "Bad"
-    ]
+    categories: ["Alle Zuhausewörter", "Zimmer", "Möbel", "Küche", "Bad"]
   },
   verbs: {
     thema: "Tunwörter",
     title: "Band Tunwörter",
     allCategory: "Alle Tunwörter",
-    categories: [
-      "Alle Tunwörter",
-      "Bewegung",
-      "Schule",
-      "Spielen",
-      "Gefühle zeigen"
-    ]
+    categories: ["Alle Tunwörter", "Bewegung", "Schule", "Spielen", "Gefühle zeigen"]
   },
   adjectives: {
     thema: "Wiewörter",
     title: "Band Wiewörter",
     allCategory: "Alle Wiewörter",
-    categories: [
-      "Alle Wiewörter",
-      "Aussehen",
-      "Größe",
-      "Gefühl",
-      "Bewegung"
-    ]
+    categories: ["Alle Wiewörter", "Aussehen", "Größe", "Gefühl", "Bewegung"]
   }
+};
+
+const STORY_OPTIONS = {
+  who: ["Toni", "ein Hund", "eine Katze", "ein Drache", "ein Kind", "ein Freund", "eine Lehrerin", "ein Monster"],
+  where: ["in der Schule", "im Wald", "am Strand", "im Garten", "im Schloss", "auf dem Spielplatz", "im Schwimmbad", "in einer Höhle"],
+  what: ["findet einen Schatz", "verliert den Ball", "trifft einen Freund", "hört ein Geräusch", "braucht Hilfe", "fliegt davon", "findet eine Tür", "bekommt eine Idee"]
 };
 
 const FAVORITE_KEY = "toni-woerterbuch-favoriten";
 const OLD_FAVORITE_KEY = "mina-igel-favoriten";
+const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
 
 const state = {
-  route: "home",
-  categories: {
-    animals: BANDS.animals.allCategory,
-    school: BANDS.school.allCategory,
-    summer: BANDS.summer.allCategory,
-    food: BANDS.food.allCategory,
-    feelings: BANDS.feelings.allCategory,
-    toys: BANDS.toys.allCategory,
-    people: BANDS.people.allCategory,
-    homePlace: BANDS.homePlace.allCategory,
-    verbs: BANDS.verbs.allCategory,
-    adjectives: BANDS.adjectives.allCategory
-  },
+  route: "portal",
+  categories: Object.fromEntries(Object.entries(BANDS).map(([route, band]) => [route, band.allCategory])),
   query: "",
   favorites: loadFavorites()
 };
 
 const views = {
-  home: document.querySelector("#view-home"),
+  portal: document.querySelector("#view-portal"),
+  dictionary: document.querySelector("#view-dictionary"),
   band: document.querySelector("#view-band"),
-  favorites: document.querySelector("#view-favorites")
+  favorites: document.querySelector("#view-favorites"),
+  writing: document.querySelector("#view-writing"),
+  story: document.querySelector("#view-story"),
+  reading: document.querySelector("#view-reading")
 };
 
+const dictionaryNav = document.querySelector("#dictionary-nav");
+const dictionaryTools = document.querySelector("#dictionary-tools");
 const themeGrid = document.querySelector("#theme-grid");
 const homeSearch = document.querySelector("#home-search");
 const homeSearchGrid = document.querySelector("#home-search-grid");
@@ -172,8 +113,13 @@ const favoriteGrid = document.querySelector("#favorite-grid");
 const searchInput = document.querySelector("#search-input");
 const navButtons = document.querySelectorAll("[data-route]");
 const scrollTopButton = document.querySelector("#scroll-top-button");
+const rollStoryButton = document.querySelector("#roll-story-button");
+const storyWho = document.querySelector("#story-who");
+const storyWhere = document.querySelector("#story-where");
+const storyWhat = document.querySelector("#story-what");
 
 renderThemes();
+rollStory();
 render();
 
 navButtons.forEach((button) => {
@@ -185,9 +131,9 @@ searchInput.addEventListener("input", (event) => {
   render();
 });
 
+rollStoryButton.addEventListener("click", rollStory);
 window.addEventListener("scroll", updateScrollTopButton, { passive: true });
 setInterval(updateScrollTopButton, 250);
-
 scrollTopButton.addEventListener("click", scrollToTop);
 scrollTopButton.addEventListener("pointerdown", scrollToTop);
 
@@ -233,14 +179,19 @@ function render() {
   updateVisibleView();
   updateNavigation();
   updateScrollTopButton();
+  updateDictionaryTools();
   renderHomeSearch();
   renderBandView();
   renderWordCards(favoriteGrid, getFavoriteWords(), "Tippe auf einen Stern. Dann findest du dein Wort hier wieder.");
 }
 
 function updateVisibleView() {
-  views.home.classList.toggle("is-visible", state.route === "home");
+  views.portal.classList.toggle("is-visible", state.route === "portal");
+  views.dictionary.classList.toggle("is-visible", state.route === "dictionary");
   views.favorites.classList.toggle("is-visible", state.route === "favorites");
+  views.writing.classList.toggle("is-visible", state.route === "writing");
+  views.story.classList.toggle("is-visible", state.route === "story");
+  views.reading.classList.toggle("is-visible", state.route === "reading");
   views.band.classList.toggle("is-visible", Boolean(getCurrentBand()));
 }
 
@@ -248,6 +199,17 @@ function updateNavigation() {
   navButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.route === state.route);
   });
+}
+
+function updateDictionaryTools() {
+  const dictionaryVisible = DICTIONARY_ROUTES.includes(state.route);
+  dictionaryNav.hidden = !dictionaryVisible;
+  dictionaryTools.hidden = !dictionaryVisible;
+
+  if (!dictionaryVisible && state.query) {
+    state.query = "";
+    searchInput.value = "";
+  }
 }
 
 function updateScrollTopButton() {
@@ -331,7 +293,6 @@ function matchesSearch(word) {
     return true;
   }
 
-  // Suche über die wichtigsten Felder, damit Kinder auch nach Artikel, Kategorie oder Band suchen können.
   const searchableText = [
     word.wort,
     word.artikel,
@@ -394,6 +355,11 @@ function setRoute(route) {
     return;
   }
 
+  if (route === "portal") {
+    state.query = "";
+    searchInput.value = "";
+  }
+
   state.route = route;
   render();
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -424,6 +390,16 @@ function speakWord(id) {
 
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
+}
+
+function rollStory() {
+  storyWho.textContent = pickRandom(STORY_OPTIONS.who);
+  storyWhere.textContent = pickRandom(STORY_OPTIONS.where);
+  storyWhat.textContent = pickRandom(STORY_OPTIONS.what);
+}
+
+function pickRandom(items) {
+  return items[Math.floor(Math.random() * items.length)];
 }
 
 function loadFavorites() {
