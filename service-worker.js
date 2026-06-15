@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonis-sprachwelt-v6";
+const CACHE_NAME = "tonis-sprachwelt-v7";
 const ASSETS = [
   "./",
   "index.html",
@@ -9,9 +9,9 @@ const ASSETS = [
   "lesetexte.js",
   "manifest.json",
   "assets/toni.png",
-  "assets/app-icon.png",
-  "assets/app-icon-192.png",
-  "assets/app-icon-512.png"
+  "icon.png",
+  "icon-192.png",
+  "icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
@@ -25,11 +25,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) => Promise.all(
       keys
-        .filter((key) => (
-          key.startsWith("tonis-sprachwelt-") ||
-          key.startsWith("hilfe-") ||
-          key.toLowerCase().includes("notfall")
-        ) && key !== CACHE_NAME)
+        .filter((key) => key.startsWith("tonis-sprachwelt-") && key !== CACHE_NAME)
         .map((key) => caches.delete(key))
     ))
   );

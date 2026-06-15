@@ -105,7 +105,7 @@ const state = {
   writingArea: "",
   writingCardIndex: 0,
   readingArea: "",
-  readingCardIndex: 0
+  readingCardIndex: null
 };
 
 const views = {
@@ -416,6 +416,11 @@ function renderReadingView() {
     return;
   }
 
+  if (state.readingCardIndex === null) {
+    renderReadingOverview(cards);
+    return;
+  }
+
   state.readingCardIndex = Math.min(state.readingCardIndex, cards.length - 1);
   renderReadingCard(cards[state.readingCardIndex], cards.length);
 }
@@ -438,6 +443,31 @@ function renderReadingSelection() {
   }).join("");
 }
 
+function renderReadingOverview(cards) {
+  readingAreaGrid.hidden = true;
+  readingCardView.hidden = false;
+  readingCardView.innerHTML = `
+    <section class="reading-overview-card" aria-labelledby="reading-overview-title">
+      <div class="reading-overview-heading">
+        <h3 id="reading-overview-title">${getReadingAreaEmoji(state.readingArea)} ${state.readingArea}</h3>
+        <p>Wähle eine Aufgabe.</p>
+      </div>
+      <div class="task-list">
+        ${cards.map((card, index) => `
+          <button class="task-list-button" type="button" data-reading-card="${index}">
+            <span class="task-number">${formatTaskNumber(card.nummer)}</span>
+            <span>${card.titel}</span>
+          </button>
+        `).join("")}
+      </div>
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="back">⬅ Zurück zur Lesewelt</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="home">🏠 Home</button>
+      </div>
+    </section>
+  `;
+}
+
 function renderReadingCard(card, totalCards) {
   readingAreaGrid.hidden = true;
   readingCardView.hidden = false;
@@ -448,7 +478,7 @@ function renderReadingCard(card, totalCards) {
   readingCardView.innerHTML = `
     <article class="writing-task-card reading-task-card">
       <div class="writing-card-topline">
-        <span class="card-number">Karte ${card.nummer} von ${totalCards}</span>
+        <span class="card-number">Karte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
         <span class="card-area">${card.bereich}</span>
         <span class="card-area">Level: ${card.level}</span>
       </div>
@@ -459,10 +489,11 @@ function renderReadingCard(card, totalCards) {
       ${renderCardSection("💡", "Lesetipps", renderCardList(card.lesetipps))}
       ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
       <div class="writing-card-actions">
-        <button class="big-action-button writing-action-button" type="button" data-reading-action="next">Nächste Karte</button>
-        <button class="big-action-button writing-action-button" type="button" data-reading-action="random">Zufallskarte</button>
-        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="back">Zurück zur Lesewelt</button>
         <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="home">🏠 Home</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="overview">⬅ Zurück zur Übersicht</button>
+        <button class="big-action-button writing-action-button" type="button" data-reading-action="random">🎲 Zufall</button>
+        <button class="big-action-button writing-action-button" type="button" data-reading-action="next">➡ Nächste Aufgabe</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-reading-action="top">⬆ Nach oben</button>
       </div>
     </article>
   `;
@@ -492,7 +523,7 @@ function renderWritingCard(card, totalCards) {
   writingCardView.innerHTML = `
     <article class="writing-task-card">
       <div class="writing-card-topline">
-        <span class="card-number">Karte ${card.nummer} von ${totalCards}</span>
+        <span class="card-number">Karte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
         <span class="card-area">${card.bereich}</span>
       </div>
       <h3>${card.titel}</h3>
@@ -503,10 +534,11 @@ function renderWritingCard(card, totalCards) {
       ${renderCardSection("⭐", "Schreibtipps", renderCardList(card.schreibtipps))}
       ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
       <div class="writing-card-actions">
-        <button class="big-action-button writing-action-button" type="button" data-writing-action="next">Nächste Karte</button>
-        <button class="big-action-button writing-action-button" type="button" data-writing-action="random">Zufallskarte</button>
-        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="back">Zurück zur Auswahl</button>
         <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="home">🏠 Home</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="back">⬅ Zurück zur Übersicht</button>
+        <button class="big-action-button writing-action-button" type="button" data-writing-action="random">🎲 Zufall</button>
+        <button class="big-action-button writing-action-button" type="button" data-writing-action="next">➡ Nächste Aufgabe</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="top">⬆ Nach oben</button>
       </div>
     </article>
   `;
@@ -545,6 +577,14 @@ function getReadingCards(area) {
   return LESETEXTE.filter((card) => card.bereich === area);
 }
 
+function getReadingAreaEmoji(areaName) {
+  return READING_AREAS.find((area) => area.name === areaName)?.emoji || "📖";
+}
+
+function formatTaskNumber(number) {
+  return String(number).padStart(2, "0");
+}
+
 function handleWritingClick(event) {
   const areaButton = event.target.closest("[data-writing-area]");
   if (areaButton) {
@@ -573,7 +613,15 @@ function handleReadingClick(event) {
   const areaButton = event.target.closest("[data-reading-area]");
   if (areaButton) {
     state.readingArea = areaButton.dataset.readingArea;
-    state.readingCardIndex = 0;
+    state.readingCardIndex = null;
+    render();
+    scrollToTop();
+    return;
+  }
+
+  const cardButton = event.target.closest("[data-reading-card]");
+  if (cardButton) {
+    state.readingCardIndex = Number(cardButton.dataset.readingCard);
     render();
     scrollToTop();
     return;
@@ -599,6 +647,11 @@ function handleWritingAction(action) {
     state.writingArea = "";
     state.writingCardIndex = 0;
     render();
+    scrollToTop();
+    return;
+  }
+
+  if (action === "top") {
     scrollToTop();
     return;
   }
@@ -632,13 +685,25 @@ function handleReadingAction(action) {
 
   if (action === "back") {
     state.readingArea = "";
-    state.readingCardIndex = 0;
+    state.readingCardIndex = null;
     render();
     scrollToTop();
     return;
   }
 
-  if (!cards.length) {
+  if (action === "overview") {
+    state.readingCardIndex = null;
+    render();
+    scrollToTop();
+    return;
+  }
+
+  if (action === "top") {
+    scrollToTop();
+    return;
+  }
+
+  if (!cards.length || state.readingCardIndex === null) {
     return;
   }
 
@@ -676,7 +741,7 @@ function setRoute(route) {
     state.writingArea = "";
     state.writingCardIndex = 0;
     state.readingArea = "";
-    state.readingCardIndex = 0;
+    state.readingCardIndex = null;
   }
 
   if (route === "writing" && state.route !== "writing") {
@@ -686,7 +751,7 @@ function setRoute(route) {
 
   if (route === "reading" && state.route !== "reading") {
     state.readingArea = "";
-    state.readingCardIndex = 0;
+    state.readingCardIndex = null;
   }
 
   state.route = route;
@@ -760,7 +825,7 @@ function clearLegacyAppCaches() {
   caches.keys()
     .then((keys) => Promise.all(
       keys
-        .filter((key) => key.startsWith("hilfe-") || key.toLowerCase().includes("notfall"))
+        .filter((key) => key.startsWith("hilfe-"))
         .map((key) => caches.delete(key))
     ))
     .catch(() => {});
