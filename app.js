@@ -85,12 +85,11 @@ const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
 const APP_TITLE = "Tonis Sprachwelt";
 const WRITING_AREAS = [
-  { name: "Sätze schreiben", emoji: "📝", sourceAreas: ["Schreibaufgaben"] },
-  { name: "Geschichten schreiben", emoji: "📖", sourceAreas: ["Mini-Bücher"] },
-  { name: "Zufallsgeschichten", emoji: "🎲", sourceAreas: ["Geschichtenideen"] },
-  { name: "Geschichtenbilder", emoji: "🖼️", kind: "image" },
+  { name: "Schreibaufgaben", emoji: "✏️", sourceAreas: ["Schreibaufgaben"] },
+  { name: "Mini-Bücher", emoji: "📖", sourceAreas: ["Mini-Bücher"] },
+  { name: "Geschichtenideen", emoji: "🎲", sourceAreas: ["Geschichtenideen"] },
   { name: "Starke Schreiber", emoji: "⭐", sourceAreas: ["Starke Schreiber"] },
-  { name: "Schreibtipps", emoji: "💡", kind: "tips" }
+  { name: "Geschichtenbilder", emoji: "🖼️", kind: "image" }
 ];
 const READING_AREAS = [
   { name: "Lies und male", emoji: "🎨" },
@@ -120,115 +119,35 @@ const STORY_IMAGE_TITLES = [
   "Fantasiewelt",
   "Wimmelstadt"
 ];
+const STORY_IMAGE_FILES = [
+  "01-spielplatz.png",
+  "02-bauernhof.png",
+  "03-wald.png",
+  "04-meer.png",
+  "05-geburtstag.png",
+  "06-klassenzimmer.png",
+  "07-kinderzimmer.png",
+  "08-zoo.png",
+  "09-herbst.png",
+  "10-winter.png",
+  "11-fruehling.png",
+  "12-sommer.png",
+  "13-drachenland.png",
+  "14-ritterburg.png",
+  "15-weltraum.png",
+  "16-zirkus.png",
+  "17-schatzinsel.png",
+  "18-regenbogenland.png",
+  "19-fantasiewelt.png",
+  "20-wimmelstadt.png"
+];
 const STORY_IMAGE_PROMPTS = [
   "Wer ist auf dem Bild?",
+  "Wo spielt die Geschichte?",
   "Was passiert gerade?",
   "Was könnte als Nächstes passieren?",
-  "Welches Problem gibt es?",
-  "Wer hilft?",
+  "Gibt es ein Problem?",
   "Wie endet die Geschichte?"
-];
-const WRITING_TIP_CARDS = [
-  {
-    nummer: 1,
-    titel: "Ganze Sätze",
-    auftrag: "Schreibe ganze Sätze in dein Heft.",
-    fragen: ["Hat jeder Satz einen Anfang?", "Steht am Ende ein Punkt?", "Kann man deinen Satz verstehen?"],
-    satzanfaenge: ["Heute ...", "Dann ...", "Am Ende ..."],
-    worthelfer: ["Satz", "Punkt", "Anfang", "Ende"],
-    schreibtipps: ["Lies jeden Satz noch einmal.", "Achte auf Fingerabstände.", "Setze am Satzende einen Punkt."],
-    toniTipp: "Ein ganzer Satz erzählt etwas vollständig."
-  },
-  {
-    nummer: 2,
-    titel: "Starker Anfang",
-    auftrag: "Übe spannende Satzanfänge.",
-    fragen: ["Wie beginnt deine Geschichte?", "Macht der Anfang neugierig?", "Wer kommt vor?"],
-    satzanfaenge: ["Heute ...", "Plötzlich ...", "Auf einmal ..."],
-    worthelfer: ["Anfang", "plötzlich", "leise", "schnell"],
-    schreibtipps: ["Beginne nicht jeden Satz gleich.", "Lies den Anfang laut.", "Wähle einen passenden Satzanfang."],
-    toniTipp: "Ein guter Anfang macht Lust aufs Weiterlesen."
-  },
-  {
-    nummer: 3,
-    titel: "Adjektive nutzen",
-    auftrag: "Mache deinen Text genauer.",
-    fragen: ["Wie sieht die Figur aus?", "Wie fühlt sie sich?", "Wie ist der Ort?"],
-    satzanfaenge: ["Der ... ist ...", "Die ... wirkt ...", "Es ist ..."],
-    worthelfer: ["klein", "groß", "fröhlich", "leise", "bunt"],
-    schreibtipps: ["Nutze Adjektive.", "Übertreibe nicht.", "Prüfe, ob das Adjektiv passt."],
-    toniTipp: "Adjektive machen ein Bild im Kopf."
-  },
-  {
-    nummer: 4,
-    titel: "Verben nutzen",
-    auftrag: "Mache deine Geschichte lebendig.",
-    fragen: ["Was macht die Figur?", "Was passiert zuerst?", "Was passiert danach?"],
-    satzanfaenge: ["Toni rennt ...", "Lina sucht ...", "Der Ball rollt ..."],
-    worthelfer: ["rennen", "suchen", "rufen", "finden", "lachen"],
-    schreibtipps: ["Nutze Verben.", "Wähle genaue Verben.", "Lies den Satz danach noch einmal."],
-    toniTipp: "Verben zeigen, was passiert."
-  },
-  {
-    nummer: 5,
-    titel: "Reihenfolge",
-    auftrag: "Schreibe deine Geschichte in der richtigen Reihenfolge.",
-    fragen: ["Was passiert zuerst?", "Was passiert danach?", "Wie endet es?"],
-    satzanfaenge: ["Zuerst ...", "Dann ...", "Danach ...", "Am Ende ..."],
-    worthelfer: ["zuerst", "dann", "danach", "später"],
-    schreibtipps: ["Ordne deine Ideen.", "Nutze Reihenfolgewörter.", "Prüfe, ob alles zusammenpasst."],
-    toniTipp: "Eine gute Reihenfolge hilft beim Verstehen."
-  },
-  {
-    nummer: 6,
-    titel: "Problem und Lösung",
-    auftrag: "Baue ein Problem und eine Lösung ein.",
-    fragen: ["Was ist das Problem?", "Wer hilft?", "Wie wird es gelöst?"],
-    satzanfaenge: ["Plötzlich ...", "Zum Glück ...", "Am Ende ..."],
-    worthelfer: ["Problem", "Hilfe", "lösen", "mutig"],
-    schreibtipps: ["Schreibe das Problem deutlich.", "Erzähle die Lösung.", "Lass die Figur etwas tun."],
-    toniTipp: "Viele Geschichten brauchen ein Problem."
-  },
-  {
-    nummer: 7,
-    titel: "Gefühle zeigen",
-    auftrag: "Schreibe, wie sich eine Figur fühlt.",
-    fragen: ["Ist die Figur froh?", "Ist sie traurig?", "Warum fühlt sie so?"],
-    satzanfaenge: ["Toni freut sich, weil ...", "Lina ist traurig, weil ...", "Er hat Angst, weil ..."],
-    worthelfer: ["froh", "traurig", "mutig", "ängstlich", "stolz"],
-    schreibtipps: ["Nutze Gefühlswörter.", "Begründe das Gefühl.", "Lies den Gefühlssatz noch einmal."],
-    toniTipp: "Gefühle machen Figuren lebendig."
-  },
-  {
-    nummer: 8,
-    titel: "Ort beschreiben",
-    auftrag: "Beschreibe den Ort deiner Geschichte.",
-    fragen: ["Wo spielt die Geschichte?", "Was sieht man dort?", "Wie fühlt sich der Ort an?"],
-    satzanfaenge: ["Im Wald ...", "Auf dem Spielplatz ...", "In der Schule ..."],
-    worthelfer: ["Ort", "hell", "dunkel", "ruhig", "laut"],
-    schreibtipps: ["Schreibe, wo die Geschichte spielt.", "Nutze genaue Wörter.", "Male den Ort im Kopf."],
-    toniTipp: "Ein genauer Ort macht die Geschichte klar."
-  },
-  {
-    nummer: 9,
-    titel: "Überarbeiten",
-    auftrag: "Lies deine Geschichte noch einmal.",
-    fragen: ["Fehlt ein Punkt?", "Ist ein Wort schwer zu lesen?", "Kannst du einen Satz besser machen?"],
-    satzanfaenge: ["Ich prüfe ...", "Ich verbessere ...", "Ich lese ..."],
-    worthelfer: ["prüfen", "verbessern", "lesen", "ordentlich"],
-    schreibtipps: ["Lies langsam.", "Kontrolliere Punkte.", "Verbessere ein Wort."],
-    toniTipp: "Gute Schreiber überarbeiten."
-  },
-  {
-    nummer: 10,
-    titel: "Vorlesen",
-    auftrag: "Lies deine Geschichte einem Partner vor.",
-    fragen: ["Kann dein Partner folgen?", "Wo musst du eine Pause machen?", "Klingt deine Geschichte fertig?"],
-    satzanfaenge: ["Ich lese ...", "Mein Partner hört ...", "Danach verbessere ich ..."],
-    worthelfer: ["vorlesen", "Pause", "deutlich", "ruhig"],
-    schreibtipps: ["Lies deutlich.", "Mache Pausen.", "Frage nach einem Tipp."],
-    toniTipp: "Beim Vorlesen hörst du, ob dein Text passt."
-  }
 ];
 
 const state = {
@@ -685,11 +604,6 @@ function renderWritingCard(card, totalCards) {
   writingAreaGrid.hidden = true;
   writingCardView.hidden = false;
   const imageSection = card.kind === "image" ? renderStoryImageSection(card) : "";
-  const taskSection = card.kind === "image"
-    ? ""
-    : renderCardSection("✏️", "Auftrag", `<p>${card.auftrag}</p>`);
-  const questionTitle = card.kind === "image" ? "Schreibideen" : "Denkfragen";
-  const questionIcon = card.kind === "image" ? "✏️" : "❓";
   const helperSection = card.worthelfer?.length
     ? renderCardSection("📝", "Worthelfer", renderWordChips(card.worthelfer))
     : "";
@@ -701,17 +615,17 @@ function renderWritingCard(card, totalCards) {
       </div>
       <h3>${card.titel}</h3>
       ${imageSection}
-      ${taskSection}
-      ${renderCardSection(questionIcon, questionTitle, renderCardList(card.fragen))}
+      ${renderCardSection("✏️", "Auftrag", `<p>${card.auftrag}</p>`)}
+      ${renderCardSection("❓", "Denkfragen", renderCardList(card.fragen))}
       ${renderCardSection("🟨", "So kannst du anfangen", renderCardList(card.satzanfaenge))}
       ${helperSection}
       ${renderCardSection("⭐", "Schreibtipps", renderCardList(card.schreibtipps))}
       ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
       <div class="writing-card-actions">
-        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="home">🏠 Home</button>
         <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="back">⬅ Zurück zur Übersicht</button>
-        <button class="big-action-button writing-action-button" type="button" data-writing-action="random">🎲 Zufallsaufgabe</button>
-        <button class="big-action-button writing-action-button" type="button" data-writing-action="next">➡ Nächste Aufgabe</button>
+        <button class="big-action-button writing-action-button" type="button" data-writing-action="next">Nächste Karte</button>
+        <button class="big-action-button writing-action-button" type="button" data-writing-action="random">Zufallskarte</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="home">🏠 Home</button>
         <button class="big-action-button writing-action-button is-light" type="button" data-writing-action="top">⬆ Nach oben</button>
       </div>
     </article>
@@ -763,13 +677,8 @@ function getWritingCards(area) {
     return getStoryImageCards();
   }
 
-  if (config.kind === "tips") {
-    return WRITING_TIP_CARDS.map((card) => ({ ...card, bereich: "Schreibtipps", displayBereich: area }));
-  }
-
   return SCHREIBKARTEN
-    .filter((card) => config.sourceAreas.includes(card.bereich))
-    .map((card) => ({ ...card, displayBereich: area }));
+    .filter((card) => config.sourceAreas.includes(card.bereich));
 }
 
 function getWritingAreaConfig(areaName) {
@@ -787,25 +696,20 @@ function getStoryImageCards() {
     displayBereich: "Geschichtenbilder",
     nummer: index + 1,
     titel: title,
-    bild: `images/geschichtenbilder/${toImageSlug(title)}.png`,
-    auftrag: "Sieh dir das Bild genau an. Schreibe dazu eine Geschichte in dein Heft.",
+    bild: `assets/geschichtenbilder/${STORY_IMAGE_FILES[index]}`,
+    auftrag: "Schau dir das Bild genau an. Schreibe eine Geschichte in dein Heft oder in dein Mini-Buch.",
     fragen: STORY_IMAGE_PROMPTS,
     satzanfaenge: ["Heute ...", "Plötzlich ...", "Auf einmal ...", "Dann ...", "Am Ende ..."],
-    worthelfer: [],
-    schreibtipps: ["Nutze Adjektive.", "Nutze Verben.", "Schreibe ganze Sätze.", "Lies deine Geschichte noch einmal."],
-    toniTipp: "Schau zuerst genau. Schreibe dann, was auf dem Bild passieren könnte."
+    worthelfer: ["sehen", "gehen", "finden", "helfen", "spielen", "lachen", "traurig", "mutig", "plötzlich", "zusammen"],
+    schreibtipps: [
+      "Schreibe mit Bleistift ins Heft.",
+      "Schreibe mindestens drei Sätze.",
+      "Beginne jeden Satz groß.",
+      "Setze am Satzende einen Punkt.",
+      "Lies deine Geschichte noch einmal."
+    ],
+    toniTipp: "Suche passende Wörter im Wörterbuch, bevor du sie abschreibst."
   }));
-}
-
-function toImageSlug(title) {
-  return title
-    .toLowerCase()
-    .replaceAll("ä", "ae")
-    .replaceAll("ö", "oe")
-    .replaceAll("ü", "ue")
-    .replaceAll("ß", "ss")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
 }
 
 function getReadingCards(area) {

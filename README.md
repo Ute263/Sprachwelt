@@ -45,16 +45,15 @@ Nach kurzer Zeit zeigt GitHub den Link zur App an.
 
 Tonis Schreibwerkstatt enthält digitale Aufgabenkarten mit vorgeschalteten Übersichtsseiten. Die Kinder wählen zuerst einen Bereich, dann eine nummerierte Aufgabe und schreiben weiterhin handschriftlich ins Heft, auf Arbeitsblätter oder in Mini-Bücher.
 
-Die Schreibwerkstatt hat sechs Bereiche:
+Die Schreibwerkstatt hat fünf Bereiche:
 
-- `Sätze schreiben`
-- `Geschichten schreiben`
-- `Zufallsgeschichten`
-- `Geschichtenbilder`
+- `Schreibaufgaben`
+- `Mini-Bücher`
+- `Geschichtenideen`
 - `Starke Schreiber`
-- `Schreibtipps`
+- `Geschichtenbilder`
 
-Der Bereich `Geschichtenbilder` ist vorbereitet. Spätere Wimmelbilder werden als PNG-Dateien im Ordner `images/geschichtenbilder/` abgelegt. Solange noch kein Bild vorhanden ist, zeigt die App einen Platzhalter.
+Der Bereich `Geschichtenbilder` ist vorbereitet. Spätere Wimmelbilder werden als PNG-Dateien im Ordner `assets/geschichtenbilder/` abgelegt. Solange noch kein Bild vorhanden ist, zeigt die App einen Platzhalter.
 
 ## Lesewelt
 
