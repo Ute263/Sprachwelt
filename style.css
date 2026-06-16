@@ -325,6 +325,44 @@ h2 {
   font-size: 3.3rem;
 }
 
+.fresch-symbol {
+  display: grid;
+  place-items: center;
+  width: 94px;
+  height: 94px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 4px solid rgba(31, 111, 188, 0.16);
+  border-radius: 28px;
+  background: #fff;
+}
+
+.fresch-symbol img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fresch-symbol-large {
+  width: 118px;
+  height: 118px;
+  margin-bottom: 14px;
+}
+
+.fresch-symbol-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  color: var(--button-dark);
+  background: var(--sky);
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+}
+
 .learning-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -814,12 +852,66 @@ h2 {
 
 .category-label {
   display: inline-block;
-  margin-bottom: 16px;
   padding: 8px 12px;
   border-radius: 999px;
   background: var(--rose);
   color: #76425b;
   font-weight: 900;
+}
+
+.word-label-row,
+.word-fresch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.grundwortschatz-label,
+.word-fresch-tags span {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.grundwortschatz-label {
+  color: #6d5200;
+  background: #fff2b3;
+}
+
+.grundwortschatz-label.is-large {
+  margin: 0 0 16px;
+  font-size: 1.12rem;
+}
+
+.word-fresch-tags span {
+  color: var(--button-dark);
+  background: var(--sky);
+}
+
+.word-class-color {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.word-class-color.is-noun {
+  color: #5f4b00;
+  background: #ffe66d;
+}
+
+.word-class-color.is-verb {
+  color: #195739;
+  background: #bff0d1;
+}
+
+.word-class-color.is-adjective {
+  color: #50341f;
+  background: #d6b38d;
 }
 
 .read-button {

@@ -7,8 +7,8 @@ const THEMES = [
   { name: "Zum Kuscheln", route: "toys", emoji: "🛏️", ready: true },
   { name: "Familie und Menschen", route: "people", emoji: "👨‍👩‍👧", ready: true },
   { name: "Gefühle", route: "feelings", emoji: "😊", ready: true },
-  { name: "Verben", route: "verbs", emoji: "🏃", ready: true },
-  { name: "Adjektive", route: "adjectives", emoji: "🌈", ready: true },
+  { name: "Verben", route: "verbs", emoji: "🟩", ready: true },
+  { name: "Adjektive", route: "adjectives", emoji: "🟫", ready: true },
   { name: "Natur und Jahreszeiten", route: "nature", emoji: "🌳", ready: true },
   { name: "Fahrzeuge", route: "vehicles", emoji: "🚗", ready: true },
   { name: "Feste und Feiern", route: "celebrations", emoji: "🎉", ready: true },
@@ -134,6 +134,9 @@ const FAVORITE_KEY = "toni-woerterbuch-favoriten";
 const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
 const APP_TITLE = "Tonis Sprachwelt";
+const NRW_WORDS = typeof GRUNDWORTSCHATZ_NRW !== "undefined" ? GRUNDWORTSCHATZ_NRW : [];
+const NRW_WORD_LOOKUP = new Map(NRW_WORDS.map((entry) => [normalizeWord(entry.wort), entry]));
+const DICTIONARY_WORDS = buildDictionaryWords();
 const WRITING_AREAS = [
   { name: "Schreibaufgaben", emoji: "✏️", sourceAreas: ["Schreibaufgaben"] },
   { name: "Mini-Bücher", emoji: "📖", sourceAreas: ["Mini-Bücher"] },
@@ -205,19 +208,27 @@ const WORD_EXPLORER_AREAS = [
   { name: "Rechtschreibung", emoji: "✏️", route: "orthography" },
   { name: "Wort des Tages", emoji: "⭐", route: "dailyWord" }
 ];
+const FRESCH_SYMBOLS = {
+  "Schwingen": "assets/fresch/schwingen.png",
+  "Verlängern": "assets/fresch/verlaengern.png",
+  "Ableiten": "assets/fresch/ableiten.png",
+  "Merken": "assets/fresch/merken.png",
+  "Wortbausteine": "assets/fresch/wortbausteine.png",
+  "Groß oder klein?": "assets/fresch/gross-oder-klein.png"
+};
 const FRESCH_AREAS = [
   {
     name: "Schwingen",
-    emoji: "🖐",
+    symbol: FRESCH_SYMBOLS["Schwingen"],
     titles: ["Silben schwingen", "Zwei Silben", "Drei Silben", "Silbenbögen", "Silbenkönig", "Robotersprache", "Wörter klatschen", "Wörter gehen", "Vokale hören", "Silben zählen", "Langsame Wörter", "Schnelle Wörter", "Namen schwingen", "Tierwörter schwingen", "Schulwörter schwingen", "Sommerwörter schwingen", "Schwierige Wörter", "Partner-Schwingen", "Kontroll-Schwingen", "Silbenprofi"],
     explanation: "Sprich das Wort langsam in Silben. Jede Silbe bekommt einen Schwung.",
-    examples: ["To-ni", "Blu-me", "Fe-der-map-pe"],
+    examples: ["To-ni", "Blu-me", "Schu-le"],
     exercise: "Schwinge fünf Wörter aus deinem Heft und zeichne Silbenbögen darunter.",
     tip: "Wenn du ein Wort schwingst, hörst du oft jeden Teil besser."
   },
   {
     name: "Verlängern",
-    emoji: "➕",
+    symbol: FRESCH_SYMBOLS["Verlängern"],
     titles: ["Wort verlängern", "Hund oder Hunt?", "Berg oder Berk?", "Tag oder Tak?", "Rad oder Rat?", "Kind oder Kint?", "Einzahl und Mehrzahl", "Ende hörbar machen", "Nomen verlängern", "Adjektive verlängern", "Verben verlängern", "Partnerwörter", "Endlaut prüfen", "Schwere Enden", "Genau hinhören", "Wörter sammeln", "Verlängerungsprobe", "Satzprobe", "Kontrollprobe", "Verlängerungsprofi"],
     explanation: "Verlängere ein Wort, damit du den letzten Laut besser hörst.",
     examples: ["Hund - Hunde", "Berg - Berge", "gelb - gelbe"],
@@ -226,7 +237,7 @@ const FRESCH_AREAS = [
   },
   {
     name: "Ableiten",
-    emoji: "🌿",
+    symbol: FRESCH_SYMBOLS["Ableiten"],
     titles: ["Wortfamilie finden", "ä kommt von a", "äu kommt von au", "Bäume und Baum", "Häuser und Haus", "Räuber und rauben", "Wörter verwandeln", "Grundwort suchen", "Familienwörter", "Ableitungsprobe", "ä-Wörter", "äu-Wörter", "Wörter vergleichen", "Wortstamm finden", "Passende Wörter", "Sätze prüfen", "Schwere Ableitungen", "Partnerprobe", "Kontrollprobe", "Ableitungsprofi"],
     explanation: "Suche ein verwandtes Wort. So findest du heraus, ob du ä oder äu schreibst.",
     examples: ["Bäume - Baum", "Häuser - Haus", "träumen - Traum"],
@@ -235,12 +246,30 @@ const FRESCH_AREAS = [
   },
   {
     name: "Merken",
-    emoji: "⭐",
+    symbol: FRESCH_SYMBOLS["Merken"],
     titles: ["Merkwort ansehen", "Wortbild merken", "Schwierige Stelle", "Wort abdecken", "Wort schreiben", "Wort prüfen", "Merkwörter sammeln", "ie merken", "h merken", "doppelte Buchstaben", "Fremde Wörter", "Lieblings-Merkwort", "Wortkarte bauen", "Partner-Abfrage", "Satz mit Merkwort", "Drei Merkwörter", "Wörter vergleichen", "Schwierige Stelle markieren", "Kontrollblick", "Merkwortprofi"],
     explanation: "Manche Wörter musst du dir genau merken. Schau auf die schwierige Stelle.",
     examples: ["Vogel", "Tiger", "nämlich"],
     exercise: "Wähle drei Merkwörter. Schreibe sie ab und markiere die schwierige Stelle.",
     tip: "Merkwörter brauchen einen ruhigen Kontrollblick."
+  },
+  {
+    name: "Wortbausteine",
+    symbol: FRESCH_SYMBOLS["Wortbausteine"],
+    titles: ["Wortbausteine entdecken", "Vorsilben", "Nachsilben", "Wortstamm", "Endungen", "ge-Wörter", "ver-Wörter", "un-Wörter", "Wörter bauen", "Wörter umbauen", "Familienwörter", "Baustein -er", "Baustein -en", "Baustein -lich", "Baustein -ig", "Lange Wörter", "Kurze Wörter", "Bausteine markieren", "Partnerprobe", "Wortbausteinprofi"],
+    explanation: "Viele Wörter bestehen aus Bausteinen. Suche den Teil, der in verwandten Wörtern gleich bleibt.",
+    examples: ["spielen - Spiel - Spielplatz", "freundlich - Freund", "fahren - Fahrer"],
+    exercise: "Suche drei Wörter aus einer Wortfamilie und markiere den gleichen Baustein.",
+    tip: "Wortbausteine helfen dir bei langen Wörtern."
+  },
+  {
+    name: "Groß oder klein?",
+    symbol: FRESCH_SYMBOLS["Groß oder klein?"],
+    titles: ["Nomen erkennen", "Menschen", "Tiere", "Pflanzen", "Dinge", "Artikelprobe", "Verben erkennen", "Adjektive erkennen", "Satzanfang", "Namen", "Wörter sortieren", "Nomen gelb", "Verben grün", "Adjektive braun", "Große Anfangsbuchstaben", "Kleine Anfangsbuchstaben", "Wörter im Satz", "Partnerkontrolle", "Sortierprobe", "Groß-klein-Profi"],
+    explanation: "Nomen schreibst du groß. Verben und Adjektive schreibst du meistens klein.",
+    examples: ["der Hund", "laufen", "klein"],
+    exercise: "Sortiere fünf Wörter in Nomen, Verben und Adjektive. Markiere den ersten Buchstaben.",
+    tip: "Frage: Kann ich der, die oder das davor setzen?"
   }
 ];
 const ORTHOGRAPHY_TITLES = [
@@ -265,28 +294,7 @@ const ORTHOGRAPHY_TITLES = [
   "Nomen",
   "Wörter genau abschreiben"
 ];
-const DAILY_WORDS = [
-  ["Sonne", "Son-ne", "Nomen", "Die Sonne scheint warm.", "sonnig, Sonnenschein", "Schwingen"],
-  ["laufen", "lau-fen", "Verb", "Toni kann schnell laufen.", "Lauf, Läufer, gelaufen", "Verlängern"],
-  ["bunt", "bunt", "Adjektiv", "Das Bild ist bunt.", "bunte, buntes", "Verlängern"],
-  ["Baum", "Baum", "Nomen", "Im Garten steht ein Baum.", "Bäume, Baumhaus", "Ableiten"],
-  ["spielen", "spie-len", "Verb", "Die Kinder spielen draußen.", "Spiel, Spielplatz", "Schwingen"],
-  ["fröhlich", "fröh-lich", "Adjektiv", "Lina ist heute fröhlich.", "froh, Freude", "Merken"],
-  ["Schule", "Schu-le", "Nomen", "Toni geht in die Schule.", "Schulhof, Schultasche", "Schwingen"],
-  ["helfen", "hel-fen", "Verb", "Wir helfen zusammen.", "Hilfe, Helfer", "Schwingen"],
-  ["klein", "klein", "Adjektiv", "Der Käfer ist klein.", "kleine, kleiner", "Verlängern"],
-  ["Haus", "Haus", "Nomen", "Das Haus hat rote Fenster.", "Häuser, Haustür", "Ableiten"],
-  ["lesen", "le-sen", "Verb", "Toni liest ein Buch.", "Leser, Lesebuch", "Schwingen"],
-  ["mutig", "mu-tig", "Adjektiv", "Das Kind ist mutig.", "Mut, ermutigen", "Schwingen"],
-  ["Blume", "Blu-me", "Nomen", "Die Blume wächst im Garten.", "Blumen, Blumenbeet", "Schwingen"],
-  ["finden", "fin-den", "Verb", "Toni findet einen Stein.", "Fund, gefunden", "Schwingen"],
-  ["warm", "warm", "Adjektiv", "Der Tee ist warm.", "warme, wärmen", "Ableiten"],
-  ["Fahrrad", "Fahr-rad", "Nomen", "Das Fahrrad steht am Zaun.", "fahren, Räder", "Ableiten"],
-  ["schreiben", "schrei-ben", "Verb", "Lina schreibt einen Satz.", "Schrift, Schreibheft", "Schwingen"],
-  ["leise", "lei-se", "Adjektiv", "Die Klasse ist leise.", "leiser, leise sein", "Schwingen"],
-  ["Freund", "Freund", "Nomen", "Ben ist Tonis Freund.", "Freunde, freundlich", "Verlängern"],
-  ["träumen", "träu-men", "Verb", "Toni träumt von einem Drachen.", "Traum, Träumer", "Ableiten"]
-];
+const DAILY_WORDS = NRW_WORDS.slice(0, 20);
 
 const state = {
   route: "portal",
@@ -530,23 +538,24 @@ function getCurrentBand() {
 function getBandWords(band) {
   const selectedCategory = state.categories[state.route];
 
-  return WORDS.filter((word) => {
+  return DICTIONARY_WORDS.filter((word) => {
     if (state.query) {
       return matchesSearch(word);
     }
 
-    const matchesTheme = word.thema === band.thema;
+    const wordThemes = getWordThemes(word);
+    const matchesTheme = wordThemes.includes(band.thema) || wordThemes.includes(band.title);
     const matchesCategory = selectedCategory === band.allCategory || word.kategorie === selectedCategory;
     return matchesTheme && matchesCategory && matchesSearch(word);
   });
 }
 
 function getSearchWords() {
-  return WORDS.filter((word) => matchesSearch(word));
+  return DICTIONARY_WORDS.filter((word) => matchesSearch(word));
 }
 
 function getFavoriteWords() {
-  return WORDS.filter((word) => state.favorites.includes(word.id) && matchesSearch(word));
+  return DICTIONARY_WORDS.filter((word) => state.favorites.includes(word.id) && matchesSearch(word));
 }
 
 function matchesSearch(word) {
@@ -559,10 +568,16 @@ function matchesSearch(word) {
     word.artikel,
     word.silben,
     word.kategorie,
-    word.thema
+    getWordThemes(word).join(" "),
+    word.wortart,
+    word.fresch?.join(" ")
   ].join(" ").toLowerCase();
 
   return searchableText.includes(state.query);
+}
+
+function getWordThemes(word) {
+  return Array.isArray(word.thema) ? word.thema : [word.thema].filter(Boolean);
 }
 
 function renderWordCards(container, words, emptyText) {
@@ -579,6 +594,10 @@ function renderWordCards(container, words, emptyText) {
       ? `<img class="word-picture" src="${word.bild}" alt="" loading="lazy">`
       : word.emoji;
     const visualClass = word.bild ? "word-emoji has-picture" : "word-emoji";
+    const grundLabel = word.grundwortschatz ? `<span class="grundwortschatz-label">⭐ Grundwortschatz NRW</span>` : "";
+    const freschLabels = word.fresch?.length
+      ? `<div class="word-fresch-tags">${word.fresch.map((strategy) => `<span>${strategy}</span>`).join("")}</div>`
+      : "";
     return `
       <article class="word-card">
         <div class="word-top">
@@ -596,7 +615,11 @@ function renderWordCards(container, words, emptyText) {
           <h3 class="word">${word.wort}</h3>
           <p class="syllables">${word.silben}</p>
         </div>
-        <span class="category-label">${word.kategorie}</span>
+        <div class="word-label-row">
+          <span class="category-label">${word.kategorie}</span>
+          ${grundLabel}
+        </div>
+        ${freschLabels}
         <button class="read-button" type="button" data-speak="${word.id}">Vorlesen</button>
       </article>
     `;
@@ -609,6 +632,63 @@ function renderWordCards(container, words, emptyText) {
   container.querySelectorAll("[data-speak]").forEach((button) => {
     button.addEventListener("click", () => speakWord(button.dataset.speak));
   });
+}
+
+function buildDictionaryWords() {
+  const existing = WORDS.map((word) => {
+    const grundwort = NRW_WORD_LOOKUP.get(normalizeWord(word.wort));
+    if (!grundwort) {
+      return word;
+    }
+
+    return {
+      ...word,
+      wortart: word.wortart || grundwort.wortart,
+      fresch: word.fresch || grundwort.fresch,
+      besonderheit: word.besonderheit || grundwort.besonderheit,
+      grundwortschatz: true
+    };
+  });
+
+  const existingWords = new Set(existing.map((word) => normalizeWord(word.wort)));
+  const additions = NRW_WORDS
+    .filter((word) => !existingWords.has(normalizeWord(word.wort)))
+    .map((word) => ({
+      id: `nrw-${makeWordId(word.wort)}`,
+      wort: word.wort,
+      artikel: word.artikel,
+      silben: word.silben,
+      kategorie: word.kategorie || getDefaultCategory(word),
+      thema: word.thema,
+      emoji: word.emoji || "⭐",
+      wortart: word.wortart,
+      fresch: word.fresch,
+      besonderheit: word.besonderheit,
+      grundwortschatz: true
+    }));
+
+  return [...existing, ...additions];
+}
+
+function getDefaultCategory(word) {
+  if (word.thema?.includes("Verben")) return "Alle Verben";
+  if (word.thema?.includes("Adjektive")) return "Alle Adjektive";
+  return "Alle Wörter";
+}
+
+function normalizeWord(word) {
+  return String(word || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ß/g, "ss")
+    .trim();
+}
+
+function makeWordId(word) {
+  return normalizeWord(word)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function renderWritingView() {
@@ -748,7 +828,7 @@ function renderFreschView() {
     freschCardView.innerHTML = "";
     freschAreaGrid.innerHTML = FRESCH_AREAS.map((area) => `
       <button class="learning-area-tile" type="button" data-fresch-area="${area.name}">
-        <span class="portal-emoji" aria-hidden="true">${area.emoji}</span>
+        ${renderFreschSymbol(area.name)}
         <span>${area.name}</span>
       </button>
     `).join("");
@@ -761,7 +841,8 @@ function renderFreschView() {
 
   if (state.freschCardIndex === null) {
     renderLearningOverview(freschCardView, {
-      title: `${getFreschAreaEmoji(state.freschArea)} ${state.freschArea}`,
+      title: state.freschArea,
+      symbolName: state.freschArea,
       backAction: "back",
       homeAction: "home",
       cardAttribute: "data-fresch-card",
@@ -784,7 +865,7 @@ function renderOrthographyView() {
   if (state.orthographyCardIndex === null) {
     renderLearningOverview(orthographyCardView, {
       title: "✏️ Rechtschreibung",
-      backAction: "home",
+      backAction: "wordExplorer",
       homeAction: "home",
       cardAttribute: "data-orthography-card",
       actionAttribute: "data-orthography-action",
@@ -806,7 +887,7 @@ function renderDailyWordView() {
   if (state.dailyWordIndex === null) {
     renderLearningOverview(dailyWordCardView, {
       title: "⭐ Wort des Tages",
-      backAction: "home",
+      backAction: "wordExplorer",
       homeAction: "home",
       cardAttribute: "data-daily-word-card",
       actionAttribute: "data-daily-word-action",
@@ -820,9 +901,11 @@ function renderDailyWordView() {
 }
 
 function renderLearningOverview(container, config) {
+  const symbol = config.symbolName ? renderFreschSymbol(config.symbolName, "fresch-symbol-large") : "";
   container.innerHTML = `
     <section class="reading-overview-card">
       <div class="reading-overview-heading">
+        ${symbol}
         <h3>${config.title}</h3>
         <p>Wähle eine Aufgabe.</p>
       </div>
@@ -847,6 +930,14 @@ function renderLearningCard(container, card, totalCards, actionAttribute) {
     ? renderCardSection("🔤", "Beispiele", renderCardList(card.beispiele))
     : "";
   const wordInfo = card.wordInfo || "";
+  const symbol = card.symbolName ? renderFreschSymbol(card.symbolName, "fresch-symbol-large") : "";
+  const colorSignal = card.farbe ? `<span class="word-class-color ${card.farbe.className}">${card.farbe.label}</span>` : "";
+  const markerSection = card.markierauftrag
+    ? renderCardSection("🖍️", "Markierauftrag", `<p>${card.markierauftrag}</p>`)
+    : "";
+  const extraSection = card.zusatzaufgabe
+    ? renderCardSection("➕", "Zusatzaufgabe", `<p>${card.zusatzaufgabe}</p>`)
+    : "";
 
   container.innerHTML = `
     <article class="writing-task-card">
@@ -854,11 +945,15 @@ function renderLearningCard(container, card, totalCards, actionAttribute) {
         <span class="card-number">Karte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
         <span class="card-area">${card.bereich}</span>
       </div>
+      ${symbol}
       <h3>${card.titel}</h3>
+      ${colorSignal}
       ${wordInfo}
       ${renderCardSection("💡", "Erklärung", `<p>${card.erklaerung}</p>`)}
       ${examples}
-      ${renderCardSection("✏️", "Kleine Übung", `<p>${card.uebung}</p>`)}
+      ${renderCardSection("✏️", card.uebungTitel || "Kleine Übung", `<p>${card.uebung}</p>`)}
+      ${markerSection}
+      ${extraSection}
       ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
       <div class="writing-card-actions">
         <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="overview">⬅ Zur Übersicht</button>
@@ -1044,6 +1139,7 @@ function getFreschCards(areaName) {
     bereich: area.name,
     nummer: index + 1,
     titel: title,
+    symbolName: area.name,
     erklaerung: area.explanation,
     beispiele: area.examples,
     uebung: area.exercise,
@@ -1051,8 +1147,15 @@ function getFreschCards(areaName) {
   }));
 }
 
-function getFreschAreaEmoji(areaName) {
-  return FRESCH_AREAS.find((area) => area.name === areaName)?.emoji || "🌳";
+function renderFreschSymbol(name, extraClass = "") {
+  const symbol = FRESCH_SYMBOLS[name];
+  const className = `fresch-symbol ${extraClass}`.trim();
+  return `
+    <span class="${className}" aria-label="FRESCH: ${name}">
+      <img src="${symbol}" alt="" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+      <span class="fresch-symbol-fallback" hidden>FRESCH</span>
+    </span>
+  `;
 }
 
 function getOrthographyCards() {
@@ -1060,81 +1163,183 @@ function getOrthographyCards() {
     bereich: "Rechtschreibung",
     nummer: index + 1,
     titel: title,
-    erklaerung: getOrthographyExplanation(title),
-    beispiele: getOrthographyExamples(title),
-    uebung: "Lies die Beispiele. Schreibe drei passende Wörter auf Papier und kontrolliere sie genau.",
-    toniTipp: "Schau langsam auf jede schwierige Stelle im Wort."
+    ...getOrthographyCardConfig(title)
   }));
 }
 
-function getOrthographyExplanation(title) {
-  if (title === "Groß oder klein?") return "Nomen schreibst du groß. Verben und Adjektive schreibst du meistens klein.";
-  if (title === "Wörter genau abschreiben") return "Schau zuerst genau hin. Schreibe dann langsam ab und kontrolliere Buchstabe für Buchstabe.";
-  if (title === "Wörter trennen") return "Du kannst Wörter in Silben trennen. Sprich das Wort langsam.";
-  if (title === "Wortfamilien") return "Wörter aus einer Familie haben einen gemeinsamen Wortstamm.";
-  if (title === "Zusammengesetzte Wörter") return "Zwei Wörter können zusammen ein neues langes Wort bilden.";
-  return `Achte bei ${title} auf die besondere Schreibstelle. Lies das Wort langsam und genau.`;
-}
-
-function getOrthographyExamples(title) {
-  const map = {
-    "Groß oder klein?": ["der Hund", "laufen", "schön"],
-    "Wörter mit sch": ["Schule", "Tasche", "Fisch"],
-    "Wörter mit ch": ["Buch", "ich", "lachen"],
-    "Wörter mit ei": ["Eis", "klein", "Leiter"],
-    "Wörter mit au": ["Haus", "Maus", "Baum"],
-    "Wörter mit eu": ["Eule", "Freude", "heute"],
-    "Wörter mit ie": ["Biene", "Wiese", "spielen"],
-    "Wörter mit sp": ["Spinne", "Spiel", "Sport"],
-    "Wörter mit st": ["Stein", "Stern", "Stuhl"],
-    "Umlaute": ["Bäume", "Hände", "Tüte"],
-    "Doppelkonsonanten": ["Sonne", "Ball", "Koffer"],
-    "ck": ["Ecke", "Jacke", "Brücke"],
-    "tz": ["Katze", "Blitz", "Mütze"],
-    "Wörter trennen": ["To-ni", "Blu-me", "Schu-le"],
-    "Wortfamilien": ["fahren, Fahrrad, Fahrer", "spielen, Spiel, Spielplatz"],
-    "Zusammengesetzte Wörter": ["Schultasche", "Baumhaus", "Fußball"],
-    "Verben": ["laufen", "lesen", "malen"],
-    "Adjektive": ["klein", "mutig", "bunt"],
-    "Nomen": ["Toni", "Haus", "Blume"],
-    "Wörter genau abschreiben": ["Schmetterling", "Geburtstag", "Freundschaft"]
+function getOrthographyCardConfig(title) {
+  const special = {
+    "Wörter mit sch": ["sch", ["Schule", "Tasche", "Fisch"]],
+    "Wörter mit ch": ["ch", ["Buch", "Milch", "Kuchen"]],
+    "Wörter mit ei": ["ei", ["Eis", "klein", "schreiben"]],
+    "Wörter mit au": ["au", ["Haus", "Maus", "Baum"]],
+    "Wörter mit eu": ["eu", ["Freund", "Freude", "heute"]],
+    "Wörter mit ie": ["ie", ["spielen", "Wiese", "Biene"]],
+    "Wörter mit sp": ["sp", ["spielen", "Sport", "Spielplatz"]],
+    "Wörter mit st": ["st", ["Stift", "Fest", "Angst"]],
+    "Umlaute": ["ä, ö oder ü", ["Tür", "fröhlich", "Bäume"]]
   };
-  return map[title] || ["Toni", "Schule", "lesen"];
+
+  if (special[title]) {
+    const [mark, examples] = special[title];
+    return {
+      symbolName: "Merken",
+      erklaerung: `In diesen Wörtern gibt es eine besondere Stelle: ${mark}. Lies die Wörter genau.`,
+      beispiele: examples,
+      uebungTitel: "Aufgabe",
+      uebung: "Finde fünf weitere Wörter.",
+      markierauftrag: `Schreibe sie auf. Markiere nur die besondere Stelle: ${mark}.`,
+      zusatzaufgabe: "Lies deine Wörter einem Partner vor.",
+      toniTipp: "Markiere nur das, worum es auf dieser Karte geht."
+    };
+  }
+
+  const configs = {
+    "Groß oder klein?": {
+      symbolName: "Groß oder klein?",
+      erklaerung: "Nomen schreibst du groß. Verben und Adjektive schreibst du meistens klein.",
+      beispiele: ["der Hund", "laufen", "klein"],
+      uebung: "Finde fünf weitere Wörter.",
+      markierauftrag: "Sortiere die Wörter: Nomen gelb, Verben grün, Adjektive braun.",
+      zusatzaufgabe: "Schreibe mit einem Wort einen Satz.",
+      toniTipp: "Bei Nomen helfen dir der, die oder das."
+    },
+    "Doppelkonsonanten": {
+      symbolName: "Merken",
+      erklaerung: "Nach einem kurzen Vokal stehen manchmal zwei gleiche Konsonanten.",
+      beispiele: ["Sonne", "Bett", "kommen"],
+      markierauftrag: "Markiere die doppelten Konsonanten.",
+      zusatzaufgabe: "Sprich die Wörter langsam und klatsche die Silben.",
+      toniTipp: "Schau auf die Mitte des Wortes."
+    },
+    "ck": {
+      symbolName: "Merken",
+      erklaerung: "Nach einem kurzen Vokal steht oft ck.",
+      beispiele: ["Decke", "Ecke", "backen"],
+      markierauftrag: "Markiere ck.",
+      zusatzaufgabe: "Schreibe ein ck-Wort in einem Satz.",
+      toniTipp: "ck bleibt zusammen."
+    },
+    "tz": {
+      symbolName: "Merken",
+      erklaerung: "Nach einem kurzen Vokal steht oft tz.",
+      beispiele: ["Katze", "Sitz", "plötzlich"],
+      markierauftrag: "Markiere tz.",
+      zusatzaufgabe: "Lies deine Wörter deutlich vor.",
+      toniTipp: "tz bleibt zusammen."
+    },
+    "Wörter trennen": {
+      symbolName: "Schwingen",
+      erklaerung: "Du kannst Wörter in Silben trennen. Sprich das Wort langsam.",
+      beispiele: ["To-ni", "Blu-me", "Schu-le"],
+      markierauftrag: "Zeichne Silbenbögen unter deine Wörter.",
+      zusatzaufgabe: "Kreise in jeder Silbe den Silbenkönig ein.",
+      toniTipp: "Schwingen hilft beim Trennen."
+    },
+    "Wortfamilien": {
+      symbolName: "Ableiten",
+      erklaerung: "Wörter aus einer Familie haben einen gemeinsamen Wortstamm.",
+      beispiele: ["fahren, Fahrrad, Fahrer", "spielen, Spiel, Spielplatz", "Freund, Freunde, freundlich"],
+      markierauftrag: "Markiere den gleichen Wortbaustein.",
+      zusatzaufgabe: "Schreibe zu einem Wort zwei Familienwörter.",
+      toniTipp: "Verwandte Wörter helfen beim Schreiben."
+    },
+    "Zusammengesetzte Wörter": {
+      symbolName: "Wortbausteine",
+      erklaerung: "Zwei Wörter können zusammen ein neues langes Wort bilden.",
+      beispiele: ["Schultasche", "Baumhaus", "Fußball"],
+      markierauftrag: "Male zwischen die zwei Wortteile einen Strich.",
+      zusatzaufgabe: "Baue selbst zwei neue lange Wörter.",
+      toniTipp: "Lange Wörter werden leichter, wenn du die Teile findest."
+    },
+    "Verben": {
+      symbolName: "Groß oder klein?",
+      farbe: { label: "🟩 Grün: Verb", className: "is-verb" },
+      erklaerung: "Verben werden klein geschrieben. Verben beschreiben alles, was man tun kann.",
+      beispiele: ["laufen", "spielen", "malen"],
+      markierauftrag: "Markiere den ersten Buchstaben. Markiere die Silbenkönige.",
+      zusatzaufgabe: "Schreibe mit einem Verb einen Satz.",
+      toniTipp: "Frage: Was kann ich tun?"
+    },
+    "Adjektive": {
+      symbolName: "Groß oder klein?",
+      farbe: { label: "🟫 Braun: Adjektiv", className: "is-adjective" },
+      erklaerung: "Adjektive werden klein geschrieben. Adjektive beschreiben, wie etwas ist.",
+      beispiele: ["groß", "klein", "fröhlich"],
+      markierauftrag: "Markiere den ersten Buchstaben. Markiere die Silbenkönige.",
+      zusatzaufgabe: "Schreibe mit einem Adjektiv einen Satz.",
+      toniTipp: "Frage: Wie ist etwas?"
+    },
+    "Nomen": {
+      symbolName: "Groß oder klein?",
+      farbe: { label: "🟨 Gelb: Nomen", className: "is-noun" },
+      erklaerung: "Nomen werden groß geschrieben. Nomen sind Wörter für Menschen, Tiere, Pflanzen und Dinge.",
+      beispiele: ["Hund", "Blume", "Sonne"],
+      markierauftrag: "Markiere den ersten Buchstaben. Markiere die Silbenkönige.",
+      zusatzaufgabe: "Suche ein Wort im Wörterbuch oder schreibe mit einem Wort einen Satz.",
+      toniTipp: "Nomen haben oft einen Artikel: der, die oder das."
+    },
+    "Wörter genau abschreiben": {
+      symbolName: "Merken",
+      erklaerung: "Schau zuerst genau hin. Schreibe dann langsam ab und kontrolliere Buchstabe für Buchstabe.",
+      beispiele: ["Schultasche", "Geburtstag", "Freundschaft"],
+      markierauftrag: "Markiere die Stelle, die für dich schwierig ist.",
+      zusatzaufgabe: "Decke das Wort ab und schreibe es noch einmal.",
+      toniTipp: "Ein Kontrollblick am Ende ist wichtig."
+    }
+  };
+
+  const config = configs[title] || {
+    symbolName: "Merken",
+    erklaerung: `Achte bei ${title} auf die besondere Schreibstelle. Lies das Wort langsam und genau.`,
+    beispiele: ["Toni", "Schule", "lesen"],
+    markierauftrag: "Markiere die besondere Stelle.",
+    zusatzaufgabe: "Schreibe mit einem Wort einen Satz.",
+    toniTipp: "Schau langsam auf jede schwierige Stelle im Wort."
+  };
+
+  return {
+    uebungTitel: "Aufgabe",
+    uebung: "Finde fünf weitere Wörter.",
+    ...config
+  };
 }
 
 function getDailyWordCards() {
-  return DAILY_WORDS.map(([word, syllables, wordType, sentence, family, strategy], index) => ({
+  return DAILY_WORDS.map((entry, index) => ({
     bereich: "Wort des Tages",
     nummer: index + 1,
     titel: `Wort des Tages ${index + 1}`,
+    symbolName: entry.fresch?.[0] || "Schwingen",
     erklaerung: "Lies das Wort genau. Sprich es langsam und bearbeite die Aufgaben auf Papier.",
     beispiele: [],
     uebung: "Lies. Schwinge die Silben. Schreibe das Wort ab. Lies den Satz. Schreibe einen eigenen Satz.",
     toniTipp: "Bearbeite alles ruhig auf Papier.",
     wordInfo: `
+      <span class="grundwortschatz-label is-large">⭐ Grundwortschatz NRW</span>
       <section class="writing-card-section">
         <h4>⭐ Wort</h4>
-        <p>${word}</p>
+        <p>${entry.wort}</p>
       </section>
       <section class="writing-card-section">
         <h4>🔤 Silben</h4>
-        <p>${syllables}</p>
+        <p>${entry.silben}</p>
       </section>
       <section class="writing-card-section">
         <h4>📌 Wortart</h4>
-        <p>${wordType}</p>
+        <p>${entry.wortart}</p>
       </section>
       <section class="writing-card-section">
         <h4>📖 Beispielsatz</h4>
-        <p>${sentence}</p>
+        <p>${entry.beispielsatz}</p>
       </section>
       <section class="writing-card-section">
         <h4>🌱 Wortfamilie</h4>
-        <p>${family}</p>
+        <p>${entry.wortfamilie}</p>
       </section>
       <section class="writing-card-section">
         <h4>🌳 FRESCH-Strategie</h4>
-        <p>${strategy}</p>
+        <p>${entry.fresch.join(", ")}</p>
       </section>
       <section class="writing-card-section">
         <h4>✏️ Aufgaben</h4>
@@ -1289,6 +1494,11 @@ function handleLearningAction(action, kind) {
 
   if (action === "home") {
     setRoute("portal");
+    return;
+  }
+
+  if (action === "wordExplorer") {
+    setRoute("wordExplorer");
     return;
   }
 
@@ -1486,7 +1696,7 @@ function toggleFavorite(id) {
 }
 
 function speakWord(id) {
-  const word = WORDS.find((entry) => entry.id === id);
+  const word = DICTIONARY_WORDS.find((entry) => entry.id === id);
   if (!word || !("speechSynthesis" in window)) {
     return;
   }

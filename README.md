@@ -7,7 +7,7 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 ## Bereiche
 
 - `Wortforscher`: Wörterbuch, FRESCH, Rechtschreibung und Wort des Tages.
-- `Wörterbuch`: Themenkacheln mit Suche, Vorlesen und Favoriten.
+- `Wörterbuch`: Themenkacheln mit Suche, Vorlesen, Favoriten und Grundwortschatz-Label.
 - `Schreibwerkstatt`: Digitale Aufgabenkarten mit vorgeschalteten Übersichten, Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
 - `Lesewelt`: Kurze Lesetexte und Lesekarten mit Aufgaben zum genauen Lesen, Textverständnis, Vorlesen und Lies-und-male-Aufgaben.
@@ -28,6 +28,7 @@ Auf dem Mac geht das zum Beispiel so:
 2. Lade diese Dateien und Ordner in das Repository hoch:
    - `index.html`
    - `style.css`
+   - `grundwortschatz-nrw.js`
    - `words.js`
    - `schreibkarten.js`
    - `lesetexte.js`
@@ -67,6 +68,26 @@ Der Wortforscher bündelt vier Bereiche:
 - `Wort des Tages`
 
 Die Kinder lesen, untersuchen Wörter und bearbeiten Aufgaben weiterhin auf Papier. Es werden keine Schülertexte eingegeben oder gespeichert.
+
+Die Datei `grundwortschatz-nrw.js` enthält vorbereitete Wörter mit Silben, Wortart, FRESCH-Strategien und Themen. Wörter aus dieser Datei erscheinen im Wörterbuch mit dem Label `Grundwortschatz NRW`. Der Bereich `Wort des Tages` nutzt ausschließlich Wörter aus dieser Datei.
+
+Der Bereich `FRESCH` ist für sechs Strategien vorbereitet:
+
+- `Schwingen`
+- `Verlängern`
+- `Ableiten`
+- `Merken`
+- `Wortbausteine`
+- `Groß oder klein?`
+
+Die Originalsymbole können als PNG-Dateien im Ordner `assets/fresch/` abgelegt werden:
+
+- `schwingen.png`
+- `verlaengern.png`
+- `ableiten.png`
+- `merken.png`
+- `wortbausteine.png`
+- `gross-oder-klein.png`
 
 ## Lesewelt
 

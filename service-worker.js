@@ -1,9 +1,10 @@
-const CACHE_NAME = "tonis-sprachwelt-v11";
+const CACHE_NAME = "tonis-sprachwelt-v12";
 const ASSETS = [
   "./",
   "index.html",
   "style.css",
   "app.js",
+  "grundwortschatz-nrw.js",
   "words.js",
   "schreibkarten.js",
   "lesetexte.js",
