@@ -221,36 +221,57 @@ const FRESCH_SYMBOLS = {
 const FRESCH_AREAS = [
   {
     name: "Schwingen",
-    symbol: FRESCH_SYMBOLS["Schwingen"]
+    symbol: FRESCH_SYMBOLS["Schwingen"],
+    explanation: "Sprich das Wort deutlich und schwinge die Silben.",
+    examples: ["Regenbogen", "Vollmond", "Tomate"],
+    task: "Schwinge die Wörter. Male die Silbenbögen. Markiere die Silbenkönige."
   },
   {
     name: "Verlängern",
-    symbol: FRESCH_SYMBOLS["Verlängern"]
+    symbol: FRESCH_SYMBOLS["Verlängern"],
+    explanation: "Verlängere das Wort, damit du den letzten Buchstaben besser hören kannst.",
+    examples: ["Hund → Hunde", "Berg → Berge", "fragen → fragte", "klug → klüger"],
+    task: "Sprich beide Wörter. Markiere die hörbare Stelle."
   },
   {
     name: "Ableiten",
-    symbol: FRESCH_SYMBOLS["Ableiten"]
+    symbol: FRESCH_SYMBOLS["Ableiten"],
+    explanation: "Verwandte Wörter helfen dir beim Schreiben.",
+    examples: ["Traum → Träume", "klar → klären", "Baum → Bäume"],
+    task: "Sprich beide Wörter. Markiere die veränderte Stelle."
   },
   {
     name: "Merken",
-    symbol: FRESCH_SYMBOLS["Merken"]
+    symbol: FRESCH_SYMBOLS["Merken"],
+    explanation: "Für manche Wörter gibt es keine Strategie. Diese Wörter musst du dir merken.",
+    examples: ["Vater", "Straße", "Tiger"],
+    task: "Markiere die schwierige Stelle. Schreibe das Wort."
   },
   {
     name: "Wortbausteine",
-    symbol: FRESCH_SYMBOLS["Wortbausteine"]
+    symbol: FRESCH_SYMBOLS["Wortbausteine"],
+    explanation: "Viele Wörter bestehen aus mehreren Bausteinen.",
+    examples: ["Hängematte", "Spielzeug", "Wortspiel"],
+    task: "Trenne die Wörter in ihre Wortbausteine. Markiere die Bausteine in verschiedenen Farben."
   },
   {
     name: "Groß- und Kleinschreibung",
-    symbol: FRESCH_SYMBOLS["Groß- und Kleinschreibung"]
+    symbol: FRESCH_SYMBOLS["Groß- und Kleinschreibung"],
+    explanation: "Nomen und Satzanfänge werden groß geschrieben.",
+    examples: ["Sonne", "Glück", "Zucker"],
+    task: "Markiere den ersten Buchstaben."
   },
   {
     name: "Nachschlagen",
-    symbol: FRESCH_SYMBOLS["Nachschlagen"]
+    symbol: FRESCH_SYMBOLS["Nachschlagen"],
+    explanation: "Schwierige Wörter kannst du im Wörterbuch nachschlagen.",
+    examples: ["Fuß", "vielleicht", "Ärztin"],
+    task: "Suche die Wörter im Wörterbuch. Lies die Silben."
   }
 ];
-const FRESCH_WORD_SETS = {
+const FRESCH_GENERATOR_WORDS = {
   "Schwingen": [
-    ["Tomate", "To-ma-te"], ["Schule", "Schu-le"], ["Blume", "Blu-me"], ["Banane", "Ba-na-ne"], ["Giraffe", "Gi-raf-fe"],
+    ["Regenbogen", "Re-gen-bo-gen"], ["Vollmond", "Voll-mond"], ["Tomate", "To-ma-te"], ["Schule", "Schu-le"], ["Blume", "Blu-me"], ["Banane", "Ba-na-ne"], ["Giraffe", "Gi-raf-fe"],
     ["Katze", "Kat-ze"], ["Tasche", "Ta-sche"], ["Sonne", "Son-ne"], ["Wasser", "Was-ser"], ["Apfel", "Ap-fel"],
     ["Mutter", "Mut-ter"], ["Freude", "Freu-de"], ["Regen", "Re-gen"], ["Auto", "Au-to"], ["Kuchen", "Ku-chen"],
     ["Musik", "Mu-sik"], ["laufen", "lau-fen"], ["spielen", "spie-len"], ["lesen", "le-sen"], ["malen", "ma-len"]
@@ -268,23 +289,23 @@ const FRESCH_WORD_SETS = {
     ["lang", "lang → länger", "a → ä"], ["stark", "stark → stärker", "a → ä"], ["Traum", "Traum → träumen", "au → äu"], ["fahren", "fahren → fährt", "a → ä"], ["waschen", "waschen → wäscht", "a → ä"]
   ],
   "Merken": [
-    ["Vater", "Va-ter", "V"], ["Vogel", "Vo-gel", "V"], ["Fahrrad", "Fahr-rad", "h"], ["fertig", "fer-tig", "f"], ["vielleicht", "viel-leicht", "v"],
-    ["nämlich", "näm-lich", "ä"], ["Tiger", "Ti-ger", "i"], ["Computer", "Com-pu-ter", "C"], ["Milch", "Milch", "ch"], ["Tür", "Tür", "ü"],
+    ["Vater", "Va-ter", "V"], ["Straße", "Stra-ße", "ß"], ["Tiger", "Ti-ger", "i"], ["Vogel", "Vo-gel", "V"], ["Fahrrad", "Fahr-rad", "h"], ["fertig", "fer-tig", "f"], ["vielleicht", "viel-leicht", "v"],
+    ["nämlich", "näm-lich", "ä"], ["Computer", "Com-pu-ter", "C"], ["Milch", "Milch", "ch"], ["Tür", "Tür", "ü"],
     ["Bett", "Bett", "tt"], ["Ball", "Ball", "ll"], ["Sonne", "Son-ne", "nn"], ["kommen", "kom-men", "mm"], ["groß", "groß", "ß"],
     ["klein", "klein", "ei"], ["Eis", "Eis", "ei"], ["Freund", "Freund", "eu"], ["Sport", "Sport", "sp"], ["Angst", "Angst", "st"]
   ],
   "Wortbausteine": [
-    ["Spielplatz", "Spiel-platz", "Spiel + Platz"], ["Haustür", "Haus-tür", "Haus + Tür"], ["Handschuh", "Hand-schuh", "Hand + Schuh"], ["Baumhaus", "Baum-haus", "Baum + Haus"], ["Schultasche", "Schul-ta-sche", "Schule + Tasche"],
+    ["Hängematte", "Hän-ge-mat-te", "Hänge + Matte"], ["Spielzeug", "Spiel-zeug", "Spiel + Zeug"], ["Wortspiel", "Wort-spiel", "Wort + Spiel"], ["Spielplatz", "Spiel-platz", "Spiel + Platz"], ["Haustür", "Haus-tür", "Haus + Tür"], ["Handschuh", "Hand-schuh", "Hand + Schuh"], ["Baumhaus", "Baum-haus", "Baum + Haus"], ["Schultasche", "Schul-ta-sche", "Schule + Tasche"],
     ["Fußball", "Fuß-ball", "Fuß + Ball"], ["Apfelbaum", "Ap-fel-baum", "Apfel + Baum"], ["Bilderbuch", "Bil-der-buch", "Bilder + Buch"], ["Wasserflasche", "Was-ser-fla-sche", "Wasser + Flasche"], ["Kinderzimmer", "Kin-der-zim-mer", "Kinder + Zimmer"],
     ["Kuscheldecke", "Ku-schel-de-cke", "Kuscheln + Decke"], ["Lesebuch", "Le-se-buch", "Lesen + Buch"], ["Schulhof", "Schul-hof", "Schule + Hof"], ["Sportplatz", "Sport-platz", "Sport + Platz"], ["Musikraum", "Mu-sik-raum", "Musik + Raum"],
     ["Fahrrad", "Fahr-rad", "Fahren + Rad"], ["Geburtstag", "Ge-burts-tag", "Geburt + Tag"], ["Regenbogen", "Re-gen-bo-gen", "Regen + Bogen"], ["Eisbecher", "Eis-be-cher", "Eis + Becher"], ["Buntstift", "Bunt-stift", "bunt + Stift"]
   ],
   "Groß- und Kleinschreibung": [
-    ["Blume"], ["Hund"], ["Schule"], ["Sonne"], ["Baum"], ["Haus"], ["Kind"], ["Mutter"], ["Vater"], ["Freund"],
+    ["Sonne"], ["Glück"], ["Zucker"], ["Blume"], ["Hund"], ["Schule"], ["Baum"], ["Haus"], ["Kind"], ["Mutter"], ["Vater"], ["Freund"],
     ["Buch"], ["Tasche"], ["Stift"], ["Apfel"], ["Brot"], ["Wasser"], ["Tisch"], ["Bett"], ["Auto"], ["Musik"]
   ],
   "Nachschlagen": [
-    ["spielen"], ["Hund"], ["Blume"], ["Schule"], ["lesen"], ["schreiben"], ["Haus"], ["Baum"], ["Freund"], ["Wasser"],
+    ["Fuß"], ["vielleicht"], ["Ärztin"], ["spielen"], ["Hund"], ["Blume"], ["Schule"], ["lesen"], ["schreiben"], ["Haus"], ["Baum"], ["Freund"], ["Wasser"],
     ["laufen"], ["klein"], ["bunt"], ["Vogel"], ["Fahrrad"], ["Sonne"], ["Buch"], ["Tasche"], ["Apfel"], ["Sport"]
   ]
 };
@@ -322,7 +343,8 @@ const state = {
   readingArea: "",
   readingCardIndex: null,
   freschArea: "",
-  freschCardIndex: null,
+  freschWordCount: 0,
+  freschGeneratedWords: [],
   orthographyCardIndex: null,
   dailyWordIndex: null
 };
@@ -856,26 +878,97 @@ function renderFreschView() {
     return;
   }
 
-  const cards = getFreschCards(state.freschArea);
   freschAreaGrid.hidden = true;
   freschCardView.hidden = false;
+  renderFreschGeneratorView();
+}
 
-  if (state.freschCardIndex === null) {
-    renderLearningOverview(freschCardView, {
-      title: state.freschArea,
-      symbolName: state.freschArea,
-      intro: "Wähle eine Wortkarte.",
-      backAction: "back",
-      homeAction: "home",
-      cardAttribute: "data-fresch-card",
-      actionAttribute: "data-fresch-action",
-      cards
-    });
+function renderFreschGeneratorView() {
+  const strategy = getFreschStrategy(state.freschArea);
+  if (!strategy) {
+    freschCardView.innerHTML = "";
     return;
   }
 
-  state.freschCardIndex = Math.min(state.freschCardIndex, cards.length - 1);
-  renderLearningCard(freschCardView, cards[state.freschCardIndex], cards.length, "data-fresch-action");
+  const generated = state.freschGeneratedWords.length
+    ? renderFreschGeneratedWords(strategy)
+    : `<p class="empty-state">Wähle zuerst aus, ob du mit einem, zwei oder drei Wörtern arbeiten möchtest.</p>`;
+
+  freschCardView.innerHTML = `
+    <section class="reading-overview-card fresch-generator-card">
+      <div class="reading-overview-heading">
+        ${renderFreschSymbol(strategy.name, "fresch-symbol-large")}
+        <h3>${strategy.name}</h3>
+        <p>${strategy.explanation}</p>
+      </div>
+      <section class="writing-card-section">
+        <h4>Beispiele</h4>
+        ${renderCardList(strategy.examples)}
+      </section>
+      <div class="fresch-count-grid" aria-label="Anzahl der Wörter">
+        <button class="fresch-count-tile" type="button" data-fresch-count="1">
+          <span>⭐</span>
+          <strong>Ein Wort</strong>
+        </button>
+        <button class="fresch-count-tile" type="button" data-fresch-count="2">
+          <span>⭐⭐</span>
+          <strong>Zwei Wörter</strong>
+        </button>
+        <button class="fresch-count-tile" type="button" data-fresch-count="3">
+          <span>⭐⭐⭐</span>
+          <strong>Drei Wörter</strong>
+        </button>
+      </div>
+      <section class="writing-card-section">
+        <h4>Aufgabe</h4>
+        <p>${strategy.task}</p>
+      </section>
+      ${generated}
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button is-light" type="button" data-fresch-action="back">⬅ Zurück zu FRESCH</button>
+        <button class="big-action-button writing-action-button" type="button" data-fresch-action="new" ${state.freschWordCount ? "" : "disabled"}>Neue Wörter</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-fresch-action="home">🏠 Home</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-fresch-action="top">⬆ Nach oben</button>
+      </div>
+    </section>
+  `;
+}
+
+function renderFreschGeneratedWords(strategy) {
+  return `
+    <section class="fresch-generated-panel">
+      <div class="fresch-generated-heading">
+        <h4>Deine Wörter</h4>
+        <p>${state.freschWordCount} ${state.freschWordCount === 1 ? "Wort" : "Wörter"}</p>
+      </div>
+      <div class="fresch-generated-grid">
+        ${state.freschGeneratedWords.map((word) => renderGeneratedWordCard(word, strategy)).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderGeneratedWordCard(word, strategy) {
+  const image = word.bild
+    ? `<img class="fresch-word-image" src="${word.bild}" alt="">`
+    : `<span class="fresch-word-emoji" aria-hidden="true">${word.emoji}</span>`;
+  const article = word.artikel ? `<span>Artikel: <strong>${word.artikel}</strong></span>` : "";
+  const relation = word.relation ? `<span>${strategy.name}: <strong>${word.relation}</strong></span>` : "";
+
+  return `
+    <article class="fresch-generated-word">
+      <div class="fresch-generated-picture">${image}</div>
+      <h4>${word.wort}</h4>
+      <div class="fresch-word-facts">
+        ${article}
+        <span>Silben: <strong>${word.silben}</strong></span>
+        <span>Wortart: <strong>${word.wortart}</strong></span>
+        <span>Strategie: <strong>${strategy.name}</strong></span>
+        ${relation}
+        <span>Besonderheit: <strong>${word.besonderheit}</strong></span>
+      </div>
+    </article>
+  `;
 }
 
 function renderOrthographyView() {
@@ -948,11 +1041,6 @@ function renderLearningOverview(container, config) {
 }
 
 function renderLearningCard(container, card, totalCards, actionAttribute) {
-  if (card.kind === "fresch-word") {
-    renderFreschWordCard(container, card, totalCards, actionAttribute);
-    return;
-  }
-
   const examples = card.beispiele?.length
     ? renderCardSection("🔤", "Beispiele", renderCardList(card.beispiele))
     : "";
@@ -981,64 +1069,6 @@ function renderLearningCard(container, card, totalCards, actionAttribute) {
       ${renderCardSection("✏️", card.uebungTitel || "Kleine Übung", `<p>${card.uebung}</p>`)}
       ${markerSection}
       ${extraSection}
-      ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
-      <div class="writing-card-actions">
-        <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="overview">⬅ Zur Übersicht</button>
-        <button class="big-action-button writing-action-button" type="button" ${actionAttribute}="next">➡ Nächste Aufgabe</button>
-        <button class="big-action-button writing-action-button" type="button" ${actionAttribute}="random">🎲 Zufallsaufgabe</button>
-        <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="home">🏠 Home</button>
-        <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="top">⬆ Nach oben</button>
-      </div>
-    </article>
-  `;
-}
-
-function renderFreschWordCard(container, card, totalCards, actionAttribute) {
-  const symbol = renderFreschSymbol(card.symbolName, "fresch-symbol-large");
-  const image = card.bild
-    ? `<img class="fresch-word-image" src="${card.bild}" alt="">`
-    : `<span class="fresch-word-emoji" aria-hidden="true">${card.emoji}</span>`;
-  const articleSection = card.artikel
-    ? `<section class="fresch-ritual-field"><span>Artikel</span><strong>${card.artikel}</strong></section>`
-    : "";
-  const relationTitle = card.strategie === "Verlängern"
-    ? "Verlängern"
-    : card.strategie === "Ableiten"
-      ? "Ableiten"
-      : card.strategie === "Wortbausteine"
-        ? "Wortbausteine"
-        : "";
-  const relationSection = card.relation
-    ? `<section class="fresch-ritual-field"><span>${relationTitle}</span><strong>${card.relation}</strong></section>`
-    : "";
-
-  container.innerHTML = `
-    <article class="writing-task-card fresch-ritual-card">
-      <div class="writing-card-topline">
-        <span class="card-number">Wortkarte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
-        <span class="card-area">${card.bereich}</span>
-      </div>
-      <div class="fresch-ritual-hero">
-        ${symbol}
-        <div>
-          <p class="fresch-ritual-label">Wort des Tages</p>
-          <h3>${card.wort}</h3>
-        </div>
-      </div>
-      <div class="fresch-ritual-picture">${image}</div>
-      <div class="fresch-ritual-grid">
-        ${articleSection}
-        <section class="fresch-ritual-field"><span>Silben</span><strong>${card.silben}</strong></section>
-        <section class="fresch-ritual-field"><span>Strategie</span><strong>${card.strategie}</strong></section>
-        <section class="fresch-ritual-field is-wide"><span>Ziel</span><strong>${card.ziel}</strong></section>
-        ${relationSection}
-        <section class="fresch-ritual-field is-wide"><span>Markierung</span><strong>${card.markierung}</strong></section>
-      </div>
-      ${renderCardSection("✏️", "Aufgabe", `<p>${card.aufgabe}</p>`)}
-      <section class="fresch-writing-line" aria-label="Schreibzeile">
-        <span>Schreibzeile</span>
-        <div></div>
-      </section>
       ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
       <div class="writing-card-actions">
         <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="overview">⬅ Zur Übersicht</button>
@@ -1214,105 +1244,64 @@ function getReadingAreaEmoji(areaName) {
   return READING_AREAS.find((area) => area.name === areaName)?.emoji || "📖";
 }
 
-function getFreschCards(areaName) {
-  const words = FRESCH_WORD_SETS[areaName] || [];
-  if (!words.length) {
-    return [];
-  }
-
-  return words.map((entry, index) => buildFreschWordCard(areaName, entry, index));
-}
-
-function buildFreschWordCard(areaName, entry, index) {
-  const [word, detail, mark] = entry;
-  const wordData = getWordData(word);
-  const article = wordData?.artikel || "";
-  const syllables = detail && areaName === "Schwingen" ? detail : wordData?.silben || detail || word;
-  const relation = areaName === "Wortbausteine"
-    ? mark
-    : getFreschRelation(areaName, word, detail);
-  const marking = getFreschMarking(areaName, word, mark, relation);
-
-  return {
-    kind: "fresch-word",
-    bereich: areaName,
-    nummer: index + 1,
-    titel: word,
-    wort: word,
-    artikel: article,
-    silben: syllables,
-    symbolName: areaName,
-    strategie: areaName,
-    ziel: getFreschGoal(areaName),
-    relation,
-    markierung: marking,
-    aufgabe: getFreschTask(areaName),
-    toniTipp: getFreschTip(areaName),
-    bild: wordData?.bild || "",
-    emoji: wordData?.emoji || "•"
-  };
-}
-
 function getWordData(word) {
   return DICTIONARY_WORDS.find((entry) => normalizeWord(entry.wort) === normalizeWord(word))
     || NRW_WORDS.find((entry) => normalizeWord(entry.wort) === normalizeWord(word))
     || null;
 }
 
-function getFreschGoal(areaName) {
-  const map = {
-    "Schwingen": "Wörter in Silben zerlegen.",
-    "Verlängern": "Endungen hörbar machen.",
-    "Ableiten": "Verwandte Wörter nutzen.",
-    "Merken": "Merkwörter erkennen.",
-    "Wortbausteine": "Zusammengesetzte Wörter erkennen.",
-    "Groß- und Kleinschreibung": "Nomen erkennen.",
-    "Nachschlagen": "Mit dem Wörterbuch arbeiten."
-  };
-  return map[areaName] || "";
+function getFreschStrategy(areaName) {
+  return FRESCH_AREAS.find((area) => area.name === areaName) || null;
 }
 
-function getFreschRelation(areaName, word, detail) {
-  if (areaName === "Verlängern") return detail || `${word} →`;
-  if (areaName === "Ableiten") return detail || `${word} →`;
+function generateFreschWords(areaName, count) {
+  const pool = FRESCH_GENERATOR_WORDS[areaName] || [];
+  return shuffleItems(pool)
+    .slice(0, count)
+    .map((entry) => buildGeneratedFreschWord(areaName, entry));
+}
+
+function buildGeneratedFreschWord(areaName, entry) {
+  const [word, detail, mark] = entry;
+  const wordData = getWordData(word);
+  const syllables = areaName === "Schwingen" || areaName === "Merken" || areaName === "Wortbausteine"
+    ? detail || wordData?.silben || word
+    : wordData?.silben || detail || word;
+
+  return {
+    wort: word,
+    artikel: wordData?.artikel || "",
+    silben: syllables,
+    wortart: wordData?.wortart || guessWordType(word),
+    relation: getGeneratedRelation(areaName, detail, mark),
+    besonderheit: getGeneratedFeature(areaName, wordData, mark, detail),
+    bild: wordData?.bild || "",
+    emoji: wordData?.emoji || "•"
+  };
+}
+
+function getGeneratedRelation(areaName, detail, mark) {
+  if (areaName === "Verlängern" || areaName === "Ableiten") return detail || "";
+  if (areaName === "Wortbausteine") return mark || "";
   return "";
 }
 
-function getFreschMarking(areaName, word, mark, relation) {
-  if (areaName === "Schwingen") return "Markiere die Silbenkönige.";
-  if (areaName === "Verlängern") return `Markiere den hörbaren Buchstaben${mark ? `: ${mark}` : "."}`;
-  if (areaName === "Ableiten") return `Markiere die veränderte Stelle${mark ? `: ${mark}` : "."}`;
-  if (areaName === "Merken") return `Markiere die schwierige Stelle${mark ? `: ${mark}` : "."}`;
-  if (areaName === "Wortbausteine") return `Trenne das Wort: ${relation}.`;
-  if (areaName === "Groß- und Kleinschreibung") return "Markiere den ersten Buchstaben.";
-  if (areaName === "Nachschlagen") return "Lies die Silben im Wörterbuch.";
-  return "";
+function getGeneratedFeature(areaName, wordData, mark, detail) {
+  if (mark && areaName !== "Wortbausteine") return mark;
+  if (areaName === "Wortbausteine" && mark) return mark;
+  if (wordData?.besonderheit?.length) return wordData.besonderheit.join(", ");
+  if (areaName === "Schwingen") return "Silben";
+  if (areaName === "Nachschlagen") return "Wörterbuch";
+  if (areaName === "Groß- und Kleinschreibung") return "Anfangsbuchstabe";
+  return detail || "genau ansehen";
 }
 
-function getFreschTask(areaName) {
-  const map = {
-    "Schwingen": "Schwinge das Wort. Male Silbenbögen.",
-    "Verlängern": "Sprich beide Wörter. Markiere den hörbaren Buchstaben.",
-    "Ableiten": "Sprich beide Wörter. Markiere die veränderte Stelle.",
-    "Merken": "Markiere die schwierige Stelle. Schreibe das Wort.",
-    "Wortbausteine": "Trenne das Wort.",
-    "Groß- und Kleinschreibung": "Markiere den ersten Buchstaben.",
-    "Nachschlagen": "Suche das Wort im Wörterbuch. Lies die Silben."
-  };
-  return map[areaName] || "";
+function guessWordType(word) {
+  return /^[A-ZÄÖÜ]/.test(word) ? "Nomen" : "Wort";
 }
 
-function getFreschTip(areaName) {
-  const map = {
-    "Schwingen": "Sprich das Wort langsam.",
-    "Verlängern": "Verlängere das Wort, damit du den letzten Buchstaben besser hören kannst.",
-    "Ableiten": "Verwandte Wörter helfen dir beim Schreiben.",
-    "Merken": "Manche Wörter muss man sich merken.",
-    "Wortbausteine": "Viele lange Wörter bestehen aus zwei kleineren Wörtern.",
-    "Groß- und Kleinschreibung": "Nomen werden groß geschrieben.",
-    "Nachschlagen": "Im Wörterbuch findest du Hilfe."
-  };
-  return map[areaName] || "";
+function shuffleItems(items) {
+  return [...items].sort(() => Math.random() - 0.5);
 }
 
 function renderFreschSymbol(name, extraClass = "") {
@@ -1589,15 +1578,17 @@ function handleFreschClick(event) {
   const areaButton = event.target.closest("[data-fresch-area]");
   if (areaButton) {
     state.freschArea = areaButton.dataset.freschArea;
-    state.freschCardIndex = null;
+    state.freschWordCount = 0;
+    state.freschGeneratedWords = [];
     render();
     scrollToTop();
     return;
   }
 
-  const cardButton = event.target.closest("[data-fresch-card]");
-  if (cardButton) {
-    state.freschCardIndex = Number(cardButton.dataset.freschCard);
+  const countButton = event.target.closest("[data-fresch-count]");
+  if (countButton) {
+    state.freschWordCount = Number(countButton.dataset.freschCount);
+    state.freschGeneratedWords = generateFreschWords(state.freschArea, state.freschWordCount);
     render();
     scrollToTop();
     return;
@@ -1605,7 +1596,34 @@ function handleFreschClick(event) {
 
   const actionButton = event.target.closest("[data-fresch-action]");
   if (!actionButton) return;
-  handleLearningAction(actionButton.dataset.freschAction, "fresch");
+  handleFreschAction(actionButton.dataset.freschAction);
+}
+
+function handleFreschAction(action) {
+  if (action === "home") {
+    setRoute("portal");
+    return;
+  }
+
+  if (action === "back") {
+    state.freschArea = "";
+    state.freschWordCount = 0;
+    state.freschGeneratedWords = [];
+    render();
+    scrollToTop();
+    return;
+  }
+
+  if (action === "top") {
+    scrollToTop();
+    return;
+  }
+
+  if (action === "new" && state.freschWordCount) {
+    state.freschGeneratedWords = generateFreschWords(state.freschArea, state.freschWordCount);
+    render();
+    scrollToTop();
+  }
 }
 
 function handleOrthographyClick(event) {
@@ -1638,12 +1656,6 @@ function handleDailyWordClick(event) {
 
 function handleLearningAction(action, kind) {
   const config = {
-    fresch: {
-      get cards() { return getFreschCards(state.freschArea); },
-      get index() { return state.freschCardIndex; },
-      set index(value) { state.freschCardIndex = value; },
-      resetArea() { state.freschArea = ""; }
-    },
     orthography: {
       get cards() { return getOrthographyCards(); },
       get index() { return state.orthographyCardIndex; },
@@ -1819,7 +1831,8 @@ function setRoute(route) {
     state.readingArea = "";
     state.readingCardIndex = null;
     state.freschArea = "";
-    state.freschCardIndex = null;
+    state.freschWordCount = 0;
+    state.freschGeneratedWords = [];
     state.orthographyCardIndex = null;
     state.dailyWordIndex = null;
   }
@@ -1836,7 +1849,8 @@ function setRoute(route) {
 
   if (route === "fresch" && state.route !== "fresch") {
     state.freschArea = "";
-    state.freschCardIndex = null;
+    state.freschWordCount = 0;
+    state.freschGeneratedWords = [];
   }
 
   if (route === "orthography" && state.route !== "orthography") {
