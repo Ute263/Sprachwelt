@@ -7,7 +7,7 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 ## Bereiche
 
 - `Wörterbuch`: Themenbände mit Suche, Vorlesen und Favoriten.
-- `Schreibwerkstatt`: Digitale Aufgabenkarten mit Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
+- `Schreibwerkstatt`: Digitale Aufgabenkarten mit vorgeschalteten Übersichten, Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
 - `Lesewelt`: Kurze Lesetexte und Lesekarten mit Aufgaben zum genauen Lesen, Textverständnis, Vorlesen und Lies-und-male-Aufgaben.
 
@@ -43,7 +43,18 @@ Nach kurzer Zeit zeigt GitHub den Link zur App an.
 
 ## Schreibwerkstatt
 
-Tonis Schreibwerkstatt enthält digitale Aufgabenkarten mit Denkfragen, Satzanfängen, Worthelfern und Schreibtipps. Die Kinder schreiben weiterhin handschriftlich ins Heft, auf Arbeitsblätter oder in Mini-Bücher.
+Tonis Schreibwerkstatt enthält digitale Aufgabenkarten mit vorgeschalteten Übersichtsseiten. Die Kinder wählen zuerst einen Bereich, dann eine nummerierte Aufgabe und schreiben weiterhin handschriftlich ins Heft, auf Arbeitsblätter oder in Mini-Bücher.
+
+Die Schreibwerkstatt hat sechs Bereiche:
+
+- `Sätze schreiben`
+- `Geschichten schreiben`
+- `Zufallsgeschichten`
+- `Geschichtenbilder`
+- `Starke Schreiber`
+- `Schreibtipps`
+
+Der Bereich `Geschichtenbilder` ist vorbereitet. Spätere Wimmelbilder werden als PNG-Dateien im Ordner `images/geschichtenbilder/` abgelegt. Solange noch kein Bild vorhanden ist, zeigt die App einen Platzhalter.
 
 ## Lesewelt
 
