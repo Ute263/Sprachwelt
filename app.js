@@ -223,55 +223,71 @@ const FRESCH_AREAS = [
     name: "Schwingen",
     symbol: FRESCH_SYMBOLS["Schwingen"],
     titles: ["Silben schwingen", "Zwei Silben", "Drei Silben", "Silbenbögen", "Silbenkönig", "Robotersprache", "Wörter klatschen", "Wörter gehen", "Vokale hören", "Silben zählen", "Langsame Wörter", "Schnelle Wörter", "Namen schwingen", "Tierwörter schwingen", "Schulwörter schwingen", "Sommerwörter schwingen", "Schwierige Wörter", "Partner-Schwingen", "Kontroll-Schwingen", "Silbenprofi"],
-    explanation: "Sprich das Wort langsam in Silben. Jede Silbe bekommt einen Schwung.",
-    examples: ["To-ni", "Blu-me", "Schu-le"],
-    exercise: "Schwinge fünf Wörter aus deinem Heft und zeichne Silbenbögen darunter.",
-    tip: "Wenn du ein Wort schwingst, hörst du oft jeden Teil besser."
+    explanation: "Wörter in Silben zerlegen.",
+    examples: ["Blume", "Tomate", "Schule"],
+    exercise: "Schwinge die Wörter und male Silbenbögen.",
+    extra: "Finde drei weitere Wörter mit zwei oder drei Silben.",
+    tip: "Sprich langsam. Jede Silbe bekommt einen Schwung."
   },
   {
     name: "Verlängern",
     symbol: FRESCH_SYMBOLS["Verlängern"],
     titles: ["Wort verlängern", "Hund oder Hunt?", "Berg oder Berk?", "Tag oder Tak?", "Rad oder Rat?", "Kind oder Kint?", "Einzahl und Mehrzahl", "Ende hörbar machen", "Nomen verlängern", "Adjektive verlängern", "Verben verlängern", "Partnerwörter", "Endlaut prüfen", "Schwere Enden", "Genau hinhören", "Wörter sammeln", "Verlängerungsprobe", "Satzprobe", "Kontrollprobe", "Verlängerungsprofi"],
-    explanation: "Verlängere ein Wort, damit du den letzten Laut besser hörst.",
-    examples: ["Hund - Hunde", "Berg - Berge", "gelb - gelbe"],
-    exercise: "Suche drei Wörter mit einem schwierigen Ende. Verlängere sie auf Papier.",
-    tip: "Verlängern hilft besonders am Wortende."
+    explanation: "Endungen hörbar machen.",
+    examples: ["Hund → Hunde", "Kind → Kinder", "Tag → Tage"],
+    exercise: "Verlängere die Wörter.",
+    extra: "Finde drei weitere Wörter zum Verlängern.",
+    tip: "Wenn du das Wort länger machst, hörst du das Ende besser."
   },
   {
     name: "Ableiten",
     symbol: FRESCH_SYMBOLS["Ableiten"],
     titles: ["Wortfamilie finden", "ä kommt von a", "äu kommt von au", "Bäume und Baum", "Häuser und Haus", "Räuber und rauben", "Wörter verwandeln", "Grundwort suchen", "Familienwörter", "Ableitungsprobe", "ä-Wörter", "äu-Wörter", "Wörter vergleichen", "Wortstamm finden", "Passende Wörter", "Sätze prüfen", "Schwere Ableitungen", "Partnerprobe", "Kontrollprobe", "Ableitungsprofi"],
-    explanation: "Suche ein verwandtes Wort. So findest du heraus, ob du ä oder äu schreibst.",
-    examples: ["Bäume - Baum", "Häuser - Haus", "träumen - Traum"],
-    exercise: "Schreibe drei Wörter mit ä oder äu auf und suche das verwandte Wort.",
-    tip: "Wörter aus einer Familie helfen einander."
+    explanation: "Verwandte Wörter nutzen.",
+    examples: ["Baum → Bäume", "Haus → Häuser", "jung → jünger"],
+    exercise: "Leite die Wörter ab.",
+    extra: "Finde drei weitere Wortpaare.",
+    tip: "Verwandte Wörter zeigen dir die richtige Schreibweise."
   },
   {
     name: "Merken",
     symbol: FRESCH_SYMBOLS["Merken"],
     titles: ["Merkwort ansehen", "Wortbild merken", "Schwierige Stelle", "Wort abdecken", "Wort schreiben", "Wort prüfen", "Merkwörter sammeln", "ie merken", "h merken", "doppelte Buchstaben", "Fremde Wörter", "Lieblings-Merkwort", "Wortkarte bauen", "Partner-Abfrage", "Satz mit Merkwort", "Drei Merkwörter", "Wörter vergleichen", "Schwierige Stelle markieren", "Kontrollblick", "Merkwortprofi"],
-    explanation: "Manche Wörter musst du dir genau merken. Schau auf die schwierige Stelle.",
-    examples: ["Vogel", "Tiger", "nämlich"],
-    exercise: "Wähle drei Merkwörter. Schreibe sie ab und markiere die schwierige Stelle.",
-    tip: "Merkwörter brauchen einen ruhigen Kontrollblick."
+    explanation: "Merkwörter erkennen.",
+    examples: ["Vater", "Fahrrad", "Vogel"],
+    exercise: "Markiere die schwierige Stelle.",
+    extra: "Schreibe die Wörter noch einmal auf.",
+    tip: "Schau dir die schwierige Stelle besonders genau an."
   },
   {
     name: "Wortbausteine",
     symbol: FRESCH_SYMBOLS["Wortbausteine"],
     titles: ["Wortbausteine entdecken", "Vorsilben", "Nachsilben", "Wortstamm", "Endungen", "ge-Wörter", "ver-Wörter", "un-Wörter", "Wörter bauen", "Wörter umbauen", "Familienwörter", "Baustein -er", "Baustein -en", "Baustein -lich", "Baustein -ig", "Lange Wörter", "Kurze Wörter", "Bausteine markieren", "Partnerprobe", "Wortbausteinprofi"],
-    explanation: "Viele Wörter bestehen aus Bausteinen. Suche den Teil, der in verwandten Wörtern gleich bleibt.",
-    examples: ["spielen - Spiel - Spielplatz", "freundlich - Freund", "fahren - Fahrer"],
-    exercise: "Suche drei Wörter aus einer Wortfamilie und markiere den gleichen Baustein.",
-    tip: "Wortbausteine helfen dir bei langen Wörtern."
+    explanation: "Zusammengesetzte Wörter erkennen.",
+    examples: ["Haus + tür", "Spiel + platz", "Hand + schuh"],
+    exercise: "Zerlege die Wörter in ihre Wortbausteine.",
+    extra: "Finde drei weitere zusammengesetzte Wörter.",
+    tip: "Lange Wörter werden leichter, wenn du die Teile findest."
   },
   {
     name: "Groß oder klein?",
     symbol: FRESCH_SYMBOLS["Groß oder klein?"],
     titles: ["Nomen erkennen", "Menschen", "Tiere", "Pflanzen", "Dinge", "Artikelprobe", "Verben erkennen", "Adjektive erkennen", "Satzanfang", "Namen", "Wörter sortieren", "Nomen gelb", "Verben grün", "Adjektive braun", "Große Anfangsbuchstaben", "Kleine Anfangsbuchstaben", "Wörter im Satz", "Partnerkontrolle", "Sortierprobe", "Groß-klein-Profi"],
-    explanation: "Nomen schreibst du groß. Verben und Adjektive schreibst du meistens klein.",
-    examples: ["der Hund", "laufen", "klein"],
-    exercise: "Sortiere fünf Wörter in Nomen, Verben und Adjektive. Markiere den ersten Buchstaben.",
-    tip: "Frage: Kann ich der, die oder das davor setzen?"
+    explanation: "Nomen erkennen und groß schreiben.",
+    examples: ["Hund", "Blume", "Schule"],
+    exercise: "Markiere den ersten Buchstaben.",
+    extra: "Finde drei weitere Nomen.",
+    tip: "Nomen sind Wörter für Menschen, Tiere, Pflanzen und Dinge."
+  },
+  {
+    name: "Nachschlagen",
+    symbol: FRESCH_SYMBOLS["Nachschlagen"],
+    titles: ["Wörterbuch nutzen", "Wort suchen", "Anfangsbuchstabe", "Alphabet", "Seite finden", "Wort lesen", "Silben lesen", "Wortart ansehen", "Beispiel prüfen", "Wort abschreiben", "Lieblingswort suchen", "Tierwort suchen", "Schulwort suchen", "Verb suchen", "Adjektiv suchen", "Nomen suchen", "Partnerwort suchen", "Schnell nachschlagen", "Kontrollblick", "Nachschlageprofi"],
+    explanation: "Mit dem Wörterbuch arbeiten.",
+    examples: ["Hund", "Blume", "spielen"],
+    exercise: "Suche die Wörter im Wörterbuch.",
+    extra: "Suche drei weitere Wörter.",
+    tip: "Der Anfangsbuchstabe hilft dir beim Suchen."
   }
 ];
 const ORTHOGRAPHY_TITLES = [
@@ -1149,7 +1165,9 @@ function getFreschCards(areaName) {
     symbolName: area.name,
     erklaerung: area.explanation,
     beispiele: area.examples,
+    uebungTitel: "Hauptaufgabe",
     uebung: area.exercise,
+    zusatzaufgabe: area.extra,
     toniTipp: area.tip
   }));
 }

@@ -71,7 +71,7 @@ Die Kinder lesen, untersuchen Wörter und bearbeiten Aufgaben weiterhin auf Papi
 
 Die Datei `grundwortschatz-nrw.js` enthält vorbereitete Wörter mit Silben, Wortart, FRESCH-Strategien und Themen. Wörter aus dieser Datei erscheinen im Wörterbuch mit dem Label `Grundwortschatz NRW`. Der Bereich `Wort des Tages` nutzt ausschließlich Wörter aus dieser Datei.
 
-Der Bereich `FRESCH` ist für sechs Strategien vorbereitet:
+Der Bereich `FRESCH` ist für sieben Strategien vorbereitet:
 
 - `Schwingen`
 - `Verlängern`
@@ -79,6 +79,9 @@ Der Bereich `FRESCH` ist für sechs Strategien vorbereitet:
 - `Merken`
 - `Wortbausteine`
 - `Groß oder klein?`
+- `Nachschlagen`
+
+Die FRESCH-Karten sind bewusst knapp gehalten. Jede Karte enthält nur eine Hauptaufgabe und eine Zusatzaufgabe.
 
 Die verbindlichen FRESCH-Symbole liegen im Ordner `assets/fresch/`:
 
