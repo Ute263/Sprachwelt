@@ -221,75 +221,73 @@ const FRESCH_SYMBOLS = {
 const FRESCH_AREAS = [
   {
     name: "Schwingen",
-    symbol: FRESCH_SYMBOLS["Schwingen"],
-    titles: ["Silben schwingen", "Zwei Silben", "Drei Silben", "Silbenbögen", "Silbenkönig", "Robotersprache", "Wörter klatschen", "Wörter gehen", "Vokale hören", "Silben zählen", "Langsame Wörter", "Schnelle Wörter", "Namen schwingen", "Tierwörter schwingen", "Schulwörter schwingen", "Sommerwörter schwingen", "Schwierige Wörter", "Partner-Schwingen", "Kontroll-Schwingen", "Silbenprofi"],
-    explanation: "Wörter in Silben zerlegen.",
-    examples: ["Blume", "Tomate", "Schule"],
-    exercise: "Schwinge die Wörter und male Silbenbögen.",
-    extra: "Finde drei weitere Wörter mit zwei oder drei Silben.",
-    tip: "Sprich langsam. Jede Silbe bekommt einen Schwung."
+    symbol: FRESCH_SYMBOLS["Schwingen"]
   },
   {
     name: "Verlängern",
-    symbol: FRESCH_SYMBOLS["Verlängern"],
-    titles: ["Wort verlängern", "Hund oder Hunt?", "Berg oder Berk?", "Tag oder Tak?", "Rad oder Rat?", "Kind oder Kint?", "Einzahl und Mehrzahl", "Ende hörbar machen", "Nomen verlängern", "Adjektive verlängern", "Verben verlängern", "Partnerwörter", "Endlaut prüfen", "Schwere Enden", "Genau hinhören", "Wörter sammeln", "Verlängerungsprobe", "Satzprobe", "Kontrollprobe", "Verlängerungsprofi"],
-    explanation: "Endungen hörbar machen.",
-    examples: ["Hund → Hunde", "Kind → Kinder", "Tag → Tage"],
-    exercise: "Verlängere die Wörter.",
-    extra: "Finde drei weitere Wörter zum Verlängern.",
-    tip: "Wenn du das Wort länger machst, hörst du das Ende besser."
+    symbol: FRESCH_SYMBOLS["Verlängern"]
   },
   {
     name: "Ableiten",
-    symbol: FRESCH_SYMBOLS["Ableiten"],
-    titles: ["Wortfamilie finden", "ä kommt von a", "äu kommt von au", "Bäume und Baum", "Häuser und Haus", "Räuber und rauben", "Wörter verwandeln", "Grundwort suchen", "Familienwörter", "Ableitungsprobe", "ä-Wörter", "äu-Wörter", "Wörter vergleichen", "Wortstamm finden", "Passende Wörter", "Sätze prüfen", "Schwere Ableitungen", "Partnerprobe", "Kontrollprobe", "Ableitungsprofi"],
-    explanation: "Verwandte Wörter nutzen.",
-    examples: ["Baum → Bäume", "Haus → Häuser", "jung → jünger"],
-    exercise: "Leite die Wörter ab.",
-    extra: "Finde drei weitere Wortpaare.",
-    tip: "Verwandte Wörter zeigen dir die richtige Schreibweise."
+    symbol: FRESCH_SYMBOLS["Ableiten"]
   },
   {
     name: "Merken",
-    symbol: FRESCH_SYMBOLS["Merken"],
-    titles: ["Merkwort ansehen", "Wortbild merken", "Schwierige Stelle", "Wort abdecken", "Wort schreiben", "Wort prüfen", "Merkwörter sammeln", "ie merken", "h merken", "doppelte Buchstaben", "Fremde Wörter", "Lieblings-Merkwort", "Wortkarte bauen", "Partner-Abfrage", "Satz mit Merkwort", "Drei Merkwörter", "Wörter vergleichen", "Schwierige Stelle markieren", "Kontrollblick", "Merkwortprofi"],
-    explanation: "Merkwörter erkennen.",
-    examples: ["Vater", "Fahrrad", "Vogel"],
-    exercise: "Markiere die schwierige Stelle.",
-    extra: "Schreibe die Wörter noch einmal auf.",
-    tip: "Schau dir die schwierige Stelle besonders genau an."
+    symbol: FRESCH_SYMBOLS["Merken"]
   },
   {
     name: "Wortbausteine",
-    symbol: FRESCH_SYMBOLS["Wortbausteine"],
-    titles: ["Wortbausteine entdecken", "Vorsilben", "Nachsilben", "Wortstamm", "Endungen", "ge-Wörter", "ver-Wörter", "un-Wörter", "Wörter bauen", "Wörter umbauen", "Familienwörter", "Baustein -er", "Baustein -en", "Baustein -lich", "Baustein -ig", "Lange Wörter", "Kurze Wörter", "Bausteine markieren", "Partnerprobe", "Wortbausteinprofi"],
-    explanation: "Zusammengesetzte Wörter erkennen.",
-    examples: ["Haus + tür", "Spiel + platz", "Hand + schuh"],
-    exercise: "Zerlege die Wörter in ihre Wortbausteine.",
-    extra: "Finde drei weitere zusammengesetzte Wörter.",
-    tip: "Lange Wörter werden leichter, wenn du die Teile findest."
+    symbol: FRESCH_SYMBOLS["Wortbausteine"]
   },
   {
-    name: "Groß oder klein?",
-    symbol: FRESCH_SYMBOLS["Groß oder klein?"],
-    titles: ["Nomen erkennen", "Menschen", "Tiere", "Pflanzen", "Dinge", "Artikelprobe", "Verben erkennen", "Adjektive erkennen", "Satzanfang", "Namen", "Wörter sortieren", "Nomen gelb", "Verben grün", "Adjektive braun", "Große Anfangsbuchstaben", "Kleine Anfangsbuchstaben", "Wörter im Satz", "Partnerkontrolle", "Sortierprobe", "Groß-klein-Profi"],
-    explanation: "Nomen erkennen und groß schreiben.",
-    examples: ["Hund", "Blume", "Schule"],
-    exercise: "Markiere den ersten Buchstaben.",
-    extra: "Finde drei weitere Nomen.",
-    tip: "Nomen sind Wörter für Menschen, Tiere, Pflanzen und Dinge."
+    name: "Groß- und Kleinschreibung",
+    symbol: FRESCH_SYMBOLS["Groß- und Kleinschreibung"]
   },
   {
     name: "Nachschlagen",
-    symbol: FRESCH_SYMBOLS["Nachschlagen"],
-    titles: ["Wörterbuch nutzen", "Wort suchen", "Anfangsbuchstabe", "Alphabet", "Seite finden", "Wort lesen", "Silben lesen", "Wortart ansehen", "Beispiel prüfen", "Wort abschreiben", "Lieblingswort suchen", "Tierwort suchen", "Schulwort suchen", "Verb suchen", "Adjektiv suchen", "Nomen suchen", "Partnerwort suchen", "Schnell nachschlagen", "Kontrollblick", "Nachschlageprofi"],
-    explanation: "Mit dem Wörterbuch arbeiten.",
-    examples: ["Hund", "Blume", "spielen"],
-    exercise: "Suche die Wörter im Wörterbuch.",
-    extra: "Suche drei weitere Wörter.",
-    tip: "Der Anfangsbuchstabe hilft dir beim Suchen."
+    symbol: FRESCH_SYMBOLS["Nachschlagen"]
   }
 ];
+const FRESCH_WORD_SETS = {
+  "Schwingen": [
+    ["Tomate", "To-ma-te"], ["Schule", "Schu-le"], ["Blume", "Blu-me"], ["Banane", "Ba-na-ne"], ["Giraffe", "Gi-raf-fe"],
+    ["Katze", "Kat-ze"], ["Tasche", "Ta-sche"], ["Sonne", "Son-ne"], ["Wasser", "Was-ser"], ["Apfel", "Ap-fel"],
+    ["Mutter", "Mut-ter"], ["Freude", "Freu-de"], ["Regen", "Re-gen"], ["Auto", "Au-to"], ["Kuchen", "Ku-chen"],
+    ["Musik", "Mu-sik"], ["laufen", "lau-fen"], ["spielen", "spie-len"], ["lesen", "le-sen"], ["malen", "ma-len"]
+  ],
+  "Verlängern": [
+    ["Hund", "Hund → Hunde", "d"], ["Kind", "Kind → Kinder", "d"], ["Tag", "Tag → Tage", "g"], ["Hand", "Hand → Hände", "d"], ["Wald", "Wald → Wälder", "d"],
+    ["Pferd", "Pferd → Pferde", "d"], ["Heft", "Heft → Hefte", "t"], ["Brot", "Brot → Brote", "t"], ["Rad", "Rad → Räder", "d"], ["Bild", "Bild → Bilder", "d"],
+    ["Freund", "Freund → Freunde", "d"], ["Fest", "Fest → Feste", "t"], ["Stift", "Stift → Stifte", "t"], ["bunt", "bunt → bunte", "t"], ["kalt", "kalt → kalte", "t"],
+    ["Berg", "Berg → Berge", "g"], ["Korb", "Korb → Körbe", "b"], ["Mund", "Mund → Münder", "d"], ["Zelt", "Zelt → Zelte", "t"], ["gelb", "gelb → gelbe", "b"]
+  ],
+  "Ableiten": [
+    ["Baum", "Baum → Bäume", "au → äu"], ["Haus", "Haus → Häuser", "au → äu"], ["jung", "jung → jünger", "u → ü"], ["warm", "warm → wärmer", "a → ä"], ["Apfel", "Apfel → Äpfel", "A → Ä"],
+    ["Vogel", "Vogel → Vögel", "o → ö"], ["Rad", "Rad → Räder", "a → ä"], ["Hand", "Hand → Hände", "a → ä"], ["Maus", "Maus → Mäuse", "au → äu"], ["Kuh", "Kuh → Kühe", "u → ü"],
+    ["Buch", "Buch → Bücher", "u → ü"], ["Mutter", "Mutter → Mütter", "u → ü"], ["Vater", "Vater → Väter", "a → ä"], ["kalt", "kalt → kälter", "a → ä"], ["groß", "groß → größer", "o → ö"],
+    ["lang", "lang → länger", "a → ä"], ["stark", "stark → stärker", "a → ä"], ["Traum", "Traum → träumen", "au → äu"], ["fahren", "fahren → fährt", "a → ä"], ["waschen", "waschen → wäscht", "a → ä"]
+  ],
+  "Merken": [
+    ["Vater", "Va-ter", "V"], ["Vogel", "Vo-gel", "V"], ["Fahrrad", "Fahr-rad", "h"], ["fertig", "fer-tig", "f"], ["vielleicht", "viel-leicht", "v"],
+    ["nämlich", "näm-lich", "ä"], ["Tiger", "Ti-ger", "i"], ["Computer", "Com-pu-ter", "C"], ["Milch", "Milch", "ch"], ["Tür", "Tür", "ü"],
+    ["Bett", "Bett", "tt"], ["Ball", "Ball", "ll"], ["Sonne", "Son-ne", "nn"], ["kommen", "kom-men", "mm"], ["groß", "groß", "ß"],
+    ["klein", "klein", "ei"], ["Eis", "Eis", "ei"], ["Freund", "Freund", "eu"], ["Sport", "Sport", "sp"], ["Angst", "Angst", "st"]
+  ],
+  "Wortbausteine": [
+    ["Spielplatz", "Spiel-platz", "Spiel + Platz"], ["Haustür", "Haus-tür", "Haus + Tür"], ["Handschuh", "Hand-schuh", "Hand + Schuh"], ["Baumhaus", "Baum-haus", "Baum + Haus"], ["Schultasche", "Schul-ta-sche", "Schule + Tasche"],
+    ["Fußball", "Fuß-ball", "Fuß + Ball"], ["Apfelbaum", "Ap-fel-baum", "Apfel + Baum"], ["Bilderbuch", "Bil-der-buch", "Bilder + Buch"], ["Wasserflasche", "Was-ser-fla-sche", "Wasser + Flasche"], ["Kinderzimmer", "Kin-der-zim-mer", "Kinder + Zimmer"],
+    ["Kuscheldecke", "Ku-schel-de-cke", "Kuscheln + Decke"], ["Lesebuch", "Le-se-buch", "Lesen + Buch"], ["Schulhof", "Schul-hof", "Schule + Hof"], ["Sportplatz", "Sport-platz", "Sport + Platz"], ["Musikraum", "Mu-sik-raum", "Musik + Raum"],
+    ["Fahrrad", "Fahr-rad", "Fahren + Rad"], ["Geburtstag", "Ge-burts-tag", "Geburt + Tag"], ["Regenbogen", "Re-gen-bo-gen", "Regen + Bogen"], ["Eisbecher", "Eis-be-cher", "Eis + Becher"], ["Buntstift", "Bunt-stift", "bunt + Stift"]
+  ],
+  "Groß- und Kleinschreibung": [
+    ["Blume"], ["Hund"], ["Schule"], ["Sonne"], ["Baum"], ["Haus"], ["Kind"], ["Mutter"], ["Vater"], ["Freund"],
+    ["Buch"], ["Tasche"], ["Stift"], ["Apfel"], ["Brot"], ["Wasser"], ["Tisch"], ["Bett"], ["Auto"], ["Musik"]
+  ],
+  "Nachschlagen": [
+    ["spielen"], ["Hund"], ["Blume"], ["Schule"], ["lesen"], ["schreiben"], ["Haus"], ["Baum"], ["Freund"], ["Wasser"],
+    ["laufen"], ["klein"], ["bunt"], ["Vogel"], ["Fahrrad"], ["Sonne"], ["Buch"], ["Tasche"], ["Apfel"], ["Sport"]
+  ]
+};
 const ORTHOGRAPHY_TITLES = [
   "Groß oder klein?",
   "Wörter mit sch",
@@ -866,6 +864,7 @@ function renderFreschView() {
     renderLearningOverview(freschCardView, {
       title: state.freschArea,
       symbolName: state.freschArea,
+      intro: "Wähle eine Wortkarte.",
       backAction: "back",
       homeAction: "home",
       cardAttribute: "data-fresch-card",
@@ -930,7 +929,7 @@ function renderLearningOverview(container, config) {
       <div class="reading-overview-heading">
         ${symbol}
         <h3>${config.title}</h3>
-        <p>Wähle eine Aufgabe.</p>
+        <p>${config.intro || "Wähle eine Aufgabe."}</p>
       </div>
       <div class="task-list">
         ${config.cards.map((card, index) => `
@@ -949,6 +948,11 @@ function renderLearningOverview(container, config) {
 }
 
 function renderLearningCard(container, card, totalCards, actionAttribute) {
+  if (card.kind === "fresch-word") {
+    renderFreschWordCard(container, card, totalCards, actionAttribute);
+    return;
+  }
+
   const examples = card.beispiele?.length
     ? renderCardSection("🔤", "Beispiele", renderCardList(card.beispiele))
     : "";
@@ -977,6 +981,64 @@ function renderLearningCard(container, card, totalCards, actionAttribute) {
       ${renderCardSection("✏️", card.uebungTitel || "Kleine Übung", `<p>${card.uebung}</p>`)}
       ${markerSection}
       ${extraSection}
+      ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="overview">⬅ Zur Übersicht</button>
+        <button class="big-action-button writing-action-button" type="button" ${actionAttribute}="next">➡ Nächste Aufgabe</button>
+        <button class="big-action-button writing-action-button" type="button" ${actionAttribute}="random">🎲 Zufallsaufgabe</button>
+        <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="home">🏠 Home</button>
+        <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="top">⬆ Nach oben</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderFreschWordCard(container, card, totalCards, actionAttribute) {
+  const symbol = renderFreschSymbol(card.symbolName, "fresch-symbol-large");
+  const image = card.bild
+    ? `<img class="fresch-word-image" src="${card.bild}" alt="">`
+    : `<span class="fresch-word-emoji" aria-hidden="true">${card.emoji}</span>`;
+  const articleSection = card.artikel
+    ? `<section class="fresch-ritual-field"><span>Artikel</span><strong>${card.artikel}</strong></section>`
+    : "";
+  const relationTitle = card.strategie === "Verlängern"
+    ? "Verlängern"
+    : card.strategie === "Ableiten"
+      ? "Ableiten"
+      : card.strategie === "Wortbausteine"
+        ? "Wortbausteine"
+        : "";
+  const relationSection = card.relation
+    ? `<section class="fresch-ritual-field"><span>${relationTitle}</span><strong>${card.relation}</strong></section>`
+    : "";
+
+  container.innerHTML = `
+    <article class="writing-task-card fresch-ritual-card">
+      <div class="writing-card-topline">
+        <span class="card-number">Wortkarte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
+        <span class="card-area">${card.bereich}</span>
+      </div>
+      <div class="fresch-ritual-hero">
+        ${symbol}
+        <div>
+          <p class="fresch-ritual-label">Wort des Tages</p>
+          <h3>${card.wort}</h3>
+        </div>
+      </div>
+      <div class="fresch-ritual-picture">${image}</div>
+      <div class="fresch-ritual-grid">
+        ${articleSection}
+        <section class="fresch-ritual-field"><span>Silben</span><strong>${card.silben}</strong></section>
+        <section class="fresch-ritual-field"><span>Strategie</span><strong>${card.strategie}</strong></section>
+        <section class="fresch-ritual-field is-wide"><span>Ziel</span><strong>${card.ziel}</strong></section>
+        ${relationSection}
+        <section class="fresch-ritual-field is-wide"><span>Markierung</span><strong>${card.markierung}</strong></section>
+      </div>
+      ${renderCardSection("✏️", "Aufgabe", `<p>${card.aufgabe}</p>`)}
+      <section class="fresch-writing-line" aria-label="Schreibzeile">
+        <span>Schreibzeile</span>
+        <div></div>
+      </section>
       ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
       <div class="writing-card-actions">
         <button class="big-action-button writing-action-button is-light" type="button" ${actionAttribute}="overview">⬅ Zur Übersicht</button>
@@ -1153,23 +1215,104 @@ function getReadingAreaEmoji(areaName) {
 }
 
 function getFreschCards(areaName) {
-  const area = FRESCH_AREAS.find((entry) => entry.name === areaName);
-  if (!area) {
+  const words = FRESCH_WORD_SETS[areaName] || [];
+  if (!words.length) {
     return [];
   }
 
-  return area.titles.map((title, index) => ({
-    bereich: area.name,
+  return words.map((entry, index) => buildFreschWordCard(areaName, entry, index));
+}
+
+function buildFreschWordCard(areaName, entry, index) {
+  const [word, detail, mark] = entry;
+  const wordData = getWordData(word);
+  const article = wordData?.artikel || "";
+  const syllables = detail && areaName === "Schwingen" ? detail : wordData?.silben || detail || word;
+  const relation = areaName === "Wortbausteine"
+    ? mark
+    : getFreschRelation(areaName, word, detail);
+  const marking = getFreschMarking(areaName, word, mark, relation);
+
+  return {
+    kind: "fresch-word",
+    bereich: areaName,
     nummer: index + 1,
-    titel: title,
-    symbolName: area.name,
-    erklaerung: area.explanation,
-    beispiele: area.examples,
-    uebungTitel: "Hauptaufgabe",
-    uebung: area.exercise,
-    zusatzaufgabe: area.extra,
-    toniTipp: area.tip
-  }));
+    titel: word,
+    wort: word,
+    artikel: article,
+    silben: syllables,
+    symbolName: areaName,
+    strategie: areaName,
+    ziel: getFreschGoal(areaName),
+    relation,
+    markierung: marking,
+    aufgabe: getFreschTask(areaName),
+    toniTipp: getFreschTip(areaName),
+    bild: wordData?.bild || "",
+    emoji: wordData?.emoji || "•"
+  };
+}
+
+function getWordData(word) {
+  return DICTIONARY_WORDS.find((entry) => normalizeWord(entry.wort) === normalizeWord(word))
+    || NRW_WORDS.find((entry) => normalizeWord(entry.wort) === normalizeWord(word))
+    || null;
+}
+
+function getFreschGoal(areaName) {
+  const map = {
+    "Schwingen": "Wörter in Silben zerlegen.",
+    "Verlängern": "Endungen hörbar machen.",
+    "Ableiten": "Verwandte Wörter nutzen.",
+    "Merken": "Merkwörter erkennen.",
+    "Wortbausteine": "Zusammengesetzte Wörter erkennen.",
+    "Groß- und Kleinschreibung": "Nomen erkennen.",
+    "Nachschlagen": "Mit dem Wörterbuch arbeiten."
+  };
+  return map[areaName] || "";
+}
+
+function getFreschRelation(areaName, word, detail) {
+  if (areaName === "Verlängern") return detail || `${word} →`;
+  if (areaName === "Ableiten") return detail || `${word} →`;
+  return "";
+}
+
+function getFreschMarking(areaName, word, mark, relation) {
+  if (areaName === "Schwingen") return "Markiere die Silbenkönige.";
+  if (areaName === "Verlängern") return `Markiere den hörbaren Buchstaben${mark ? `: ${mark}` : "."}`;
+  if (areaName === "Ableiten") return `Markiere die veränderte Stelle${mark ? `: ${mark}` : "."}`;
+  if (areaName === "Merken") return `Markiere die schwierige Stelle${mark ? `: ${mark}` : "."}`;
+  if (areaName === "Wortbausteine") return `Trenne das Wort: ${relation}.`;
+  if (areaName === "Groß- und Kleinschreibung") return "Markiere den ersten Buchstaben.";
+  if (areaName === "Nachschlagen") return "Lies die Silben im Wörterbuch.";
+  return "";
+}
+
+function getFreschTask(areaName) {
+  const map = {
+    "Schwingen": "Schwinge das Wort. Male Silbenbögen.",
+    "Verlängern": "Sprich beide Wörter. Markiere den hörbaren Buchstaben.",
+    "Ableiten": "Sprich beide Wörter. Markiere die veränderte Stelle.",
+    "Merken": "Markiere die schwierige Stelle. Schreibe das Wort.",
+    "Wortbausteine": "Trenne das Wort.",
+    "Groß- und Kleinschreibung": "Markiere den ersten Buchstaben.",
+    "Nachschlagen": "Suche das Wort im Wörterbuch. Lies die Silben."
+  };
+  return map[areaName] || "";
+}
+
+function getFreschTip(areaName) {
+  const map = {
+    "Schwingen": "Sprich das Wort langsam.",
+    "Verlängern": "Verlängere das Wort, damit du den letzten Buchstaben besser hören kannst.",
+    "Ableiten": "Verwandte Wörter helfen dir beim Schreiben.",
+    "Merken": "Manche Wörter muss man sich merken.",
+    "Wortbausteine": "Viele lange Wörter bestehen aus zwei kleineren Wörtern.",
+    "Groß- und Kleinschreibung": "Nomen werden groß geschrieben.",
+    "Nachschlagen": "Im Wörterbuch findest du Hilfe."
+  };
+  return map[areaName] || "";
 }
 
 function renderFreschSymbol(name, extraClass = "") {

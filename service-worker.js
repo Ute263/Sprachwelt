@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonis-sprachwelt-v14";
+const CACHE_NAME = "tonis-sprachwelt-v15";
 const ASSETS = [
   "./",
   "index.html",

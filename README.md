@@ -78,10 +78,10 @@ Der Bereich `FRESCH` ist für sieben Strategien vorbereitet:
 - `Ableiten`
 - `Merken`
 - `Wortbausteine`
-- `Groß oder klein?`
+- `Groß- und Kleinschreibung`
 - `Nachschlagen`
 
-Die FRESCH-Karten sind bewusst knapp gehalten. Jede Karte enthält nur eine Hauptaufgabe und eine Zusatzaufgabe.
+Die FRESCH-Karten sind als tägliches Sprachritual aufgebaut. Jede Karte arbeitet mit genau einem Wort und enthält nur eine Hauptaufgabe.
 
 Die verbindlichen FRESCH-Symbole liegen im Ordner `assets/fresch/`:
 
