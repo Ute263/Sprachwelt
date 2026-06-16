@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Nachschlagen">
+  <circle cx="64" cy="64" r="58" fill="none" stroke="#111" stroke-width="6"/>
+  <path d="M42 31h31l13 13v52H42z" fill="none" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M73 31v15h15" fill="none" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M50 52h25M50 66h30M50 80h24" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M35 39h9M35 50h9M35 61h9M35 72h9M35 83h9" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+</svg>

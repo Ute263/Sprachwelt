@@ -350,6 +350,13 @@ h2 {
   margin-bottom: 14px;
 }
 
+.fresch-symbol-small {
+  width: 34px;
+  height: 34px;
+  border-width: 2px;
+  border-radius: 50%;
+}
+
 .fresch-symbol-fallback {
   display: grid;
   place-items: center;
@@ -868,7 +875,7 @@ h2 {
 }
 
 .grundwortschatz-label,
-.word-fresch-tags span {
+.word-fresch-tags > span {
   display: inline-block;
   padding: 8px 12px;
   border-radius: 999px;
@@ -885,7 +892,10 @@ h2 {
   font-size: 1.12rem;
 }
 
-.word-fresch-tags span {
+.word-fresch-tags > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--button-dark);
   background: var(--sky);
 }

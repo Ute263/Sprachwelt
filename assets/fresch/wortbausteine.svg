@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Wortbausteine">
+  <circle cx="64" cy="64" r="58" fill="none" stroke="#111" stroke-width="6"/>
+  <rect x="28" y="72" width="22" height="20" fill="none" stroke="#111" stroke-width="6"/>
+  <rect x="53" y="52" width="22" height="40" fill="none" stroke="#111" stroke-width="6"/>
+  <rect x="78" y="66" width="22" height="26" fill="none" stroke="#111" stroke-width="6"/>
+</svg>

@@ -203,18 +203,20 @@ const STORY_IMAGE_PROMPTS = [
   "Wie endet die Geschichte?"
 ];
 const WORD_EXPLORER_AREAS = [
-  { name: "Wörterbuch", emoji: "📖", route: "dictionary" },
+  { name: "Wörterbuch", emoji: "📖", route: "dictionary", symbolName: "Nachschlagen" },
   { name: "FRESCH", emoji: "🌳", route: "fresch" },
   { name: "Rechtschreibung", emoji: "✏️", route: "orthography" },
   { name: "Wort des Tages", emoji: "⭐", route: "dailyWord" }
 ];
 const FRESCH_SYMBOLS = {
-  "Schwingen": "assets/fresch/schwingen.png",
-  "Verlängern": "assets/fresch/verlaengern.png",
-  "Ableiten": "assets/fresch/ableiten.png",
-  "Merken": "assets/fresch/merken.png",
-  "Wortbausteine": "assets/fresch/wortbausteine.png",
-  "Groß oder klein?": "assets/fresch/gross-oder-klein.png"
+  "Schwingen": "assets/fresch/schwingen.svg",
+  "Verlängern": "assets/fresch/verlaengern.svg",
+  "Ableiten": "assets/fresch/ableiten.svg",
+  "Merken": "assets/fresch/merken.svg",
+  "Wortbausteine": "assets/fresch/wortbausteine.svg",
+  "Groß oder klein?": "assets/fresch/gross-klein.svg",
+  "Groß- und Kleinschreibung": "assets/fresch/gross-klein.svg",
+  "Nachschlagen": "assets/fresch/nachschlagen.svg"
 };
 const FRESCH_AREAS = [
   {
@@ -395,7 +397,7 @@ function scrollToTop() {
 function renderWordExplorer() {
   wordExplorerGrid.innerHTML = WORD_EXPLORER_AREAS.map((area) => `
     <button class="learning-area-tile" type="button" data-route="${area.route}">
-      <span class="portal-emoji" aria-hidden="true">${area.emoji}</span>
+      ${area.symbolName ? renderFreschSymbol(area.symbolName) : `<span class="portal-emoji" aria-hidden="true">${area.emoji}</span>`}
       <span>${area.name}</span>
     </button>
   `).join("");
@@ -596,7 +598,12 @@ function renderWordCards(container, words, emptyText) {
     const visualClass = word.bild ? "word-emoji has-picture" : "word-emoji";
     const grundLabel = word.grundwortschatz ? `<span class="grundwortschatz-label">⭐ Grundwortschatz NRW</span>` : "";
     const freschLabels = word.fresch?.length
-      ? `<div class="word-fresch-tags">${word.fresch.map((strategy) => `<span>${strategy}</span>`).join("")}</div>`
+      ? `<div class="word-fresch-tags">${word.fresch.map((strategy) => `
+          <span>
+            ${renderFreschSymbol(strategy, "fresch-symbol-small")}
+            ${strategy}
+          </span>
+        `).join("")}</div>`
       : "";
     return `
       <article class="word-card">

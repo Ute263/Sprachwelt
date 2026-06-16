@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Groß- und Kleinschreibung">
+  <circle cx="64" cy="64" r="58" fill="none" stroke="#111" stroke-width="6"/>
+  <text x="25" y="76" font-family="Arial, sans-serif" font-size="40" font-weight="500" fill="#111">A?</text>
+  <text x="76" y="77" font-family="Arial, sans-serif" font-size="40" font-weight="500" fill="#111">a</text>
+</svg>

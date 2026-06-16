@@ -80,14 +80,15 @@ Der Bereich `FRESCH` ist für sechs Strategien vorbereitet:
 - `Wortbausteine`
 - `Groß oder klein?`
 
-Die Originalsymbole können als PNG-Dateien im Ordner `assets/fresch/` abgelegt werden:
+Die verbindlichen FRESCH-Symbole liegen im Ordner `assets/fresch/`:
 
-- `schwingen.png`
-- `verlaengern.png`
-- `ableiten.png`
-- `merken.png`
-- `wortbausteine.png`
-- `gross-oder-klein.png`
+- `schwingen.svg`
+- `verlaengern.svg`
+- `ableiten.svg`
+- `merken.svg`
+- `wortbausteine.svg`
+- `gross-klein.svg`
+- `nachschlagen.svg`
 
 ## Lesewelt
 
