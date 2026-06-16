@@ -51,23 +51,35 @@
             <h2 id="portal-title">Wähle einen Bereich aus.</h2>
           </div>
           <div class="portal-grid">
-            <button class="portal-tile" type="button" data-route="dictionary">
-              <span class="portal-emoji" aria-hidden="true">📖</span>
-              <span>Wörterbuch</span>
+            <button class="portal-tile" type="button" data-route="wordExplorer">
+              <span class="portal-emoji" aria-hidden="true">🔍</span>
+              <span>Wortforscher</span>
             </button>
             <button class="portal-tile" type="button" data-route="writing">
               <span class="portal-emoji" aria-hidden="true">✏️</span>
               <span>Schreibwerkstatt</span>
             </button>
-            <button class="portal-tile" type="button" data-route="story">
-              <span class="portal-emoji" aria-hidden="true">🎲</span>
-              <span>Geschichtenwürfel</span>
-            </button>
             <button class="portal-tile" type="button" data-route="reading">
               <span class="portal-emoji" aria-hidden="true">📚</span>
               <span>Lesewelt</span>
             </button>
+            <button class="portal-tile" type="button" data-route="story">
+              <span class="portal-emoji" aria-hidden="true">🎲</span>
+              <span>Geschichtenwürfel</span>
+            </button>
+            <button class="portal-tile" type="button" data-route="journal">
+              <span class="portal-emoji" aria-hidden="true">📋</span>
+              <span>Mein Lerntagebuch</span>
+            </button>
           </div>
+        </section>
+
+        <section id="view-word-explorer" class="view" aria-labelledby="word-explorer-title">
+          <button class="home-button" type="button" data-route="portal">🏠 Home</button>
+          <div class="section-heading">
+            <h2 id="word-explorer-title">🔍 Wortforscher</h2>
+          </div>
+          <div id="word-explorer-grid" class="learning-area-grid" aria-live="polite"></div>
         </section>
 
         <section id="dictionary-tools" class="dictionary-tools" aria-label="Wörterbuch-Werkzeuge" hidden>
@@ -79,6 +91,7 @@
         </section>
 
         <section id="view-dictionary" class="view" aria-labelledby="dictionary-title">
+          <button class="home-button" type="button" data-route="wordExplorer">⬅ Wortforscher</button>
           <div class="section-heading">
             <h2 id="dictionary-title">Wähle ein Thema aus.</h2>
           </div>
@@ -93,17 +106,43 @@
 
         <section id="view-band" class="view" aria-labelledby="band-title">
           <div class="section-heading">
-            <h2 id="band-title">Band Tiere</h2>
+            <h2 id="band-title">Tiere</h2>
           </div>
           <div id="category-tabs" class="category-tabs" aria-label="Kategorien"></div>
           <div id="word-grid" class="word-grid" aria-live="polite"></div>
         </section>
 
         <section id="view-favorites" class="view" aria-labelledby="favorites-title">
+          <button class="home-button" type="button" data-route="dictionary">⬅ Wörterbuch</button>
           <div class="section-heading">
             <h2 id="favorites-title">Meine Wörter</h2>
           </div>
           <div id="favorite-grid" class="word-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="view-fresch" class="view" aria-labelledby="fresch-title">
+          <button class="home-button" type="button" data-route="wordExplorer">⬅ Wortforscher</button>
+          <div class="section-heading">
+            <h2 id="fresch-title">🌳 FRESCH</h2>
+          </div>
+          <div id="fresch-area-grid" class="learning-area-grid" aria-live="polite"></div>
+          <div id="fresch-card-view" class="writing-card-view" aria-live="polite" hidden></div>
+        </section>
+
+        <section id="view-orthography" class="view" aria-labelledby="orthography-title">
+          <button class="home-button" type="button" data-route="wordExplorer">⬅ Wortforscher</button>
+          <div class="section-heading">
+            <h2 id="orthography-title">✏️ Rechtschreibung</h2>
+          </div>
+          <div id="orthography-card-view" class="writing-card-view" aria-live="polite"></div>
+        </section>
+
+        <section id="view-daily-word" class="view" aria-labelledby="daily-word-title">
+          <button class="home-button" type="button" data-route="wordExplorer">⬅ Wortforscher</button>
+          <div class="section-heading">
+            <h2 id="daily-word-title">⭐ Wort des Tages</h2>
+          </div>
+          <div id="daily-word-card-view" class="writing-card-view" aria-live="polite"></div>
         </section>
 
         <section id="view-writing" class="view" aria-labelledby="writing-title">
@@ -138,6 +177,30 @@
             </article>
           </div>
           <button id="roll-story-button" class="big-action-button" type="button">Neue Geschichte würfeln</button>
+        </section>
+
+        <section id="view-journal" class="view" aria-labelledby="journal-title">
+          <button class="home-button" type="button" data-route="portal">🏠 Home</button>
+          <div class="section-heading">
+            <h2 id="journal-title">📋 Mein Lerntagebuch</h2>
+            <p class="writing-intro">Schreibe dein Lerntagebuch auf Papier.</p>
+          </div>
+          <article class="writing-task-card">
+            <h3>Heute gelernt</h3>
+            <section class="writing-card-section">
+              <h4>✏️ Schreibe in dein Heft</h4>
+              <ul>
+                <li>Das habe ich heute geübt.</li>
+                <li>Dieses Wort kann ich jetzt besser.</li>
+                <li>Das möchte ich noch einmal üben.</li>
+                <li>Darauf bin ich stolz.</li>
+              </ul>
+            </section>
+            <section class="writing-card-section">
+              <h4>🐥 Toni-Tipp</h4>
+              <p>Ein Lerntagebuch hilft dir, deinen Lernweg zu sehen.</p>
+            </section>
+          </article>
         </section>
 
         <section id="view-reading" class="view" aria-labelledby="reading-title">

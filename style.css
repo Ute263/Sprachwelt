@@ -267,6 +267,7 @@ h2 {
 }
 
 .portal-grid,
+.learning-area-grid,
 .writing-area-grid,
 .reading-area-grid,
 .learning-grid,
@@ -276,12 +277,14 @@ h2 {
 }
 
 .portal-grid,
+.learning-area-grid,
 .writing-area-grid,
 .reading-area-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .portal-tile,
+.learning-area-tile,
 .writing-area-tile,
 .reading-area-tile {
   display: flex;
@@ -301,6 +304,8 @@ h2 {
 
 .portal-tile:hover,
 .portal-tile:focus-visible,
+.learning-area-tile:hover,
+.learning-area-tile:focus-visible,
 .writing-area-tile:hover,
 .writing-area-tile:focus-visible,
 .reading-area-tile:hover,
@@ -835,6 +840,7 @@ h2 {
 
 @media (max-width: 900px) {
   .portal-grid,
+  .learning-area-grid,
   .writing-area-grid,
   .reading-area-grid,
   .tile-grid,
@@ -865,6 +871,7 @@ h2 {
   }
 
   .portal-grid,
+  .learning-area-grid,
   .writing-area-grid,
   .reading-area-grid,
   .tile-grid,
@@ -874,6 +881,7 @@ h2 {
   }
 
   .portal-tile,
+  .learning-area-tile,
   .writing-area-tile,
   .reading-area-tile {
     min-height: 138px;

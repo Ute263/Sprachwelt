@@ -6,10 +6,12 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 
 ## Bereiche
 
-- `Wörterbuch`: Themenbände mit Suche, Vorlesen und Favoriten.
+- `Wortforscher`: Wörterbuch, FRESCH, Rechtschreibung und Wort des Tages.
+- `Wörterbuch`: Themenkacheln mit Suche, Vorlesen und Favoriten.
 - `Schreibwerkstatt`: Digitale Aufgabenkarten mit vorgeschalteten Übersichten, Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
 - `Lesewelt`: Kurze Lesetexte und Lesekarten mit Aufgaben zum genauen Lesen, Textverständnis, Vorlesen und Lies-und-male-Aufgaben.
+- `Mein Lerntagebuch`: Papierbasierte Reflexionsimpulse für Kinder.
 
 ## Lokal öffnen
 
@@ -54,6 +56,17 @@ Die Schreibwerkstatt hat fünf Bereiche:
 - `Geschichtenbilder`
 
 Der Bereich `Geschichtenbilder` ist vorbereitet. Spätere Wimmelbilder werden als PNG-Dateien im Ordner `assets/geschichtenbilder/` abgelegt. Solange noch kein Bild vorhanden ist, zeigt die App einen Platzhalter.
+
+## Wortforscher
+
+Der Wortforscher bündelt vier Bereiche:
+
+- `Wörterbuch`
+- `FRESCH`
+- `Rechtschreibung`
+- `Wort des Tages`
+
+Die Kinder lesen, untersuchen Wörter und bearbeiten Aufgaben weiterhin auf Papier. Es werden keine Schülertexte eingegeben oder gespeichert.
 
 ## Lesewelt
 
