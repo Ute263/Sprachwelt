@@ -9,20 +9,20 @@
   "theme_color": "#1f6fbc",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "assets/icons/app-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "assets/icons/app-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon.png",
-      "sizes": "512x512",
+      "src": "assets/icons/app-icon.png",
+      "sizes": "1254x1254",
       "type": "image/png",
       "purpose": "any maskable"
     }

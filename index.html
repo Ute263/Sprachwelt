@@ -14,15 +14,16 @@
     >
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="app-shell">
       <header class="hero" aria-labelledby="app-title">
         <div class="mascot" aria-hidden="true">
-          <img class="toni-mascot-image" src="assets/toni.png" alt="">
+          <img class="toni-mascot-image" src="assets/icons/toni-sprachwelt.png" alt="">
         </div>
         <div>
           <p class="eyebrow">Hallo, ich bin Toni.</p>
@@ -53,19 +54,27 @@
           </div>
           <div class="portal-grid">
             <button class="portal-tile" type="button" data-route="wordExplorer">
-              <span class="portal-emoji" aria-hidden="true">🔍</span>
+              <span class="icon-frame portal-icon-frame" aria-hidden="true">
+                <img class="app-icon" src="assets/icons/icon-woerterbuch.png" alt="">
+              </span>
               <span>Wortforscher</span>
             </button>
             <button class="portal-tile" type="button" data-route="writing">
-              <span class="portal-emoji" aria-hidden="true">✏️</span>
+              <span class="icon-frame portal-icon-frame" aria-hidden="true">
+                <img class="app-icon" src="assets/icons/icon-schreibwerkstatt.png" alt="">
+              </span>
               <span>Schreibwerkstatt</span>
             </button>
             <button class="portal-tile" type="button" data-route="reading">
-              <span class="portal-emoji" aria-hidden="true">📚</span>
+              <span class="icon-frame portal-icon-frame" aria-hidden="true">
+                <img class="app-icon" src="assets/icons/icon-lesewelt.png" alt="">
+              </span>
               <span>Lesewelt</span>
             </button>
             <button class="portal-tile" type="button" data-route="story">
-              <span class="portal-emoji" aria-hidden="true">🎲</span>
+              <span class="icon-frame portal-icon-frame" aria-hidden="true">
+                <img class="app-icon" src="assets/icons/icon-geschichtenwelt.png" alt="">
+              </span>
               <span>Geschichtenwürfel</span>
             </button>
           </div>
@@ -74,7 +83,10 @@
         <section id="view-word-explorer" class="view" aria-labelledby="word-explorer-title">
           <button class="home-button" type="button" data-route="portal">🏠 Home</button>
           <div class="section-heading">
-            <h2 id="word-explorer-title">🔍 Wortforscher</h2>
+            <span class="icon-frame heading-icon-frame" aria-hidden="true">
+              <img class="app-icon" src="assets/icons/icon-woerterbuch.png" alt="">
+            </span>
+            <h2 id="word-explorer-title">Wortforscher</h2>
           </div>
           <div id="word-explorer-grid" class="learning-area-grid" aria-live="polite"></div>
         </section>
@@ -90,8 +102,8 @@
         <section id="view-dictionary" class="view" aria-labelledby="dictionary-title">
           <button class="home-button" type="button" data-route="wordExplorer">⬅ Wortforscher</button>
           <div class="section-heading">
-            <span class="fresch-symbol fresch-symbol-large" aria-label="Nachschlagen">
-              <img src="assets/fresch/nachschlagen.svg" alt="">
+            <span class="icon-frame heading-icon-frame" aria-hidden="true">
+              <img class="app-icon" src="assets/icons/icon-woerterbuch.png" alt="">
             </span>
             <h2 id="dictionary-title">Wähle ein Thema aus.</h2>
           </div>
@@ -139,7 +151,10 @@
         <section id="view-writing" class="view" aria-labelledby="writing-title">
           <button class="home-button" type="button" data-route="portal">🏠 Home</button>
           <div class="section-heading">
-            <h2 id="writing-title">✏️ Tonis Schreibwerkstatt</h2>
+            <span class="icon-frame heading-icon-frame" aria-hidden="true">
+              <img class="app-icon" src="assets/icons/icon-schreibwerkstatt.png" alt="">
+            </span>
+            <h2 id="writing-title">Tonis Schreibwerkstatt</h2>
             <p class="writing-intro">
               Wähle einen Bereich.
             </p>
@@ -151,6 +166,9 @@
         <section id="view-story" class="view" aria-labelledby="story-title">
           <button class="home-button" type="button" data-route="portal">🏠 Home</button>
           <div class="section-heading">
+            <span class="icon-frame heading-icon-frame" aria-hidden="true">
+              <img class="app-icon" src="assets/icons/icon-geschichtenwelt.png" alt="">
+            </span>
             <h2 id="story-title">Geschichtenwürfel</h2>
           </div>
           <div class="story-grid" aria-live="polite">
@@ -173,6 +191,9 @@
         <section id="view-reading" class="view" aria-labelledby="reading-title">
           <button class="home-button" type="button" data-route="portal">🏠 Home</button>
           <div class="section-heading">
+            <span class="icon-frame heading-icon-frame" aria-hidden="true">
+              <img class="app-icon" src="assets/icons/icon-lesewelt.png" alt="">
+            </span>
             <h2 id="reading-title">Tonis Lesewelt</h2>
             <p class="reading-intro">
               Wähle eine Leseaufgabe aus. Lies genau. Bearbeite die Aufgabe auf Papier.

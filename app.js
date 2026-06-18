@@ -134,21 +134,34 @@ const FAVORITE_KEY = "toni-woerterbuch-favoriten";
 const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
 const APP_TITLE = "Tonis Sprachwelt";
+const ICONS = {
+  wortforscher: "assets/icons/icon-woerterbuch.png",
+  schreibwerkstatt: "assets/icons/icon-schreibwerkstatt.png",
+  schreibheft: "assets/icons/icon-schreibheft.png",
+  buecher: "assets/icons/icon-buecher.png",
+  wortforscherLupe: "assets/icons/icon-wortforscher.png",
+  geschichten: "assets/icons/icon-geschichtenwelt.png",
+  lesewelt: "assets/icons/icon-lesewelt.png",
+  lesenMalen: "assets/icons/icon-lesen-malen.png",
+  lesedetektiv: "assets/icons/icon-lesedetektiv.png",
+  texteVerstehen: "assets/icons/icon-texte-verstehen.png",
+  vorlesen: "assets/icons/icon-vorlesen.png"
+};
 const NRW_WORDS = typeof GRUNDWORTSCHATZ_NRW !== "undefined" ? GRUNDWORTSCHATZ_NRW : [];
 const NRW_WORD_LOOKUP = new Map(NRW_WORDS.map((entry) => [normalizeWord(entry.wort), entry]));
 const DICTIONARY_WORDS = buildDictionaryWords();
 const WRITING_AREAS = [
-  { name: "Schreibaufgaben", emoji: "✏️", sourceAreas: ["Schreibaufgaben"] },
-  { name: "Mini-Bücher", emoji: "📖", sourceAreas: ["Mini-Bücher"] },
-  { name: "Geschichtenideen", emoji: "🎲", sourceAreas: ["Geschichtenideen"] },
-  { name: "Starke Schreiber", emoji: "⭐", sourceAreas: ["Starke Schreiber"] },
-  { name: "Geschichtenbilder", emoji: "🖼️", kind: "image" }
+  { name: "Schreibaufgaben", icon: ICONS.schreibheft, emoji: "✏️", sourceAreas: ["Schreibaufgaben"] },
+  { name: "Mini-Bücher", icon: ICONS.buecher, emoji: "📖", sourceAreas: ["Mini-Bücher"] },
+  { name: "Geschichtenideen", icon: ICONS.geschichten, emoji: "🎲", sourceAreas: ["Geschichtenideen"] },
+  { name: "Starke Schreiber", icon: ICONS.schreibwerkstatt, emoji: "⭐", sourceAreas: ["Starke Schreiber"] },
+  { name: "Geschichtenbilder", icon: ICONS.schreibwerkstatt, emoji: "🖼️", kind: "image" }
 ];
 const READING_AREAS = [
-  { name: "Lies und male", emoji: "🎨" },
-  { name: "Lesedetektiv", emoji: "🔎" },
-  { name: "Texte verstehen", emoji: "🧠" },
-  { name: "Vorlesen", emoji: "🎭" }
+  { name: "Lies und male", icon: ICONS.lesenMalen, emoji: "🎨" },
+  { name: "Lesedetektiv", icon: ICONS.lesedetektiv, emoji: "🔎" },
+  { name: "Texte verstehen", icon: ICONS.texteVerstehen, emoji: "🧠" },
+  { name: "Vorlesen", icon: ICONS.vorlesen, emoji: "🎭" }
 ];
 const STORY_IMAGE_TITLES = [
   "Spielplatz",
@@ -203,9 +216,9 @@ const STORY_IMAGE_PROMPTS = [
   "Wie endet die Geschichte?"
 ];
 const WORD_EXPLORER_AREAS = [
-  { name: "Wörterbuch", emoji: "📖", route: "dictionary", symbolName: "Nachschlagen" },
-  { name: "Rechtschreibung", emoji: "✏️", route: "orthography" },
-  { name: "Wort des Tages", emoji: "⭐", route: "dailyWord" }
+  { name: "Wörterbuch", icon: ICONS.wortforscher, emoji: "📖", route: "dictionary", symbolName: "Nachschlagen" },
+  { name: "Rechtschreibung", icon: ICONS.schreibwerkstatt, emoji: "✏️", route: "orthography" },
+  { name: "Wort des Tages", icon: ICONS.wortforscherLupe, emoji: "⭐", route: "dailyWord" }
 ];
 const FRESCH_SYMBOLS = {
   "Schwingen": "assets/fresch/schwingen.svg",
@@ -383,7 +396,7 @@ function scrollToTop() {
 function renderWordExplorer() {
   wordExplorerGrid.innerHTML = WORD_EXPLORER_AREAS.map((area) => `
     <button class="learning-area-tile" type="button" data-route="${area.route}">
-      ${area.symbolName ? renderFreschSymbol(area.symbolName) : `<span class="portal-emoji" aria-hidden="true">${area.emoji}</span>`}
+      ${renderAppIcon(area.icon, area.name)}
       <span>${area.name}</span>
     </button>
   `).join("");
@@ -741,7 +754,7 @@ function renderReadingSelection() {
     const count = getReadingCards(area.name).length;
     return `
       <button class="reading-area-tile" type="button" data-reading-area="${area.name}">
-        <span class="portal-emoji" aria-hidden="true">${area.emoji}</span>
+        ${renderAppIcon(area.icon, area.name)}
         <span>
           <span class="tile-title">${area.name}</span>
           <span class="tile-note">${count} Karten</span>
@@ -757,7 +770,8 @@ function renderReadingOverview(cards) {
   readingCardView.innerHTML = `
     <section class="reading-overview-card" aria-labelledby="reading-overview-title">
       <div class="reading-overview-heading">
-        <h3 id="reading-overview-title">${getReadingAreaEmoji(state.readingArea)} ${state.readingArea}</h3>
+        ${renderAppIcon(getReadingAreaIcon(state.readingArea), state.readingArea, "overview-icon-frame")}
+        <h3 id="reading-overview-title">${state.readingArea}</h3>
         <p>Wähle eine Aufgabe.</p>
       </div>
       <div class="task-list">
@@ -790,6 +804,7 @@ function renderReadingCard(card, totalCards) {
         <span class="card-area">${card.bereich}</span>
         <span class="card-area">Level: ${card.level}</span>
       </div>
+      ${renderAppIcon(getReadingAreaIcon(card.bereich), card.bereich, "overview-icon-frame")}
       <h3>${card.titel}</h3>
       ${textSection}
       ${renderCardSection("✏️", "Aufgaben", renderCardList(card.aufgaben))}
@@ -858,21 +873,57 @@ function renderDailyWordCard(card) {
 
   return `
     <article class="daily-word-card">
-      <div class="daily-word-picture">${image}</div>
-      <h3>${card.wort}</h3>
-      <section class="daily-strategy">
-        ${renderFreschSymbol(card.strategy.name, "fresch-symbol-large")}
+      <div class="daily-word-hero">
+        <div class="daily-word-picture">${image}</div>
         <div>
-          <h4>${card.strategy.name}</h4>
-          <p>${card.strategy.shortExplanation}</p>
-          <p class="daily-example">Beispiel: ${card.strategy.example}</p>
+          <p class="daily-word-label">Wort des Tages</p>
+          <h3>${card.wort}</h3>
         </div>
-      </section>
-      <section class="daily-task">
-        <h4>Arbeitsauftrag</h4>
-        <p>${card.strategy.assignment}</p>
-      </section>
+      </div>
+      <div class="daily-task-grid">
+        <section class="daily-task-card">
+          ${renderDailyFreschMethods()}
+          <h4>🔍 Untersuche das Wort</h4>
+          ${renderCardList([
+            "Welche Methode wendest du an und warum?",
+            "Welche Wortart ist es?"
+          ])}
+        </section>
+        <section class="daily-task-card">
+          <h4>✏️ Arbeite mit dem Wort</h4>
+          ${renderCardList([
+            "Markiere die schwierige Stelle.",
+            "Schreibe das Wort drei Mal auf."
+          ])}
+        </section>
+        <section class="daily-task-card">
+          <h4>🌱 Denke weiter</h4>
+          ${renderCardList([
+            "Finde verwandte Wörter."
+          ])}
+        </section>
+      </div>
     </article>
+  `;
+}
+
+function renderDailyFreschMethods() {
+  const methods = [
+    { label: "schwingen", symbol: "Schwingen" },
+    { label: "verlängern", symbol: "Verlängern" },
+    { label: "ableiten", symbol: "Ableiten" },
+    { label: "merken", symbol: "Merken" }
+  ];
+
+  return `
+    <div class="daily-fresch-methods" aria-label="FRESCH-Methoden">
+      ${methods.map((method) => `
+        <span class="daily-fresch-method">
+          ${renderFreschSymbol(method.symbol, "fresch-symbol-daily")}
+          <span>${method.label}</span>
+        </span>
+      `).join("")}
+    </div>
   `;
 }
 
@@ -950,7 +1001,7 @@ function renderWritingSelection() {
     const count = getWritingCards(area.name).length;
     return `
       <button class="writing-area-tile" type="button" data-writing-area="${area.name}">
-        <span class="portal-emoji" aria-hidden="true">${area.emoji}</span>
+        ${renderAppIcon(area.icon, area.name)}
         <span>
           <span class="tile-title">${area.name}</span>
           <span class="tile-note">${count} Karten</span>
@@ -966,7 +1017,8 @@ function renderWritingOverview(cards) {
   writingCardView.innerHTML = `
     <section class="reading-overview-card" aria-labelledby="writing-overview-title">
       <div class="reading-overview-heading">
-        <h3 id="writing-overview-title">${getWritingAreaEmoji(state.writingArea)} ${state.writingArea}</h3>
+        ${renderAppIcon(getWritingAreaIcon(state.writingArea), state.writingArea, "overview-icon-frame")}
+        <h3 id="writing-overview-title">${state.writingArea}</h3>
         <p>Wähle eine Aufgabe.</p>
       </div>
       <div class="task-list">
@@ -998,6 +1050,7 @@ function renderWritingCard(card, totalCards) {
         <span class="card-number">Karte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
         <span class="card-area">${card.displayBereich || card.bereich}</span>
       </div>
+      ${renderAppIcon(getWritingAreaIcon(state.writingArea), state.writingArea, "overview-icon-frame")}
       <h3>${card.titel}</h3>
       ${imageSection}
       ${renderCardSection("✏️", "Auftrag", `<p>${card.auftrag}</p>`)}
@@ -1074,6 +1127,10 @@ function getWritingAreaEmoji(areaName) {
   return getWritingAreaConfig(areaName)?.emoji || "✏️";
 }
 
+function getWritingAreaIcon(areaName) {
+  return getWritingAreaConfig(areaName)?.icon || ICONS.schreibwerkstatt;
+}
+
 function getStoryImageCards() {
   return STORY_IMAGE_TITLES.map((title, index) => ({
     kind: "image",
@@ -1105,6 +1162,10 @@ function getReadingAreaEmoji(areaName) {
   return READING_AREAS.find((area) => area.name === areaName)?.emoji || "📖";
 }
 
+function getReadingAreaIcon(areaName) {
+  return READING_AREAS.find((area) => area.name === areaName)?.icon || ICONS.lesewelt;
+}
+
 function getWordData(word) {
   return DICTIONARY_WORDS.find((entry) => normalizeWord(entry.wort) === normalizeWord(word))
     || NRW_WORDS.find((entry) => normalizeWord(entry.wort) === normalizeWord(word))
@@ -1118,6 +1179,15 @@ function renderFreschSymbol(name, extraClass = "") {
     <span class="${className}" aria-label="FRESCH: ${name}">
       <img src="${symbol}" alt="" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
       <span class="fresch-symbol-fallback" hidden>FRESCH</span>
+    </span>
+  `;
+}
+
+function renderAppIcon(src, label, extraClass = "") {
+  const className = `icon-frame ${extraClass}`.trim();
+  return `
+    <span class="${className}" aria-hidden="true">
+      <img class="app-icon" src="${src}" alt="">
     </span>
   `;
 }

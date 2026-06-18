@@ -79,7 +79,7 @@ Die FRESCH-Strategien bleiben als Symbole und Hilfen im Bereich `Wort des Tages`
 - `Groß- und Kleinschreibung`
 - `Nachschlagen`
 
-Der Bereich `Wort des Tages` arbeitet als tägliches Sprachritual. Ein Klick auf `Neues Wort` erzeugt ein zufälliges Grundwortschatzwort. Die Karte zeigt nur Bild, Wort, passende Strategie, ein kurzes Beispiel und einen Arbeitsauftrag. Die Kinder finden Artikel, Silben, Wortart und Besonderheiten selbst auf Papier heraus.
+Der Bereich `Wort des Tages` arbeitet als tägliches Sprachritual. Ein Klick auf `Neues Wort` erzeugt ein zufälliges Grundwortschatzwort. Die Seite zeigt drei große analoge Aufgabenkarten: Wort untersuchen, mit dem Wort arbeiten und verwandte Wörter finden. Die Kinder entscheiden die FRESCH-Methode, Wortart und schwierige Stelle selbst im Heft oder auf einem Arbeitsblatt.
 
 Die verbindlichen FRESCH-Symbole liegen im Ordner `assets/fresch/`:
 
