@@ -315,8 +315,7 @@ const views = {
   dailyWord: document.querySelector("#view-daily-word"),
   writing: document.querySelector("#view-writing"),
   story: document.querySelector("#view-story"),
-  reading: document.querySelector("#view-reading"),
-  journal: document.querySelector("#view-journal")
+  reading: document.querySelector("#view-reading")
 };
 
 const dictionaryNav = document.querySelector("#dictionary-nav");
@@ -447,7 +446,6 @@ function updateVisibleView() {
   views.writing.classList.toggle("is-visible", state.route === "writing");
   views.story.classList.toggle("is-visible", state.route === "story");
   views.reading.classList.toggle("is-visible", state.route === "reading");
-  views.journal.classList.toggle("is-visible", state.route === "journal");
   views.band.classList.toggle("is-visible", Boolean(getCurrentBand()));
 }
 

@@ -11,7 +11,6 @@ Die App ist vollständig statisch und läuft ohne Anmeldung, Datenbank oder exte
 - `Schreibwerkstatt`: Digitale Aufgabenkarten mit vorgeschalteten Übersichten, Denkfragen, Satzanfängen, Worthelfern und Schreibtipps.
 - `Geschichtenwürfel`: Würfelt aus `Wer?`, `Wo?` und `Was passiert?` eine neue Schreibidee.
 - `Lesewelt`: Kurze Lesetexte und Lesekarten mit Aufgaben zum genauen Lesen, Textverständnis, Vorlesen und Lies-und-male-Aufgaben.
-- `Mein Lerntagebuch`: Papierbasierte Reflexionsimpulse für Kinder.
 
 ## Lokal öffnen
 
