@@ -135,12 +135,16 @@ const OLD_FAVORITE_KEY = "mina-igel-favoriten";
 const DICTIONARY_ROUTES = ["dictionary", "favorites", ...Object.keys(BANDS)];
 const APP_TITLE = "Tonis Sprachwelt";
 const ICONS = {
-  wortforscher: "assets/icons/icon-woerterbuch.png",
+  wortforscher: "assets/icons/icon-wortforscher.png",
+  woerterbuch: "assets/icons/icon-woerterbuch.png",
   schreibwerkstatt: "assets/icons/icon-schreibwerkstatt.png",
   schreibheft: "assets/icons/icon-schreibheft.png",
   buecher: "assets/icons/icon-buecher.png",
   wortforscherLupe: "assets/icons/icon-wortforscher.png",
+  wortDesTages: "assets/icons/icon-wort-des-tages.png",
   geschichten: "assets/icons/icon-geschichtenwelt.png",
+  starkeSchreiber: "assets/icons/icon-starke-schreiber.png",
+  geschichtenbilder: "assets/icons/icon-geschichtenbilder.png",
   lesewelt: "assets/icons/icon-lesewelt.png",
   lesenMalen: "assets/icons/icon-lesen-malen.png",
   lesedetektiv: "assets/icons/icon-lesedetektiv.png",
@@ -154,8 +158,8 @@ const WRITING_AREAS = [
   { name: "Schreibaufgaben", icon: ICONS.schreibheft, emoji: "✏️", sourceAreas: ["Schreibaufgaben"] },
   { name: "Mini-Bücher", icon: ICONS.buecher, emoji: "📖", sourceAreas: ["Mini-Bücher"] },
   { name: "Geschichtenideen", icon: ICONS.geschichten, emoji: "🎲", sourceAreas: ["Geschichtenideen"] },
-  { name: "Starke Schreiber", icon: ICONS.schreibwerkstatt, emoji: "⭐", sourceAreas: ["Starke Schreiber"] },
-  { name: "Geschichtenbilder", icon: ICONS.schreibwerkstatt, emoji: "🖼️", kind: "image" }
+  { name: "Starke Schreiber", icon: ICONS.starkeSchreiber, emoji: "⭐", sourceAreas: ["Starke Schreiber"] },
+  { name: "Geschichtenbilder", icon: ICONS.geschichtenbilder, emoji: "🖼️", kind: "image" }
 ];
 const READING_AREAS = [
   { name: "Lies und male", icon: ICONS.lesenMalen, emoji: "🎨" },
@@ -216,9 +220,9 @@ const STORY_IMAGE_PROMPTS = [
   "Wie endet die Geschichte?"
 ];
 const WORD_EXPLORER_AREAS = [
-  { name: "Wörterbuch", icon: ICONS.wortforscher, emoji: "📖", route: "dictionary", symbolName: "Nachschlagen" },
-  { name: "Rechtschreibung", icon: ICONS.schreibwerkstatt, emoji: "✏️", route: "orthography" },
-  { name: "Wort des Tages", icon: ICONS.wortforscherLupe, emoji: "⭐", route: "dailyWord" }
+  { name: "Wörterbuch", icon: ICONS.woerterbuch, emoji: "📖", route: "dictionary", symbolName: "Nachschlagen" },
+  { name: "Rechtschreibung", icon: ICONS.wortforscherLupe, emoji: "✏️", route: "orthography" },
+  { name: "Wort des Tages", icon: ICONS.wortDesTages, emoji: "⭐", route: "dailyWord" }
 ];
 const FRESCH_SYMBOLS = {
   "Schwingen": "assets/fresch/schwingen.svg",
