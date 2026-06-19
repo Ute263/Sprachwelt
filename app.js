@@ -137,6 +137,7 @@ const APP_TITLE = "Tonis Sprachwelt";
 const ICONS = {
   wortforscher: "assets/icons/icon-wortforscher.png",
   woerterbuch: "assets/icons/icon-woerterbuch.png",
+  rechtschreibung: "assets/icons/icon-rechtschreibung.png",
   schreibwerkstatt: "assets/icons/icon-schreibwerkstatt.png",
   schreibheft: "assets/icons/icon-schreibheft.png",
   buecher: "assets/icons/icon-buecher.png",
@@ -221,7 +222,7 @@ const STORY_IMAGE_PROMPTS = [
 ];
 const WORD_EXPLORER_AREAS = [
   { name: "Wörterbuch", icon: ICONS.woerterbuch, emoji: "📖", route: "dictionary", symbolName: "Nachschlagen" },
-  { name: "Rechtschreibung", icon: ICONS.wortforscherLupe, emoji: "✏️", route: "orthography" },
+  { name: "Rechtschreibung", icon: ICONS.rechtschreibung, emoji: "✏️", route: "orthography" },
   { name: "Wort des Tages", icon: ICONS.wortDesTages, emoji: "⭐", route: "dailyWord" }
 ];
 const FRESCH_SYMBOLS = {
@@ -285,27 +286,45 @@ const FRESCH_AREAS = [
     task: "Suche die Wörter im Wörterbuch. Lies die Silben."
   }
 ];
-const ORTHOGRAPHY_TITLES = [
-  "Groß oder klein?",
-  "Wörter mit sch",
-  "Wörter mit ch",
-  "Wörter mit ei",
-  "Wörter mit au",
-  "Wörter mit eu",
-  "Wörter mit ie",
-  "Wörter mit sp",
-  "Wörter mit st",
-  "Umlaute",
-  "Doppelkonsonanten",
-  "ck",
-  "tz",
-  "Wörter trennen",
-  "Wortfamilien",
-  "Zusammengesetzte Wörter",
-  "Verben",
-  "Adjektive",
-  "Nomen",
-  "Wörter genau abschreiben"
+const ORTHOGRAPHY_SECTIONS = [
+  {
+    title: "Laute und Buchstaben",
+    intro: "Übe schwierige Laute und Buchstaben.",
+    cards: [
+      { titel: "ei", hinweise: ["ei"], beispiele: ["Eis", "klein", "schreiben"] },
+      { titel: "au", hinweise: ["au"], beispiele: ["Haus", "Maus", "Baum"] },
+      { titel: "eu", hinweise: ["eu"], beispiele: ["Freund", "Freude", "heute"] },
+      { titel: "äu", hinweise: ["äu"], beispiele: ["Häuser", "Mäuse", "Bäume"] },
+      { titel: "ie", hinweise: ["ie"], beispiele: ["Wiese", "Biene", "spielen"] },
+      { titel: "sch", hinweise: ["sch"], beispiele: ["Schule", "Tasche", "Fisch"] },
+      { titel: "ch", hinweise: ["ch"], beispiele: ["Buch", "Milch", "Kuchen"] },
+      { titel: "sp / st", hinweise: ["sp", "st"], beispiele: ["spielen", "Sport", "Stift", "Stern"] },
+      { titel: "pf", hinweise: ["pf"], beispiele: ["Pferd", "Apfel", "Topf"] },
+      { titel: "ng / nk", hinweise: ["ng", "nk"], beispiele: ["Ring", "singen", "Bank", "trinken"] },
+      { titel: "v", hinweise: ["v"], beispiele: ["Vogel", "Vater", "viel"] },
+      { titel: "qu", hinweise: ["qu"], beispiele: ["Quark", "Quelle", "quaken"] },
+      { titel: "ä / e", hinweise: ["ä", "e"], beispiele: ["Bäcker", "Bett", "Hände"] },
+      { titel: "b / p", hinweise: ["b", "p"], beispiele: ["Korb", "Körbe", "gelb"] },
+      { titel: "d / t", hinweise: ["d", "t"], beispiele: ["Hund", "Hunde", "Kind"] },
+      { titel: "g / k", hinweise: ["g", "k"], beispiele: ["Berg", "Berge", "Tag"] }
+    ]
+  },
+  {
+    title: "Rechtschreib-Tricks",
+    intro: "Entdecke, wie Wörter richtig geschrieben werden.",
+    cards: [
+      { titel: "Ich höre genau", hinweise: ["hören", "sprechen"], beispiele: ["Sonne", "Nase", "Tafel"] },
+      { titel: "Auslautverhärtung", unterzeile: "g/k, d/t, b/p", hinweise: ["g / k", "d / t", "b / p"], beispiele: ["Berg → Berge", "Hund → Hunde", "Korb → Körbe"] },
+      { titel: "Doppelkonsonanten", unterzeile: "mm, nn, tt", hinweise: ["mm", "nn", "tt"], beispiele: ["Sonne", "Bett", "kommen"] },
+      { titel: "s, ss und ß", unterzeile: "s, ss, ß", hinweise: ["s", "ss", "ß"], beispiele: ["Hase", "Wasser", "Fuß"] },
+      { titel: "Verwandte Wörter", unterzeile: "Wortfamilie", hinweise: ["Familie"], beispiele: ["Baum → Bäume", "fahren → Fahrrad", "Traum → träumen"] },
+      { titel: "Zusammengesetzte Wörter", unterzeile: "Wort + Wort", hinweise: ["Wort + Wort"], beispiele: ["Schultasche", "Baumhaus", "Fußball"] },
+      { titel: "Wortbausteine", unterzeile: "vor, ver, -lich", hinweise: ["vor", "ver", "lich"], beispiele: ["vorsingen", "verlaufen", "freundlich"] },
+      { titel: "Groß- und Kleinschreibung", unterzeile: "Nomen, Verb, Adjektiv", hinweise: ["Nomen", "Verb", "Adjektiv"], beispiele: ["der Hund", "laufen", "klein"] },
+      { titel: "Dehnung", unterzeile: "ie, h, langer Laut", hinweise: ["ie", "h", "lang"], beispiele: ["Biene", "fahren", "Sohn"] },
+      { titel: "Merkwörter", unterzeile: "gut merken", hinweise: ["merken"], beispiele: ["Vater", "vielleicht", "Computer"] }
+    ]
+  }
 ];
 const DAILY_WORDS = NRW_WORDS.slice(0, 20);
 
@@ -321,6 +340,8 @@ const state = {
   orthographyCardIndex: null,
   dailyWord: null
 };
+let storyZoomLevel = 1.35;
+let storyZoomModal = null;
 
 const views = {
   portal: document.querySelector("#view-portal"),
@@ -384,6 +405,7 @@ readingView.addEventListener("click", handleReadingClick);
 orthographyView.addEventListener("click", handleOrthographyClick);
 dailyWordView.addEventListener("click", handleDailyWordClick);
 window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+window.addEventListener("keydown", handleStoryZoomKeydown);
 setInterval(updateScrollTopButton, 250);
 scrollTopButton.addEventListener("click", scrollToTop);
 scrollTopButton.addEventListener("pointerdown", scrollToTop);
@@ -833,19 +855,12 @@ function renderOrthographyView() {
 
   const cards = getOrthographyCards();
   if (state.orthographyCardIndex === null) {
-    renderLearningOverview(orthographyCardView, {
-      title: "✏️ Rechtschreibung",
-      backAction: "wordExplorer",
-      homeAction: "home",
-      cardAttribute: "data-orthography-card",
-      actionAttribute: "data-orthography-action",
-      cards
-    });
+    renderOrthographyOverview(orthographyCardView);
     return;
   }
 
   state.orthographyCardIndex = Math.min(state.orthographyCardIndex, cards.length - 1);
-  renderLearningCard(orthographyCardView, cards[state.orthographyCardIndex], cards.length, "data-orthography-action");
+  renderOrthographyCard(orthographyCardView, cards[state.orthographyCardIndex], cards.length);
 }
 
 function renderDailyWordView() {
@@ -954,6 +969,84 @@ function renderLearningOverview(container, config) {
       </div>
     </section>
   `;
+}
+
+function renderOrthographyOverview(container) {
+  let cardIndex = 0;
+  container.innerHTML = `
+    <section class="orthography-overview-card" aria-labelledby="orthography-title">
+      <div class="reading-overview-heading">
+        ${renderAppIcon(ICONS.rechtschreibung, "Rechtschreibung", "overview-icon-frame")}
+        <h3 id="orthography-title">Rechtschreibung</h3>
+        <p>Wähle eine Übung. Arbeite im Heft oder Lernplaner.</p>
+      </div>
+      <div class="orthography-section-list">
+        ${ORTHOGRAPHY_SECTIONS.map((section) => {
+          const sectionHtml = `
+            <section class="orthography-section">
+              <h4>${section.title}</h4>
+              <p>${section.intro}</p>
+              <div class="orthography-tile-grid">
+                ${section.cards.map((card) => {
+                  const index = cardIndex++;
+                  return `
+                    <button class="orthography-tile" type="button" data-orthography-card="${index}">
+                      <span class="orthography-tile-title">${card.titel}</span>
+                      ${renderOrthographyTileNote(card)}
+                    </button>
+                  `;
+                }).join("")}
+              </div>
+            </section>
+          `;
+          return sectionHtml;
+        }).join("")}
+      </div>
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="wordExplorer">⬅ Wortforscher</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="home">🏠 Home</button>
+      </div>
+    </section>
+  `;
+}
+
+function renderOrthographyCard(container, card, totalCards) {
+  const examples = card.beispiele?.length
+    ? renderCardSection("🔤", "Beispiele", renderCardList(card.beispiele))
+    : "";
+  const hintSection = card.hinweise?.length
+    ? renderCardSection("👀", "Achte auf", renderOrthographyHints(card.hinweise))
+    : "";
+
+  container.innerHTML = `
+    <article class="writing-task-card">
+      <div class="writing-card-topline">
+        <span class="card-number">Karte ${formatTaskNumber(card.nummer)} von ${formatTaskNumber(totalCards)}</span>
+        <span class="card-area">${card.gruppe}</span>
+      </div>
+      ${renderAppIcon(ICONS.rechtschreibung, "Rechtschreibung", "overview-icon-frame")}
+      <h3>${card.titel}</h3>
+      ${hintSection}
+      ${examples}
+      ${renderCardSection("✏️", "Aufgabe", renderCardList(card.aufgaben))}
+      ${renderCardSection("🐥", "Toni-Tipp", `<p>${card.toniTipp}</p>`)}
+      <div class="writing-card-actions">
+        <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="overview">⬅ Zur Übersicht</button>
+        <button class="big-action-button writing-action-button" type="button" data-orthography-action="next">➡ Nächste Aufgabe</button>
+        <button class="big-action-button writing-action-button" type="button" data-orthography-action="random">🎲 Zufallsaufgabe</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="home">🏠 Home</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="top">⬆ Nach oben</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderOrthographyHints(hints = []) {
+  return `<p class="orthography-detail-note">${hints.join(", ")}</p>`;
+}
+
+function renderOrthographyTileNote(card) {
+  return card.unterzeile ? `<span class="orthography-tile-note">${card.unterzeile}</span>` : "";
 }
 
 function renderLearningCard(container, card, totalCards, actionAttribute) {
@@ -1075,12 +1168,25 @@ function renderWritingCard(card, totalCards) {
 }
 
 function renderStoryImageSection(card) {
+  const imageSrc = escapeAttribute(card.bild);
+  const imageTitle = escapeAttribute(card.titel);
   return `
     <figure class="story-image-frame">
-      <img src="${card.bild}" alt="${card.titel}" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+      <img src="${imageSrc}" alt="${imageTitle}" data-story-zoom-src="${imageSrc}" data-story-zoom-title="${imageTitle}" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
       <div class="story-image-placeholder" hidden>Dieses Geschichtenbild wird bald ergänzt.</div>
+      <button class="story-image-zoom-button" type="button" data-story-zoom-src="${imageSrc}" data-story-zoom-title="${imageTitle}">
+        🔍 Bild vergrößern
+      </button>
     </figure>
   `;
+}
+
+function escapeAttribute(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function renderCardSection(icon, title, content) {
@@ -1197,150 +1303,61 @@ function renderAppIcon(src, label, extraClass = "") {
 }
 
 function getOrthographyCards() {
-  return ORTHOGRAPHY_TITLES.map((title, index) => ({
+  let number = 0;
+  return ORTHOGRAPHY_SECTIONS.flatMap((section) => section.cards.map((card) => ({
     bereich: "Rechtschreibung",
-    nummer: index + 1,
-    titel: title,
-    ...getOrthographyCardConfig(title)
-  }));
+    gruppe: section.title,
+    nummer: ++number,
+    titel: card.titel,
+    hinweise: card.hinweise,
+    beispiele: card.beispiele,
+    aufgaben: getOrthographyTasks(card, section.title),
+    toniTipp: getOrthographyToniTip(card.titel)
+  })));
 }
 
-function getOrthographyCardConfig(title) {
-  const special = {
-    "Wörter mit sch": ["sch", ["Schule", "Tasche", "Fisch"]],
-    "Wörter mit ch": ["ch", ["Buch", "Milch", "Kuchen"]],
-    "Wörter mit ei": ["ei", ["Eis", "klein", "schreiben"]],
-    "Wörter mit au": ["au", ["Haus", "Maus", "Baum"]],
-    "Wörter mit eu": ["eu", ["Freund", "Freude", "heute"]],
-    "Wörter mit ie": ["ie", ["spielen", "Wiese", "Biene"]],
-    "Wörter mit sp": ["sp", ["spielen", "Sport", "Spielplatz"]],
-    "Wörter mit st": ["st", ["Stift", "Fest", "Angst"]],
-    "Umlaute": ["ä, ö oder ü", ["Tür", "fröhlich", "Bäume"]]
-  };
-
-  if (special[title]) {
-    const [mark, examples] = special[title];
-    return {
-      symbolName: "Merken",
-      erklaerung: `In diesen Wörtern gibt es eine besondere Stelle: ${mark}. Lies die Wörter genau.`,
-      beispiele: examples,
-      uebungTitel: "Aufgabe",
-      uebung: "Finde fünf weitere Wörter.",
-      markierauftrag: `Schreibe sie auf. Markiere nur die besondere Stelle: ${mark}.`,
-      zusatzaufgabe: "Lies deine Wörter einem Partner vor.",
-      toniTipp: "Markiere nur das, worum es auf dieser Karte geht."
-    };
+function getOrthographyTasks(card, sectionTitle) {
+  if (card.titel === "Auslautverhärtung") {
+    return [
+      "Lies die Beispielwörter leise.",
+      "Verlängere jedes Wort im Heft.",
+      "Markiere g / k, d / t oder b / p farbig.",
+      "Finde drei eigene Wörter."
+    ];
   }
 
-  const configs = {
-    "Groß oder klein?": {
-      symbolName: "Groß oder klein?",
-      erklaerung: "Nomen schreibst du groß. Verben und Adjektive schreibst du meistens klein.",
-      beispiele: ["der Hund", "laufen", "klein"],
-      uebung: "Finde fünf weitere Wörter.",
-      markierauftrag: "Sortiere die Wörter: Nomen gelb, Verben grün, Adjektive braun.",
-      zusatzaufgabe: "Schreibe mit einem Wort einen Satz.",
-      toniTipp: "Bei Nomen helfen dir der, die oder das."
-    },
-    "Doppelkonsonanten": {
-      symbolName: "Merken",
-      erklaerung: "Nach einem kurzen Vokal stehen manchmal zwei gleiche Konsonanten.",
-      beispiele: ["Sonne", "Bett", "kommen"],
-      markierauftrag: "Markiere die doppelten Konsonanten.",
-      zusatzaufgabe: "Sprich die Wörter langsam und klatsche die Silben.",
-      toniTipp: "Schau auf die Mitte des Wortes."
-    },
-    "ck": {
-      symbolName: "Merken",
-      erklaerung: "Nach einem kurzen Vokal steht oft ck.",
-      beispiele: ["Decke", "Ecke", "backen"],
-      markierauftrag: "Markiere ck.",
-      zusatzaufgabe: "Schreibe ein ck-Wort in einem Satz.",
-      toniTipp: "ck bleibt zusammen."
-    },
-    "tz": {
-      symbolName: "Merken",
-      erklaerung: "Nach einem kurzen Vokal steht oft tz.",
-      beispiele: ["Katze", "Sitz", "plötzlich"],
-      markierauftrag: "Markiere tz.",
-      zusatzaufgabe: "Lies deine Wörter deutlich vor.",
-      toniTipp: "tz bleibt zusammen."
-    },
-    "Wörter trennen": {
-      symbolName: "Schwingen",
-      erklaerung: "Du kannst Wörter in Silben trennen. Sprich das Wort langsam.",
-      beispiele: ["To-ni", "Blu-me", "Schu-le"],
-      markierauftrag: "Zeichne Silbenbögen unter deine Wörter.",
-      zusatzaufgabe: "Kreise in jeder Silbe den Silbenkönig ein.",
-      toniTipp: "Schwingen hilft beim Trennen."
-    },
-    "Wortfamilien": {
-      symbolName: "Ableiten",
-      erklaerung: "Wörter aus einer Familie haben einen gemeinsamen Wortstamm.",
-      beispiele: ["fahren, Fahrrad, Fahrer", "spielen, Spiel, Spielplatz", "Freund, Freunde, freundlich"],
-      markierauftrag: "Markiere den gleichen Wortbaustein.",
-      zusatzaufgabe: "Schreibe zu einem Wort zwei Familienwörter.",
-      toniTipp: "Verwandte Wörter helfen beim Schreiben."
-    },
-    "Zusammengesetzte Wörter": {
-      symbolName: "Wortbausteine",
-      erklaerung: "Zwei Wörter können zusammen ein neues langes Wort bilden.",
-      beispiele: ["Schultasche", "Baumhaus", "Fußball"],
-      markierauftrag: "Male zwischen die zwei Wortteile einen Strich.",
-      zusatzaufgabe: "Baue selbst zwei neue lange Wörter.",
-      toniTipp: "Lange Wörter werden leichter, wenn du die Teile findest."
-    },
-    "Verben": {
-      symbolName: "Groß oder klein?",
-      farbe: { label: "🟩 Grün: Verb", className: "is-verb" },
-      erklaerung: "Verben werden klein geschrieben. Verben beschreiben alles, was man tun kann.",
-      beispiele: ["laufen", "spielen", "malen"],
-      markierauftrag: "Markiere den ersten Buchstaben. Markiere die Silbenkönige.",
-      zusatzaufgabe: "Schreibe mit einem Verb einen Satz.",
-      toniTipp: "Frage: Was kann ich tun?"
-    },
-    "Adjektive": {
-      symbolName: "Groß oder klein?",
-      farbe: { label: "🟫 Braun: Adjektiv", className: "is-adjective" },
-      erklaerung: "Adjektive werden klein geschrieben. Adjektive beschreiben, wie etwas ist.",
-      beispiele: ["groß", "klein", "fröhlich"],
-      markierauftrag: "Markiere den ersten Buchstaben. Markiere die Silbenkönige.",
-      zusatzaufgabe: "Schreibe mit einem Adjektiv einen Satz.",
-      toniTipp: "Frage: Wie ist etwas?"
-    },
-    "Nomen": {
-      symbolName: "Groß oder klein?",
-      farbe: { label: "🟨 Gelb: Nomen", className: "is-noun" },
-      erklaerung: "Nomen werden groß geschrieben. Nomen sind Wörter für Menschen, Tiere, Pflanzen und Dinge.",
-      beispiele: ["Hund", "Blume", "Sonne"],
-      markierauftrag: "Markiere den ersten Buchstaben. Markiere die Silbenkönige.",
-      zusatzaufgabe: "Suche ein Wort im Wörterbuch oder schreibe mit einem Wort einen Satz.",
-      toniTipp: "Nomen haben oft einen Artikel: der, die oder das."
-    },
-    "Wörter genau abschreiben": {
-      symbolName: "Merken",
-      erklaerung: "Schau zuerst genau hin. Schreibe dann langsam ab und kontrolliere Buchstabe für Buchstabe.",
-      beispiele: ["Schultasche", "Geburtstag", "Freundschaft"],
-      markierauftrag: "Markiere die Stelle, die für dich schwierig ist.",
-      zusatzaufgabe: "Decke das Wort ab und schreibe es noch einmal.",
-      toniTipp: "Ein Kontrollblick am Ende ist wichtig."
-    }
+  if (sectionTitle === "Laute und Buchstaben") {
+    return [
+      "Lies die Beispiele deutlich.",
+      "Schreibe fünf passende Wörter in dein Heft.",
+      "Markiere die besondere Stelle farbig.",
+      "Lies deine Wörter noch einmal."
+    ];
+  }
+
+  return [
+    "Schau dir die Beispiele genau an.",
+    "Schreibe drei eigene Wörter oder Sätze in dein Heft.",
+    "Markiere die wichtige Stelle farbig.",
+    "Kontrolliere ein Wort im Wörterbuch."
+  ];
+}
+
+function getOrthographyToniTip(title) {
+  const tips = {
+    "Ich höre genau": "Sprich langsam. Manchmal hörst du dann die wichtige Stelle.",
+    "Auslautverhärtung": "Verlängern hilft: Berg wird Berge.",
+    "Doppelkonsonanten": "Achte auf den kurzen Klang vor dem doppelten Buchstaben.",
+    "s, ss und ß": "Lies das Wort langsam und markiere die s-Stelle.",
+    "Verwandte Wörter": "Ein verwandtes Wort kann dir beim Schreiben helfen.",
+    "Zusammengesetzte Wörter": "Trenne lange Wörter in zwei Teile.",
+    "Wortbausteine": "Suche den kleinen Baustein im Wort.",
+    "Groß- und Kleinschreibung": "Bei Nomen helfen dir der, die oder das.",
+    "Dehnung": "Höre, ob der Laut lang klingt.",
+    "Merkwörter": "Merkwörter darfst du besonders oft üben."
   };
 
-  const config = configs[title] || {
-    symbolName: "Merken",
-    erklaerung: `Achte bei ${title} auf die besondere Schreibstelle. Lies das Wort langsam und genau.`,
-    beispiele: ["Toni", "Schule", "lesen"],
-    markierauftrag: "Markiere die besondere Stelle.",
-    zusatzaufgabe: "Schreibe mit einem Wort einen Satz.",
-    toniTipp: "Schau langsam auf jede schwierige Stelle im Wort."
-  };
-
-  return {
-    uebungTitel: "Aufgabe",
-    uebung: "Finde fünf weitere Wörter.",
-    ...config
-  };
+  return tips[title] || "Schreibe langsam und kontrolliere die schwierige Stelle.";
 }
 
 const DAILY_STRATEGIES = {
@@ -1416,7 +1433,117 @@ function formatTaskNumber(number) {
   return String(number).padStart(2, "0");
 }
 
+function openStoryImageZoom(src, title) {
+  const modal = getStoryZoomModal();
+  const image = modal.querySelector(".story-zoom-image");
+  const heading = modal.querySelector(".story-zoom-title");
+
+  storyZoomLevel = 1.35;
+  image.src = src;
+  image.alt = title;
+  heading.textContent = title;
+  modal.hidden = false;
+  document.body.classList.add("has-story-zoom");
+  applyStoryZoom();
+
+  requestAnimationFrame(() => {
+    const viewer = modal.querySelector(".story-zoom-viewer");
+    viewer.scrollLeft = Math.max(0, (viewer.scrollWidth - viewer.clientWidth) / 2);
+    viewer.scrollTop = Math.max(0, (viewer.scrollHeight - viewer.clientHeight) / 2);
+  });
+}
+
+function getStoryZoomModal() {
+  if (storyZoomModal) {
+    return storyZoomModal;
+  }
+
+  storyZoomModal = document.createElement("div");
+  storyZoomModal.className = "story-zoom-modal";
+  storyZoomModal.hidden = true;
+  storyZoomModal.innerHTML = `
+    <div class="story-zoom-backdrop" data-story-zoom-control="close"></div>
+    <section class="story-zoom-panel" aria-modal="true" role="dialog" aria-labelledby="story-zoom-title">
+      <header class="story-zoom-header">
+        <h2 id="story-zoom-title" class="story-zoom-title">Geschichtenbild</h2>
+        <button class="story-zoom-close" type="button" data-story-zoom-control="close" aria-label="Schließen">×</button>
+      </header>
+      <div class="story-zoom-controls" aria-label="Bildlupe">
+        <button type="button" data-story-zoom-control="out">−</button>
+        <button type="button" data-story-zoom-control="reset">100%</button>
+        <button type="button" data-story-zoom-control="in">+</button>
+      </div>
+      <div class="story-zoom-viewer">
+        <img class="story-zoom-image" src="" alt="">
+      </div>
+    </section>
+  `;
+  storyZoomModal.addEventListener("click", handleStoryZoomControl);
+  document.body.append(storyZoomModal);
+  return storyZoomModal;
+}
+
+function handleStoryZoomControl(event) {
+  const controlButton = event.target.closest("[data-story-zoom-control]");
+
+  if (!controlButton) {
+    return;
+  }
+
+  const action = controlButton.dataset.storyZoomControl;
+
+  if (action === "close") {
+    closeStoryImageZoom();
+    return;
+  }
+
+  if (action === "in") {
+    storyZoomLevel = Math.min(2.6, storyZoomLevel + 0.25);
+  }
+
+  if (action === "out") {
+    storyZoomLevel = Math.max(1, storyZoomLevel - 0.25);
+  }
+
+  if (action === "reset") {
+    storyZoomLevel = 1;
+  }
+
+  applyStoryZoom();
+}
+
+function applyStoryZoom() {
+  if (!storyZoomModal) {
+    return;
+  }
+
+  const image = storyZoomModal.querySelector(".story-zoom-image");
+  image.style.width = `${Math.round(storyZoomLevel * 100)}%`;
+}
+
+function closeStoryImageZoom() {
+  if (!storyZoomModal) {
+    return;
+  }
+
+  storyZoomModal.hidden = true;
+  storyZoomModal.querySelector(".story-zoom-image").removeAttribute("src");
+  document.body.classList.remove("has-story-zoom");
+}
+
+function handleStoryZoomKeydown(event) {
+  if (event.key === "Escape" && storyZoomModal && !storyZoomModal.hidden) {
+    closeStoryImageZoom();
+  }
+}
+
 function handleWritingClick(event) {
+  const zoomButton = event.target.closest("[data-story-zoom-src]");
+  if (zoomButton) {
+    openStoryImageZoom(zoomButton.dataset.storyZoomSrc, zoomButton.dataset.storyZoomTitle || "Geschichtenbild");
+    return;
+  }
+
   const areaButton = event.target.closest("[data-writing-area]");
   if (areaButton) {
     state.writingArea = areaButton.dataset.writingArea;

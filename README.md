@@ -137,3 +137,9 @@ Wichtig:
 5. Die Kinder scannen den Code mit dem iPad und öffnen die App.
 
 Tipp: Einmal geladen, bleiben Favoriten auf dem jeweiligen iPad gespeichert.
+
+## Rechte und Nutzung
+
+© 2026 Ute Holzschneider. Alle Rechte vorbehalten.
+
+Diese App und die enthaltenen Aufgaben, Texte, Strukturen, Karten und Materialien wurden für die private schulische Nutzung erstellt. Eine Weitergabe, Veröffentlichung, Veränderung oder kommerzielle Nutzung durch Dritte ist nur mit ausdrücklicher Erlaubnis gestattet.

@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonis-sprachwelt-v24";
+const CACHE_NAME = "tonis-sprachwelt-v30";
 const ASSETS = [
   "./",
   "index.html",
@@ -18,11 +18,13 @@ const ASSETS = [
   "favicon.ico",
   "assets/icons/toni-sprachwelt.png",
   "assets/icons/icon-woerterbuch.png",
+  "assets/icons/icon-rechtschreibung.png",
   "assets/icons/icon-schreibwerkstatt.png",
   "assets/icons/icon-schreibheft.png",
   "assets/icons/icon-buecher.png",
   "assets/icons/icon-wortforscher.png",
   "assets/icons/icon-geschichtenwelt.png",
+  "assets/icons/icon-geschichtenwuerfel.png",
   "assets/icons/icon-lesewelt.png",
   "assets/icons/icon-lesen-malen.png",
   "assets/icons/icon-lesedetektiv.png",
