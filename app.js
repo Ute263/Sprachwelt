@@ -291,43 +291,46 @@ const ORTHOGRAPHY_SECTIONS = [
     title: "Laute und Buchstaben",
     intro: "Übe schwierige Laute und Buchstaben.",
     cards: [
-      { titel: "ei", hinweis: "Ich höre ei.", beispiele: ["Ei", "Seil", "heiß"] },
-      { titel: "au", hinweis: "Ich höre au.", beispiele: ["Haus", "Maus", "Baum"] },
-      { titel: "eu", hinweis: "Ich höre eu.", beispiele: ["Feuer", "heute", "Leute"] },
-      { titel: "äu", hinweis: "Manche Wörter schreibt man mit äu, wenn es ein verwandtes Wort mit au gibt.", beispiele: ["Bäume – Baum", "Häuser – Haus"] },
-      { titel: "ie", hinweis: "ie klingt lang.", beispiele: ["Biene", "lieben", "Spiel"] },
-      { titel: "sch", hinweis: "Ich höre sch.", beispiele: ["Schule", "Tasche", "Fisch"] },
-      { titel: "ch", hinweis: "Ich höre ch.", beispiele: ["ich", "Buch", "lachen"] },
-      { titel: "sp / st", hinweis: "Am Wortanfang hört man oft schp oder scht, aber man schreibt sp oder st.", beispiele: ["spielen", "Stein", "Straße"] },
-      { titel: "pf", hinweis: "Ich höre genau: p und f gehören zusammen.", beispiele: ["Pferd", "Apfel", "Pfeife"] },
-      { titel: "ng / nk", hinweis: "Ich höre genau, ob ich ng oder nk brauche.", beispiele: ["singen", "Ring", "Bank", "trinken"] },
-      { titel: "v", hinweis: "Manche Wörter schreibt man mit v. Diese Wörter muss man sich gut merken.", beispiele: ["Vogel", "Vater", "viel"] },
-      { titel: "qu", hinweis: "Nach q steht fast immer u.", beispiele: ["Quelle", "Quark", "Quadrat"] },
-      { titel: "ä / e", hinweis: "Finde ein verwandtes Wort.", beispiele: ["Hände – Hand", "Bälle – Ball", "Bäume – Baum"] },
-      { titel: "b / p", hinweis: "Am Wortende klingen b und p oft ähnlich. Verlängere das Wort.", beispiele: ["Dieb – Diebe", "halb – halbe"] },
-      { titel: "d / t", hinweis: "Am Wortende klingen d und t oft ähnlich. Verlängere das Wort.", beispiele: ["Rad – Räder", "Hund – Hunde"] },
-      { titel: "g / k", hinweis: "Am Wortende klingen g und k oft ähnlich. Verlängere das Wort.", beispiele: ["Berg – Berge", "Tag – Tage"] },
+      { titel: "ei", schwerpunkt: "ei hören und schreiben", erklaerung: "Ich höre ei.", strategie: "Sprich das Wort langsam und achte auf den ei-Laut.", beispiele: ["Ei", "Seil", "heiß"], aufgabe: "Suche 5 Wörter mit ei. Schreibe sie in dein Heft und markiere ei." },
+      { titel: "au", schwerpunkt: "au hören und schreiben", erklaerung: "Ich höre au.", strategie: "Sprich das Wort langsam und achte auf den au-Laut.", beispiele: ["Haus", "Maus", "Baum"], aufgabe: "Suche 5 Wörter mit au. Schreibe sie in dein Heft und markiere au." },
+      { titel: "eu", schwerpunkt: "eu hören und schreiben", erklaerung: "Ich höre eu.", strategie: "Sprich das Wort langsam und achte auf den eu-Laut.", beispiele: ["Feuer", "heute", "Leute"], aufgabe: "Suche 5 Wörter mit eu. Schreibe sie in dein Heft und markiere eu." },
+      { titel: "äu", schwerpunkt: "äu über verwandte Wörter erkennen", erklaerung: "Manche Wörter schreibt man mit äu, wenn es ein verwandtes Wort mit au gibt.", strategie: "Suche ein verwandtes Wort mit au.", beispiele: ["Bäume – Baum", "Häuser – Haus"], aufgabe: "Suche 5 Wörter mit äu. Schreibe das verwandte Wort mit au dazu." },
+      { titel: "ie", schwerpunkt: "langes i als ie schreiben", erklaerung: "ie klingt lang.", strategie: "Sprich das Wort langsam und höre, ob der i-Laut lang klingt.", beispiele: ["Biene", "lieben", "Spiel"], aufgabe: "Suche 5 Wörter mit ie. Schreibe sie in dein Heft und markiere ie." },
+      { titel: "sch", schwerpunkt: "sch hören und schreiben", erklaerung: "Ich höre sch.", strategie: "Sprich das Wort deutlich und achte auf den sch-Laut.", beispiele: ["Schule", "Tasche", "Fisch"], aufgabe: "Suche 5 Wörter mit sch. Schreibe sie in dein Heft und markiere sch." },
+      { titel: "ch", schwerpunkt: "ch hören und schreiben", erklaerung: "Ich höre ch.", strategie: "Sprich das Wort deutlich und achte auf den ch-Laut.", beispiele: ["ich", "Buch", "lachen"], aufgabe: "Suche 5 Wörter mit ch. Schreibe sie in dein Heft und markiere ch." },
+      { titel: "sp / st", schwerpunkt: "sp und st am Wortanfang schreiben", erklaerung: "Am Wortanfang hört man oft schp oder scht, aber man schreibt sp oder st.", strategie: "Prüfe, ob der Laut am Wortanfang steht.", beispiele: ["spielen", "Stein", "Straße"], aufgabe: "Suche 5 Wörter mit sp oder st am Anfang. Schreibe sie in dein Heft und markiere sp oder st." },
+      { titel: "pf", schwerpunkt: "pf als Lautverbindung schreiben", erklaerung: "Ich höre genau: p und f gehören zusammen.", strategie: "Sprich das Wort deutlich und höre auf p und f.", beispiele: ["Pferd", "Apfel", "Pfeife"], aufgabe: "Suche 5 Wörter mit pf. Schreibe sie in dein Heft und markiere pf." },
+      { titel: "ng / nk", schwerpunkt: "ng und nk unterscheiden", erklaerung: "Ich höre genau, ob ich ng oder nk brauche.", strategie: "Sprich das Wort langsam und höre auf den Laut am Ende der Silbe.", beispiele: ["singen", "Ring", "Bank", "trinken"], aufgabe: "Suche Wörter mit ng und nk. Schreibe sie in zwei Gruppen in dein Heft." },
+      { titel: "v", schwerpunkt: "Merkwörter mit v schreiben", erklaerung: "Manche Wörter schreibt man mit v. Diese Wörter muss man sich gut merken.", strategie: "Merke dir die schwierige Stelle im Wort.", beispiele: ["Vogel", "Vater", "viel"], aufgabe: "Suche 5 Wörter mit v. Schreibe sie in dein Heft und markiere v." },
+      { titel: "qu", schwerpunkt: "qu als feste Verbindung schreiben", erklaerung: "Nach q steht fast immer u.", strategie: "Prüfe, ob du den kw-Laut hörst. Dann schreibst du qu.", beispiele: ["Quelle", "Quark", "Quadrat"], aufgabe: "Suche 5 Wörter mit qu. Schreibe sie in dein Heft und markiere qu." },
+      { titel: "ä / e", schwerpunkt: "ä mit verwandten Wörtern erklären", erklaerung: "Finde ein verwandtes Wort.", strategie: "Suche ein verwandtes Wort mit a.", beispiele: ["Hände – Hand", "Bälle – Ball", "Bäume – Baum"], aufgabe: "Suche 5 Wörter mit ä. Schreibe das verwandte Wort dazu." },
+      { titel: "b / p", schwerpunkt: "b und p am Wortende unterscheiden", erklaerung: "Am Wortende klingen b und p oft ähnlich.", strategie: "Verlängere das Wort.", beispiele: ["Dieb – Diebe", "halb – halbe"], aufgabe: "Suche 5 Wörter mit b oder p am Ende. Verlängere sie und schreibe sie in dein Heft." },
+      { titel: "d / t", schwerpunkt: "d und t am Wortende unterscheiden", erklaerung: "Am Wortende klingen d und t oft ähnlich.", strategie: "Verlängere das Wort.", beispiele: ["Rad – Räder", "Hund – Hunde"], aufgabe: "Suche 5 Wörter mit d oder t am Ende. Verlängere sie und schreibe sie in dein Heft." },
+      { titel: "g / k", schwerpunkt: "g und k am Wortende unterscheiden", erklaerung: "Am Wortende klingen g und k oft ähnlich.", strategie: "Verlängere das Wort.", beispiele: ["Berg – Berge", "Tag – Tage"], aufgabe: "Suche 5 Wörter mit g oder k am Ende. Verlängere sie und schreibe sie in dein Heft." },
       {
         titel: "s, ss, ß",
-        hinweis: "Achte darauf, ob der Vokal davor kurz oder lang klingt.",
+        schwerpunkt: "s, ss und ß unterscheiden",
+        erklaerung: "Achte darauf, ob der Vokal davor kurz oder lang klingt.",
+        strategie: "Sprich den Vokal vor der s-Stelle deutlich.",
         merke: ["Nach kurzem Vokal schreibt man oft ss.", "Nach langem Vokal schreibt man oft ß."],
-        beispiele: ["müssen", "Straße", "Sonne"]
+        beispiele: ["müssen", "Straße", "Sonne"],
+        aufgabe: "Suche Wörter mit s, ss und ß. Schreibe sie in drei Gruppen in dein Heft."
       },
-      { titel: "mm", hinweis: "Sprich deutlich und achte auf den kurzen Vokal davor.", beispiele: ["kommen", "schwimmen", "Sommer"] },
-      { titel: "nn", hinweis: "Sprich deutlich und achte auf den kurzen Vokal davor.", beispiele: ["rennen", "Sonne", "Tanne"] },
-      { titel: "h", hinweis: "Das h kann einen Vokal verlängern. Man hört es oft nicht deutlich.", beispiele: ["fahren", "Zahn", "wohnen"] }
+      { titel: "mm", schwerpunkt: "mm nach kurzem Vokal schreiben", erklaerung: "Sprich deutlich und achte auf den kurzen Vokal davor.", strategie: "Höre, ob der Vokal kurz klingt.", beispiele: ["kommen", "schwimmen", "Sommer"], aufgabe: "Suche 5 Wörter mit mm. Schreibe sie in dein Heft und markiere mm." },
+      { titel: "nn", schwerpunkt: "nn nach kurzem Vokal schreiben", erklaerung: "Sprich deutlich und achte auf den kurzen Vokal davor.", strategie: "Höre, ob der Vokal kurz klingt.", beispiele: ["rennen", "Sonne", "Tanne"], aufgabe: "Suche 5 Wörter mit nn. Schreibe sie in dein Heft und markiere nn." },
+      { titel: "h", schwerpunkt: "h nach langem Vokal erkennen", erklaerung: "Das h kann einen Vokal verlängern. Man hört es oft nicht deutlich.", strategie: "Merke dir Wörter mit h und sprich den langen Vokal deutlich.", beispiele: ["fahren", "Zahn", "wohnen"], aufgabe: "Suche 5 Wörter mit h nach einem Vokal. Schreibe sie in dein Heft und markiere h." }
     ]
   },
   {
     title: "Rechtschreib-Tricks",
     intro: "Entdecke, wie Wörter richtig geschrieben werden.",
     cards: [
-      { titel: "Ich höre genau", hinweis: "Sprich langsam, klatsche Silben oder schwinge mit.", beispiele: ["Ro-se", "Ha-se", "Fe-der"] },
-      { titel: "Verwandte Wörter", hinweis: "Suche Wörter aus derselben Wortfamilie.", beispiele: ["Hand – Hände", "fahren – Fahrer", "Baum – Bäume"] },
-      { titel: "Zusammengesetzte Wörter", hinweis: "Ein langes Wort besteht oft aus zwei Wörtern.", beispiele: ["Haus + Tür = Haustür", "Sonne + Blume = Sonnenblume"] },
-      { titel: "Wortbausteine", hinweis: "Achte auf Vorsilben und Endungen.", beispiele: ["vor-", "ver-", "-lich", "-heit"] },
-      { titel: "Groß- und Kleinschreibung", hinweis: "Nomen schreibt man groß. Du erkennst sie oft an einem Artikel.", beispiele: ["der Hund", "die Schule", "das Haus"] },
-      { titel: "Merkwörter", hinweis: "Diese Wörter musst du dir gut merken.", beispiele: ["nämlich", "vielleicht", "wieder"] }
+      { titel: "Ich höre genau", schwerpunkt: "Wörter langsam sprechen und Silben hören", erklaerung: "Sprich langsam, klatsche Silben oder schwinge mit.", strategie: "Sprich das Wort in Silben.", beispiele: ["Ro-se", "Ha-se", "Fe-der"], aufgabe: "Suche 5 Wörter. Schwinge oder klatsche die Silben und schreibe die Wörter in dein Heft." },
+      { titel: "Verwandte Wörter", schwerpunkt: "Wortfamilien nutzen", erklaerung: "Suche Wörter aus derselben Wortfamilie.", strategie: "Finde ein verwandtes Wort, das dir die schwierige Stelle zeigt.", beispiele: ["Hand – Hände", "fahren – Fahrer", "Baum – Bäume"], aufgabe: "Suche 5 Wörter. Schreibe zu jedem Wort ein verwandtes Wort dazu." },
+      { titel: "Zusammengesetzte Wörter", schwerpunkt: "lange Wörter in Teile zerlegen", erklaerung: "Ein langes Wort besteht oft aus zwei Wörtern.", strategie: "Trenne das lange Wort in seine Wortteile.", beispiele: ["Haus + Tür = Haustür", "Sonne + Blume = Sonnenblume"], aufgabe: "Suche 5 zusammengesetzte Wörter. Schreibe die Teile und das ganze Wort auf." },
+      { titel: "Wortbausteine", schwerpunkt: "Vorsilben und Endungen erkennen", erklaerung: "Achte auf Vorsilben und Endungen.", strategie: "Suche bekannte Bausteine im Wort.", beispiele: ["vor-", "ver-", "-lich", "-heit"], aufgabe: "Suche 5 Wörter mit Wortbausteinen. Markiere die Bausteine farbig." },
+      { titel: "Groß- und Kleinschreibung", schwerpunkt: "Nomen erkennen und groß schreiben", erklaerung: "Nomen schreibt man groß. Du erkennst sie oft an einem Artikel.", strategie: "Prüfe, ob der, die oder das davor passt.", beispiele: ["der Hund", "die Schule", "das Haus"], aufgabe: "Suche 5 Nomen. Schreibe sie mit Artikel in dein Heft." },
+      { titel: "Merkwörter", schwerpunkt: "schwierige Wörter sicher merken", erklaerung: "Diese Wörter musst du dir gut merken.", strategie: "Markiere die schwierige Stelle und schreibe das Wort mehrmals richtig.", beispiele: ["nämlich", "vielleicht", "wieder"], aufgabe: "Suche 5 Merkwörter. Markiere die schwierige Stelle und schreibe jedes Wort dreimal." }
     ]
   }
 ];
@@ -347,6 +350,7 @@ const state = {
 };
 let storyZoomLevel = 1.35;
 let storyZoomModal = null;
+let orthographyModal = null;
 
 const views = {
   portal: document.querySelector("#view-portal"),
@@ -411,6 +415,7 @@ orthographyView.addEventListener("click", handleOrthographyClick);
 dailyWordView.addEventListener("click", handleDailyWordClick);
 window.addEventListener("scroll", updateScrollTopButton, { passive: true });
 window.addEventListener("keydown", handleStoryZoomKeydown);
+window.addEventListener("keydown", handleOrthographyModalKeydown);
 setInterval(updateScrollTopButton, 250);
 scrollTopButton.addEventListener("click", scrollToTop);
 scrollTopButton.addEventListener("pointerdown", scrollToTop);
@@ -858,14 +863,8 @@ function renderOrthographyView() {
     return;
   }
 
-  const cards = getOrthographyCards();
-  if (state.orthographyCardIndex === null) {
-    renderOrthographyOverview(orthographyCardView);
-    return;
-  }
-
-  state.orthographyCardIndex = Math.min(state.orthographyCardIndex, cards.length - 1);
-  renderOrthographyCard(orthographyCardView, cards[state.orthographyCardIndex], cards.length);
+  state.orthographyCardIndex = null;
+  renderOrthographyOverview(orthographyCardView);
 }
 
 function renderDailyWordView() {
@@ -983,7 +982,7 @@ function renderOrthographyOverview(container) {
       <div class="reading-overview-heading">
         ${renderAppIcon(ICONS.rechtschreibung, "Rechtschreibung", "overview-icon-frame")}
         <h3 id="orthography-overview-title">Rechtschreibung</h3>
-        <p>Übe ruhig und der Reihe nach. Die Nummern laufen von 1 bis 26.</p>
+        <p>Tippe auf einen Punkt. Dann öffnet sich die Erklärung mit Beispielen und einer Aufgabe.</p>
       </div>
       <div class="orthography-section-list">
         ${ORTHOGRAPHY_SECTIONS.map((section) => `
@@ -993,7 +992,10 @@ function renderOrthographyOverview(container) {
               <p>${section.intro}</p>
             </div>
             <div class="orthography-learning-list">
-              ${section.cards.map((card) => renderOrthographyLearningCard(card, ++cardNumber)).join("")}
+              ${section.cards.map((card) => {
+                const number = ++cardNumber;
+                return renderOrthographyLearningCard(card, number, number - 1);
+              }).join("")}
             </div>
           </section>
         `).join("")}
@@ -1007,21 +1009,14 @@ function renderOrthographyOverview(container) {
   `;
 }
 
-function renderOrthographyLearningCard(card, number) {
-  const memoryLines = card.merke?.length
-    ? `<p class="orthography-memory"><strong>Merke:</strong> ${card.merke.join(" ")}</p>`
-    : "";
-
+function renderOrthographyLearningCard(card, number, index) {
   return `
-    <article class="orthography-learning-card">
+    <button class="orthography-learning-card" type="button" data-orthography-card="${index}" aria-haspopup="dialog">
       <span class="orthography-number" aria-label="Nummer ${number}">${number}</span>
       <div class="orthography-learning-text">
         <h5>${card.titel}</h5>
-        <p>${card.hinweis}</p>
-        ${memoryLines}
-        <p class="orthography-examples"><strong>Beispiele:</strong> ${card.beispiele.join(", ")}</p>
       </div>
-    </article>
+    </button>
   `;
 }
 
@@ -1058,6 +1053,98 @@ function renderOrthographyCard(container, card, totalCards) {
 
 function renderOrthographyHints(hints = []) {
   return `<p class="orthography-detail-note">${hints.join(", ")}</p>`;
+}
+
+function openOrthographyModal(index) {
+  const card = getOrthographyCards()[index];
+  if (!card) {
+    return;
+  }
+
+  const modal = getOrthographyModal();
+  modal.querySelector(".orthography-modal-title").textContent = `${card.nummer}. ${card.titel}`;
+  modal.querySelector(".orthography-modal-body").innerHTML = `
+    ${renderOrthographyModalSection("Bereich", card.bereich)}
+    ${renderOrthographyModalSection("Rechtschreibschwerpunkt", card.schwerpunkt)}
+    ${renderOrthographyModalSection("Erklärung", card.erklaerung)}
+    ${renderOrthographyModalSection("So findest du es heraus", card.strategie)}
+    ${card.merke?.length ? renderOrthographyModalSection("Merke", card.merke.join(" ")) : ""}
+    <section class="orthography-modal-section">
+      <h3>Beispiele</h3>
+      ${renderCardList(card.beispiele)}
+    </section>
+    ${renderOrthographyModalSection("Aufgabe für das Heft", card.aufgabe)}
+  `;
+  modal.hidden = false;
+  document.body.classList.add("has-orthography-modal");
+
+  requestAnimationFrame(() => {
+    modal.querySelector("[data-orthography-modal-control='close']").focus();
+  });
+}
+
+function renderOrthographyModalSection(title, content) {
+  return `
+    <section class="orthography-modal-section">
+      <h3>${title}</h3>
+      <p>${content}</p>
+    </section>
+  `;
+}
+
+function getOrthographyModal() {
+  if (orthographyModal) {
+    return orthographyModal;
+  }
+
+  orthographyModal = document.createElement("div");
+  orthographyModal.className = "orthography-modal";
+  orthographyModal.hidden = true;
+  orthographyModal.innerHTML = `
+    <div class="orthography-modal-backdrop" data-orthography-modal-control="close"></div>
+    <section class="orthography-modal-panel" aria-modal="true" role="dialog" aria-labelledby="orthography-modal-title">
+      <header class="orthography-modal-header">
+        <div>
+          <p class="orthography-modal-kicker">Rechtschreibung</p>
+          <h2 id="orthography-modal-title" class="orthography-modal-title">Rechtschreibung</h2>
+        </div>
+        <button class="orthography-modal-close" type="button" data-orthography-modal-control="close" aria-label="Schließen">×</button>
+      </header>
+      <div class="orthography-modal-body"></div>
+      <footer class="orthography-modal-actions">
+        <button class="big-action-button writing-action-button" type="button" data-orthography-modal-control="close">Schließen</button>
+      </footer>
+    </section>
+  `;
+  orthographyModal.addEventListener("click", handleOrthographyModalControl);
+  document.body.append(orthographyModal);
+  return orthographyModal;
+}
+
+function handleOrthographyModalControl(event) {
+  const control = event.target.closest("[data-orthography-modal-control]");
+  if (!control) {
+    return;
+  }
+
+  if (control.dataset.orthographyModalControl === "close") {
+    closeOrthographyModal();
+  }
+}
+
+function closeOrthographyModal() {
+  if (!orthographyModal) {
+    return;
+  }
+
+  orthographyModal.hidden = true;
+  document.body.classList.remove("has-orthography-modal");
+}
+
+function handleOrthographyModalKeydown(event) {
+  if (event.key === "Escape" && orthographyModal && !orthographyModal.hidden) {
+    closeOrthographyModal();
+  }
 }
 
 function renderLearningCard(container, card, totalCards, actionAttribute) {
@@ -1316,13 +1403,18 @@ function renderAppIcon(src, label, extraClass = "") {
 function getOrthographyCards() {
   let number = 0;
   return ORTHOGRAPHY_SECTIONS.flatMap((section) => section.cards.map((card) => ({
-    bereich: "Rechtschreibung",
+    bereich: section.title,
     gruppe: section.title,
     nummer: ++number,
     titel: card.titel,
-    hinweise: card.hinweise || [card.hinweis].filter(Boolean),
+    schwerpunkt: card.schwerpunkt,
+    erklaerung: card.erklaerung,
+    strategie: card.strategie,
+    merke: card.merke,
+    hinweise: [card.strategie || card.erklaerung].filter(Boolean),
     beispiele: card.beispiele,
-    aufgaben: getOrthographyTasks(card, section.title),
+    aufgabe: card.aufgabe,
+    aufgaben: [card.aufgabe],
     toniTipp: getOrthographyToniTip(card.titel)
   })));
 }
@@ -1608,6 +1700,12 @@ function handleReadingClick(event) {
 }
 
 function handleOrthographyClick(event) {
+  const cardButton = event.target.closest("[data-orthography-card]");
+  if (cardButton) {
+    openOrthographyModal(Number(cardButton.dataset.orthographyCard));
+    return;
+  }
+
   const actionButton = event.target.closest("[data-orthography-action]");
   if (!actionButton) return;
   handleLearningAction(actionButton.dataset.orthographyAction, "orthography");
@@ -1628,11 +1726,13 @@ function handleDailyWordAction(action) {
   }
 
   if (action === "home") {
+    closeOrthographyModal();
     setRoute("portal");
     return;
   }
 
   if (action === "wordExplorer") {
+    closeOrthographyModal();
     setRoute("wordExplorer");
     return;
   }
