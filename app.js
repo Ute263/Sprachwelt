@@ -291,38 +291,43 @@ const ORTHOGRAPHY_SECTIONS = [
     title: "Laute und Buchstaben",
     intro: "Übe schwierige Laute und Buchstaben.",
     cards: [
-      { titel: "ei", hinweise: ["ei"], beispiele: ["Eis", "klein", "schreiben"] },
-      { titel: "au", hinweise: ["au"], beispiele: ["Haus", "Maus", "Baum"] },
-      { titel: "eu", hinweise: ["eu"], beispiele: ["Freund", "Freude", "heute"] },
-      { titel: "äu", hinweise: ["äu"], beispiele: ["Häuser", "Mäuse", "Bäume"] },
-      { titel: "ie", hinweise: ["ie"], beispiele: ["Wiese", "Biene", "spielen"] },
-      { titel: "sch", hinweise: ["sch"], beispiele: ["Schule", "Tasche", "Fisch"] },
-      { titel: "ch", hinweise: ["ch"], beispiele: ["Buch", "Milch", "Kuchen"] },
-      { titel: "sp / st", hinweise: ["sp", "st"], beispiele: ["spielen", "Sport", "Stift", "Stern"] },
-      { titel: "pf", hinweise: ["pf"], beispiele: ["Pferd", "Apfel", "Topf"] },
-      { titel: "ng / nk", hinweise: ["ng", "nk"], beispiele: ["Ring", "singen", "Bank", "trinken"] },
-      { titel: "v", hinweise: ["v"], beispiele: ["Vogel", "Vater", "viel"] },
-      { titel: "qu", hinweise: ["qu"], beispiele: ["Quark", "Quelle", "quaken"] },
-      { titel: "ä / e", hinweise: ["ä", "e"], beispiele: ["Bäcker", "Bett", "Hände"] },
-      { titel: "b / p", hinweise: ["b", "p"], beispiele: ["Korb", "Körbe", "gelb"] },
-      { titel: "d / t", hinweise: ["d", "t"], beispiele: ["Hund", "Hunde", "Kind"] },
-      { titel: "g / k", hinweise: ["g", "k"], beispiele: ["Berg", "Berge", "Tag"] }
+      { titel: "ei", hinweis: "Ich höre ei.", beispiele: ["Ei", "Seil", "heiß"] },
+      { titel: "au", hinweis: "Ich höre au.", beispiele: ["Haus", "Maus", "Baum"] },
+      { titel: "eu", hinweis: "Ich höre eu.", beispiele: ["Feuer", "heute", "Leute"] },
+      { titel: "äu", hinweis: "Manche Wörter schreibt man mit äu, wenn es ein verwandtes Wort mit au gibt.", beispiele: ["Bäume – Baum", "Häuser – Haus"] },
+      { titel: "ie", hinweis: "ie klingt lang.", beispiele: ["Biene", "lieben", "Spiel"] },
+      { titel: "sch", hinweis: "Ich höre sch.", beispiele: ["Schule", "Tasche", "Fisch"] },
+      { titel: "ch", hinweis: "Ich höre ch.", beispiele: ["ich", "Buch", "lachen"] },
+      { titel: "sp / st", hinweis: "Am Wortanfang hört man oft schp oder scht, aber man schreibt sp oder st.", beispiele: ["spielen", "Stein", "Straße"] },
+      { titel: "pf", hinweis: "Ich höre genau: p und f gehören zusammen.", beispiele: ["Pferd", "Apfel", "Pfeife"] },
+      { titel: "ng / nk", hinweis: "Ich höre genau, ob ich ng oder nk brauche.", beispiele: ["singen", "Ring", "Bank", "trinken"] },
+      { titel: "v", hinweis: "Manche Wörter schreibt man mit v. Diese Wörter muss man sich gut merken.", beispiele: ["Vogel", "Vater", "viel"] },
+      { titel: "qu", hinweis: "Nach q steht fast immer u.", beispiele: ["Quelle", "Quark", "Quadrat"] },
+      { titel: "ä / e", hinweis: "Finde ein verwandtes Wort.", beispiele: ["Hände – Hand", "Bälle – Ball", "Bäume – Baum"] },
+      { titel: "b / p", hinweis: "Am Wortende klingen b und p oft ähnlich. Verlängere das Wort.", beispiele: ["Dieb – Diebe", "halb – halbe"] },
+      { titel: "d / t", hinweis: "Am Wortende klingen d und t oft ähnlich. Verlängere das Wort.", beispiele: ["Rad – Räder", "Hund – Hunde"] },
+      { titel: "g / k", hinweis: "Am Wortende klingen g und k oft ähnlich. Verlängere das Wort.", beispiele: ["Berg – Berge", "Tag – Tage"] },
+      {
+        titel: "s, ss, ß",
+        hinweis: "Achte darauf, ob der Vokal davor kurz oder lang klingt.",
+        merke: ["Nach kurzem Vokal schreibt man oft ss.", "Nach langem Vokal schreibt man oft ß."],
+        beispiele: ["müssen", "Straße", "Sonne"]
+      },
+      { titel: "mm", hinweis: "Sprich deutlich und achte auf den kurzen Vokal davor.", beispiele: ["kommen", "schwimmen", "Sommer"] },
+      { titel: "nn", hinweis: "Sprich deutlich und achte auf den kurzen Vokal davor.", beispiele: ["rennen", "Sonne", "Tanne"] },
+      { titel: "h", hinweis: "Das h kann einen Vokal verlängern. Man hört es oft nicht deutlich.", beispiele: ["fahren", "Zahn", "wohnen"] }
     ]
   },
   {
     title: "Rechtschreib-Tricks",
     intro: "Entdecke, wie Wörter richtig geschrieben werden.",
     cards: [
-      { titel: "Ich höre genau", hinweise: ["hören", "sprechen"], beispiele: ["Sonne", "Nase", "Tafel"] },
-      { titel: "Auslautverhärtung", unterzeile: "g/k, d/t, b/p", hinweise: ["g / k", "d / t", "b / p"], beispiele: ["Berg → Berge", "Hund → Hunde", "Korb → Körbe"] },
-      { titel: "Doppelkonsonanten", unterzeile: "mm, nn, tt", hinweise: ["mm", "nn", "tt"], beispiele: ["Sonne", "Bett", "kommen"] },
-      { titel: "s, ss und ß", unterzeile: "s, ss, ß", hinweise: ["s", "ss", "ß"], beispiele: ["Hase", "Wasser", "Fuß"] },
-      { titel: "Verwandte Wörter", unterzeile: "Wortfamilie", hinweise: ["Familie"], beispiele: ["Baum → Bäume", "fahren → Fahrrad", "Traum → träumen"] },
-      { titel: "Zusammengesetzte Wörter", unterzeile: "Wort + Wort", hinweise: ["Wort + Wort"], beispiele: ["Schultasche", "Baumhaus", "Fußball"] },
-      { titel: "Wortbausteine", unterzeile: "vor, ver, -lich", hinweise: ["vor", "ver", "lich"], beispiele: ["vorsingen", "verlaufen", "freundlich"] },
-      { titel: "Groß- und Kleinschreibung", unterzeile: "Nomen, Verb, Adjektiv", hinweise: ["Nomen", "Verb", "Adjektiv"], beispiele: ["der Hund", "laufen", "klein"] },
-      { titel: "Dehnung", unterzeile: "ie, h, langer Laut", hinweise: ["ie", "h", "lang"], beispiele: ["Biene", "fahren", "Sohn"] },
-      { titel: "Merkwörter", unterzeile: "gut merken", hinweise: ["merken"], beispiele: ["Vater", "vielleicht", "Computer"] }
+      { titel: "Ich höre genau", hinweis: "Sprich langsam, klatsche Silben oder schwinge mit.", beispiele: ["Ro-se", "Ha-se", "Fe-der"] },
+      { titel: "Verwandte Wörter", hinweis: "Suche Wörter aus derselben Wortfamilie.", beispiele: ["Hand – Hände", "fahren – Fahrer", "Baum – Bäume"] },
+      { titel: "Zusammengesetzte Wörter", hinweis: "Ein langes Wort besteht oft aus zwei Wörtern.", beispiele: ["Haus + Tür = Haustür", "Sonne + Blume = Sonnenblume"] },
+      { titel: "Wortbausteine", hinweis: "Achte auf Vorsilben und Endungen.", beispiele: ["vor-", "ver-", "-lich", "-heit"] },
+      { titel: "Groß- und Kleinschreibung", hinweis: "Nomen schreibt man groß. Du erkennst sie oft an einem Artikel.", beispiele: ["der Hund", "die Schule", "das Haus"] },
+      { titel: "Merkwörter", hinweis: "Diese Wörter musst du dir gut merken.", beispiele: ["nämlich", "vielleicht", "wieder"] }
     ]
   }
 ];
@@ -972,41 +977,51 @@ function renderLearningOverview(container, config) {
 }
 
 function renderOrthographyOverview(container) {
-  let cardIndex = 0;
+  let cardNumber = 0;
   container.innerHTML = `
-    <section class="orthography-overview-card" aria-labelledby="orthography-title">
+    <section class="orthography-overview-card" aria-labelledby="orthography-overview-title">
       <div class="reading-overview-heading">
         ${renderAppIcon(ICONS.rechtschreibung, "Rechtschreibung", "overview-icon-frame")}
-        <h3 id="orthography-title">Rechtschreibung</h3>
-        <p>Wähle eine Übung. Arbeite im Heft oder Lernplaner.</p>
+        <h3 id="orthography-overview-title">Rechtschreibung</h3>
+        <p>Übe ruhig und der Reihe nach. Die Nummern laufen von 1 bis 26.</p>
       </div>
       <div class="orthography-section-list">
-        ${ORTHOGRAPHY_SECTIONS.map((section) => {
-          const sectionHtml = `
-            <section class="orthography-section">
+        ${ORTHOGRAPHY_SECTIONS.map((section) => `
+          <section class="orthography-section">
+            <div class="orthography-section-heading">
               <h4>${section.title}</h4>
               <p>${section.intro}</p>
-              <div class="orthography-tile-grid">
-                ${section.cards.map((card) => {
-                  const index = cardIndex++;
-                  return `
-                    <button class="orthography-tile" type="button" data-orthography-card="${index}">
-                      <span class="orthography-tile-title">${card.titel}</span>
-                      ${renderOrthographyTileNote(card)}
-                    </button>
-                  `;
-                }).join("")}
-              </div>
-            </section>
-          `;
-          return sectionHtml;
-        }).join("")}
+            </div>
+            <div class="orthography-learning-list">
+              ${section.cards.map((card) => renderOrthographyLearningCard(card, ++cardNumber)).join("")}
+            </div>
+          </section>
+        `).join("")}
       </div>
       <div class="writing-card-actions">
         <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="wordExplorer">⬅ Wortforscher</button>
         <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="home">🏠 Home</button>
+        <button class="big-action-button writing-action-button is-light" type="button" data-orthography-action="top">⬆ Nach oben</button>
       </div>
     </section>
+  `;
+}
+
+function renderOrthographyLearningCard(card, number) {
+  const memoryLines = card.merke?.length
+    ? `<p class="orthography-memory"><strong>Merke:</strong> ${card.merke.join(" ")}</p>`
+    : "";
+
+  return `
+    <article class="orthography-learning-card">
+      <span class="orthography-number" aria-label="Nummer ${number}">${number}</span>
+      <div class="orthography-learning-text">
+        <h5>${card.titel}</h5>
+        <p>${card.hinweis}</p>
+        ${memoryLines}
+        <p class="orthography-examples"><strong>Beispiele:</strong> ${card.beispiele.join(", ")}</p>
+      </div>
+    </article>
   `;
 }
 
@@ -1043,10 +1058,6 @@ function renderOrthographyCard(container, card, totalCards) {
 
 function renderOrthographyHints(hints = []) {
   return `<p class="orthography-detail-note">${hints.join(", ")}</p>`;
-}
-
-function renderOrthographyTileNote(card) {
-  return card.unterzeile ? `<span class="orthography-tile-note">${card.unterzeile}</span>` : "";
 }
 
 function renderLearningCard(container, card, totalCards, actionAttribute) {
@@ -1309,7 +1320,7 @@ function getOrthographyCards() {
     gruppe: section.title,
     nummer: ++number,
     titel: card.titel,
-    hinweise: card.hinweise,
+    hinweise: card.hinweise || [card.hinweis].filter(Boolean),
     beispiele: card.beispiele,
     aufgaben: getOrthographyTasks(card, section.title),
     toniTipp: getOrthographyToniTip(card.titel)
@@ -1317,15 +1328,6 @@ function getOrthographyCards() {
 }
 
 function getOrthographyTasks(card, sectionTitle) {
-  if (card.titel === "Auslautverhärtung") {
-    return [
-      "Lies die Beispielwörter leise.",
-      "Verlängere jedes Wort im Heft.",
-      "Markiere g / k, d / t oder b / p farbig.",
-      "Finde drei eigene Wörter."
-    ];
-  }
-
   if (sectionTitle === "Laute und Buchstaben") {
     return [
       "Lies die Beispiele deutlich.",
@@ -1346,14 +1348,18 @@ function getOrthographyTasks(card, sectionTitle) {
 function getOrthographyToniTip(title) {
   const tips = {
     "Ich höre genau": "Sprich langsam. Manchmal hörst du dann die wichtige Stelle.",
-    "Auslautverhärtung": "Verlängern hilft: Berg wird Berge.",
-    "Doppelkonsonanten": "Achte auf den kurzen Klang vor dem doppelten Buchstaben.",
-    "s, ss und ß": "Lies das Wort langsam und markiere die s-Stelle.",
+    "b / p": "Verlängern hilft: Dieb wird Diebe.",
+    "d / t": "Verlängern hilft: Hund wird Hunde.",
+    "g / k": "Verlängern hilft: Berg wird Berge.",
+    "s, ss, ß": "Lies das Wort langsam und achte auf den Vokal davor.",
+    "mm": "Achte auf den kurzen Klang vor mm.",
+    "nn": "Achte auf den kurzen Klang vor nn.",
+    "ie": "Höre, ob der Laut lang klingt.",
+    "h": "Manchmal verlängert h den Vokal.",
     "Verwandte Wörter": "Ein verwandtes Wort kann dir beim Schreiben helfen.",
     "Zusammengesetzte Wörter": "Trenne lange Wörter in zwei Teile.",
     "Wortbausteine": "Suche den kleinen Baustein im Wort.",
     "Groß- und Kleinschreibung": "Bei Nomen helfen dir der, die oder das.",
-    "Dehnung": "Höre, ob der Laut lang klingt.",
     "Merkwörter": "Merkwörter darfst du besonders oft üben."
   };
 
@@ -1602,14 +1608,6 @@ function handleReadingClick(event) {
 }
 
 function handleOrthographyClick(event) {
-  const cardButton = event.target.closest("[data-orthography-card]");
-  if (cardButton) {
-    state.orthographyCardIndex = Number(cardButton.dataset.orthographyCard);
-    render();
-    scrollToTop();
-    return;
-  }
-
   const actionButton = event.target.closest("[data-orthography-action]");
   if (!actionButton) return;
   handleLearningAction(actionButton.dataset.orthographyAction, "orthography");

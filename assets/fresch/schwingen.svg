@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Schwingen">
   <circle cx="64" cy="64" r="58" fill="none" stroke="#111" stroke-width="6"/>
-  <path d="M23 69c11-20 28-20 40 0s29 20 42 0" fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M24 50c8 24 28 24 36 0" fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M68 50c8 24 28 24 36 0" fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>
 </svg>

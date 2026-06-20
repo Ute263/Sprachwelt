@@ -523,23 +523,23 @@ h2 {
 .orthography-overview-card {
   max-width: 1120px;
   margin: 0 auto;
-  padding: clamp(18px, 3vw, 28px);
-  border: 4px solid rgba(31, 111, 188, 0.18);
-  border-radius: 28px;
-  background: #fff;
-  box-shadow: var(--shadow);
+  padding: clamp(10px, 2vw, 18px) 0 0;
 }
 
 .orthography-section-list {
   display: grid;
-  gap: 24px;
+  gap: 28px;
 }
 
 .orthography-section {
-  padding: clamp(16px, 3vw, 24px);
-  border: 3px solid rgba(31, 111, 188, 0.13);
+  padding: clamp(18px, 3vw, 26px);
+  border: 3px solid rgba(31, 111, 188, 0.12);
   border-radius: 24px;
-  background: #fffefa;
+  background: rgba(234, 244, 255, 0.72);
+}
+
+.orthography-section-heading {
+  margin-bottom: 16px;
 }
 
 .orthography-section h4 {
@@ -550,58 +550,82 @@ h2 {
 }
 
 .orthography-section p {
-  margin: 0 0 16px;
+  margin: 0;
   color: var(--ink);
   font-size: clamp(1.05rem, 2.2vw, 1.28rem);
   font-weight: 800;
   line-height: 1.35;
 }
 
-.orthography-tile-grid {
+.orthography-learning-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.orthography-learning-card {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
   gap: 16px;
-  align-items: stretch;
-}
-
-.orthography-tile {
-  display: grid;
-  gap: 8px;
-  align-content: center;
-  justify-items: center;
-  min-height: 140px;
-  padding: 18px;
-  border: 3px solid rgba(31, 111, 188, 0.16);
-  border-radius: 22px;
+  align-items: start;
+  min-height: 112px;
+  padding: clamp(16px, 2.4vw, 22px);
+  border: 3px solid rgba(31, 111, 188, 0.14);
+  border-radius: 20px;
   color: var(--ink);
-  background: #eaf4ff;
-  box-shadow: 0 12px 24px rgba(31, 111, 188, 0.12);
-  font: inherit;
-  text-align: center;
-  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(31, 111, 188, 0.09);
 }
 
-.orthography-tile:hover,
-.orthography-tile:focus-visible {
-  transform: translateY(-2px);
-  outline: 5px solid rgba(255, 230, 109, 0.74);
-}
-
-.orthography-tile-title {
-  font-size: clamp(1.22rem, 2.4vw, 1.72rem);
+.orthography-number {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  min-height: 64px;
+  border: 3px solid rgba(31, 111, 188, 0.2);
+  border-radius: 14px;
+  color: var(--button-dark);
+  background: #dbeeff;
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
   font-weight: 900;
-  line-height: 1.12;
-  overflow-wrap: anywhere;
+  line-height: 1;
 }
 
-.orthography-tile-note,
+.orthography-learning-text {
+  min-width: 0;
+}
+
+.orthography-learning-text h5 {
+  margin: 0 0 8px;
+  color: var(--button-dark);
+  font-size: clamp(1.28rem, 2.7vw, 1.78rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.orthography-learning-text p,
 .orthography-detail-note {
-  margin: 0;
+  margin: 0 0 8px;
   color: var(--muted);
-  font-size: clamp(0.96rem, 1.8vw, 1.1rem);
+  font-size: clamp(1.02rem, 2vw, 1.2rem);
   font-weight: 800;
-  line-height: 1.25;
-  overflow-wrap: anywhere;
+  line-height: 1.38;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.orthography-learning-text p:last-child {
+  margin-bottom: 0;
+}
+
+.orthography-memory {
+  color: var(--ink);
+}
+
+.orthography-examples {
+  color: var(--ink);
 }
 
 .reading-overview-heading {
@@ -1450,5 +1474,21 @@ h2 {
   .daily-strategy {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .orthography-section {
+    padding: 16px;
+  }
+
+  .orthography-learning-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .orthography-number {
+    width: 52px;
+    min-height: 52px;
+    border-radius: 12px;
   }
 }
